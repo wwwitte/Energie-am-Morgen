@@ -1,0 +1,49 @@
+name: Täglicher Podcast – Energie Morgen
+
+on:
+  # Täglich um 10:00 Uhr (UTC = 12:00 Uhr MESZ / 11:00 Uhr MEZ)
+  schedule:
+    - cron: "0 8 * * *"    # <- 08:00 UTC = 10:00 Uhr MEZ (Winter) / 10:00 MESZ anpassen!
+
+  # Manueller Start zum Testen (Button in GitHub Actions)
+  workflow_dispatch:
+
+permissions:
+  contents: write   # Damit der Workflow Dateien committen darf
+
+jobs:
+  generate-podcast:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Repository auschecken
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      # 2. Python einrichten
+      - name: Python 3.12 einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      # 3. Abhängigkeiten installieren
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
+
+      # 4. Podcast generieren
+      - name: Podcast generieren
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          GITHUB_REPO_NAME: ${{ github.event.repository.name }}
+        run: python podcast_generator.py
+
+      # 5. Generierte Dateien committen und pushen
+      - name: Episode committen
+        run: |
+          git config user.name  "Podcast-Bot"
+          git config user.email "podcast-bot@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet || git commit -m "🎙️ Neue Episode: $(date +'%d.%m.%Y')"
+          git push
