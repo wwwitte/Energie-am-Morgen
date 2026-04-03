@@ -3,9 +3,10 @@ Energie Morgen – Automatischer Podcast-Generator
 -------------------------------------------------
 Ablauf:
   1. Top-News von Google News RSS abrufen (erneuerbare Energien DE)
-  2. Podcast-Skript via Groq API generieren (kostenlos, EU-kompatibel)
-  3. Audio via gTTS (Google Text-to-Speech, kostenlos) erzeugen
-  4. MP3 + RSS-Feed in docs/ speichern (-> GitHub Pages)
+  2. Moderations-Richtlinien aus prompt.txt laden
+  3. Podcast-Skript via Groq API generieren (kostenlos, EU-kompatibel)
+  4. Audio via gTTS (Google Text-to-Speech, kostenlos) erzeugen
+  5. MP3 + RSS-Feed in docs/ speichern (-> GitHub Pages)
 """
 
 import datetime
@@ -28,6 +29,7 @@ GITHUB_REPO_NAME = os.environ["GITHUB_REPO_NAME"]       # z. B. "energie-morgen"
 PODCAST_TITLE = "Energie Morgen"
 PODCAST_DESC = "Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet."
 PODCAST_LANG = "de"
+PROMPT_FILE = "prompt.txt"                              # Moderations-Richtlinien
 
 RSS_URL = (
     "https://news.google.com/rss/search"
@@ -43,6 +45,19 @@ def base_url() -> str:
     return f"https://{GITHUB_USERNAME}.github.io/{GITHUB_REPO_NAME}"
 
 
+def load_prompt_config() -> str:
+    """Lädt die Moderations-Richtlinien aus prompt.txt."""
+    path = Path(PROMPT_FILE)
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Prompt-Datei '{PROMPT_FILE}' nicht gefunden. "
+            "Bitte sicherstellen, dass die Datei im Repository liegt."
+        )
+    config = path.read_text(encoding="utf-8").strip()
+    print(f"📋 Moderations-Richtlinien geladen ({len(config.splitlines())} Zeilen).")
+    return config
+
+
 def fetch_news(max_articles: int = 5) -> list[dict]:
     """Holt die aktuellen News vom Google News RSS-Feed."""
     print("📰 News abrufen ...")
@@ -52,6 +67,7 @@ def fetch_news(max_articles: int = 5) -> list[dict]:
         articles.append({
             "title": entry.get("title", ""),
             "summary": entry.get("summary", "")[:300],
+            "source": entry.get("source", {}).get("title", ""),
             "link": entry.get("link", ""),
         })
     if not articles:
@@ -60,35 +76,31 @@ def fetch_news(max_articles: int = 5) -> list[dict]:
     return articles
 
 
-def generate_script(articles: list[dict]) -> str:
-    """Erstellt ein Podcast-Skript mit Groq (kostenlos, EU-kompatibel)."""
+def generate_script(articles: list[dict], prompt_config: str) -> str:
+    """Erstellt ein Podcast-Skript mit Groq auf Basis der Moderations-Richtlinien."""
     print("✍️  Skript generieren ...")
     client = Groq(api_key=GROQ_API_KEY)
 
     datum = datetime.date.today().strftime("%d. %B %Y")
     news_text = "\n".join(
-        f"- {a['title']}: {a['summary']}" for a in articles
+        f"- [{a['source']}] {a['title']}: {a['summary']}" if a['source']
+        else f"- {a['title']}: {a['summary']}"
+        for a in articles
     )
 
-    prompt = f"""Du bist ein kompetenter, freundlicher Podcast-Moderator des deutschen Podcasts „{PODCAST_TITLE}".
-
+    prompt = f"""Du bist der Moderator des deutschen Nachrichten-Podcasts „{PODCAST_TITLE}".
 Heute ist der {datum}.
 
-Aktuelle Top-News zu erneuerbaren Energien in Deutschland:
+=== MODERATIONS-RICHTLINIEN ===
+{prompt_config}
+=== ENDE RICHTLINIEN ===
+
+Aktuelle Top-News zu erneuerbaren Energien in Deutschland (mit Quellenangabe in eckigen Klammern):
 {news_text}
 
-Erstelle ein Podcast-Skript mit ca. 700 Wörtern (etwa 5 Minuten Sprechzeit) im Solo-Moderations-Stil.
-
-Aufbau:
-1. Kurze, einladende Begrüßung mit Datum und Hinweis auf die heutige Hauptthemen (2–3 Sätze)
-2. Ausführliche Besprechung der 2–3 wichtigsten News mit Kontext und Einordnung
-3. Kurzes, motivierendes Outro mit Handlungsaufruf und Verabschiedung
-
-Regeln:
-- Natürlicher, gesprochener Stil – keine Aufzählungszeichen, kein Markdown
-- Keine Sonderzeichen wie #, *, _ oder andere Formatierung
-- Zahlen ausschreiben (z. B. "drei" statt "3")
-- Fließender Text, der direkt von einer TTS-Engine gesprochen werden kann"""
+Erstelle jetzt ein vollständiges Podcast-Skript mit ca. 700 Wörtern (etwa 5 Minuten Sprechzeit).
+Halte dich strikt an die oben genannten Moderations-Richtlinien.
+Der Text muss direkt von einer Text-to-Speech-Engine gesprochen werden können – kein Markdown, keine Formatierung."""
 
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
@@ -179,8 +191,9 @@ def main() -> None:
     audio_path = str(episodes_dir / audio_filename)
     script_path = episodes_dir / f"{date_str}.txt"
 
+    prompt_config = load_prompt_config()
     articles = fetch_news()
-    script = generate_script(articles)
+    script = generate_script(articles, prompt_config)
 
     script_path.write_text(script, encoding="utf-8")
     generate_audio(script, audio_path)
@@ -190,6 +203,7 @@ def main() -> None:
     update_rss_feed(episode_title, episode_desc, audio_filename, audio_size)
 
     print("\n✅ Fertig!")
+    print(f"   Richtlinien: {PROMPT_FILE}")
     print(f"   Skript : {script_path}")
     print(f"   Audio  : {audio_path}")
     print(f"   Feed   : docs/feed.xml")
