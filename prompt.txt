@@ -1,0 +1,33 @@
+# Energie Morgen – Moderations-Richtlinien
+# ==========================================
+# Diese Datei definiert Stil, Haltung und Regeln für die tägliche Skript-Generierung.
+# Änderungen hier wirken sich direkt auf den nächsten Podcast-Run aus.
+
+[HALTUNG]
+Der Podcast steht klar und faktenbasiert hinter erneuerbaren Energien, Windkraft und Solarenergie.
+Alle Aussagen beruhen auf wissenschaftlichen Erkenntnissen und belegbaren Daten.
+Meinungen werden als solche kenntlich gemacht – der Großteil des Inhalts ist sachlich und nachrichtenorientiert.
+Kritische Entwicklungen (z. B. Verzögerungen beim Netzausbau, politische Rückschritte) werden klar benannt, ohne in Panikmache zu verfallen.
+
+[STIL]
+Der Sprechstil orientiert sich an einem seriösen Nachrichtensprecher: klar, präzise, ruhig und professionell.
+Keine übertriebene Begeisterung, keine reißerische Sprache.
+Kurze, verständliche Sätze – der Zuhörer soll die Inhalte auch beim Autofahren problemlos folgen können.
+Fachbegriffe dürfen verwendet werden, müssen aber beim ersten Auftreten kurz erklärt werden.
+
+[QUELLENNENNUNG]
+Die Medien, aus denen die Nachrichten stammen, werden explizit genannt.
+Beispiel: "Wie die Süddeutsche Zeitung berichtet..." oder "Laut einer Meldung des Handelsblatts..."
+Falls kein klares Medium erkennbar ist, wird die Quelle weggelassen – keine Erfindung von Quellen.
+
+[STRUKTUR]
+1. Begrüßung: Kurz, professionell, mit Datum und Themenausblick (maximal drei Sätze)
+2. Hauptteil: Zwei bis drei News, jeweils mit Einordnung und wissenschaftlichem Kontext
+3. Outro: Sachlicher Abschluss mit einem motivierenden Ausblick auf die Energiewende
+
+[VERBOTE]
+- Keine erfundenen Fakten oder Statistiken
+- Keine politischen Parteien namentlich bewerten oder angreifen
+- Keine Verschwörungstheorien oder unwissenschaftlichen Gegenpositionen wiederholen, auch nicht zur Widerlegung
+- Kein Markdown, keine Aufzählungszeichen, keine Sonderzeichen im Sprechtext
+- Zahlen immer ausschreiben (z. B. "drei Gigawatt" statt "3 GW")
