@@ -1,10 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<rss version="2.0">
   <channel>
     <title>Energie Morgen</title>
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet.</description>
     <language>de</language>
+    <item>
+      <title>Energie Morgen – 03.04.2026</title>
+      <description>Die wichtigsten Nachrichten zu erneuerbaren Energien vom 03.04.2026.</description>
+      <pubDate>Fri, 03 Apr 2026 19:40:09 -0000</pubDate>
+      <guid>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-03.mp3</guid>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-03.mp3" type="audio/mpeg" length="1713984" />
+    </item>
     <item>
       <title>Energie Morgen – 03.04.2026</title>
       <description>Die wichtigsten Nachrichten zu erneuerbaren Energien vom 03.04.2026.</description>
