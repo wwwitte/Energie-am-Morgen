@@ -3,7 +3,7 @@ Energie Morgen – Automatischer Podcast-Generator
 -------------------------------------------------
 Ablauf:
   1. Top-News von Google News RSS abrufen (erneuerbare Energien DE)
-  2. Podcast-Skript via Google Gemini API generieren
+  2. Podcast-Skript via Groq API generieren (kostenlos, EU-kompatibel)
   3. Audio via Edge-TTS (Microsoft, kostenlos) erzeugen
   4. MP3 + RSS-Feed in docs/ speichern (-> GitHub Pages)
 """
@@ -17,13 +17,13 @@ from email.utils import formatdate
 
 import feedparser
 import edge_tts
-import google.generativeai as genai
+from groq import Groq
 
 # ---------------------------------------------------------------------------
 # Konfiguration
 # ---------------------------------------------------------------------------
 
-GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]           # GitHub Secret
+GROQ_API_KEY = os.environ["GROQ_API_KEY"]               # GitHub Secret
 GITHUB_USERNAME = os.environ["GITHUB_USERNAME"]         # z. B. "maxmustermann"
 GITHUB_REPO_NAME = os.environ["GITHUB_REPO_NAME"]       # z. B. "energie-morgen"
 VOICE = "de-DE-KatjaNeural"                             # Deutsche TTS-Stimme
@@ -63,10 +63,9 @@ def fetch_news(max_articles: int = 5) -> list[dict]:
 
 
 def generate_script(articles: list[dict]) -> str:
-    """Erstellt ein Podcast-Skript mit Google Gemini."""
+    """Erstellt ein Podcast-Skript mit Groq (kostenlos, EU-kompatibel)."""
     print("✍️  Skript generieren ...")
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    client = Groq(api_key=GROQ_API_KEY)
 
     datum = datetime.date.today().strftime("%d. %B %Y")
     news_text = "\n".join(
@@ -93,8 +92,12 @@ Regeln:
 - Zahlen ausschreiben (z. B. "drei" statt "3")
 - Fließender Text, der direkt von einer TTS-Engine gesprochen werden kann"""
 
-    response = model.generate_content(prompt)
-    script = response.text.strip()
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=1500,
+    )
+    script = response.choices[0].message.content.strip()
     print(f"   Skript generiert ({len(script.split())} Wörter).")
     return script
 
