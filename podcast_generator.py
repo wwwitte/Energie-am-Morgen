@@ -2,15 +2,16 @@
 Energie Morgen – Automatischer Podcast-Generator
 -------------------------------------------------
 Ablauf:
-  1. Top-News von Google News RSS abrufen (erneuerbare Energien DE)
+  1. Top-News aus mehreren Google News RSS-Feeds abrufen
   2. Moderations-Richtlinien aus prompt.txt laden
-  3. Podcast-Skript via Groq API generieren (kostenlos, EU-kompatibel)
+  3. Groq wählt die 3 spannendsten Themen und erstellt das Skript
   4. Audio via gTTS (Google Text-to-Speech, kostenlos) erzeugen
   5. MP3 + RSS-Feed in docs/ speichern (-> GitHub Pages)
 """
 
 import datetime
 import os
+import time
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from email.utils import formatdate
@@ -23,19 +24,25 @@ from groq import Groq
 # Konfiguration
 # ---------------------------------------------------------------------------
 
-GROQ_API_KEY = os.environ["GROQ_API_KEY"]               # GitHub Secret
-GITHUB_USERNAME = os.environ["GITHUB_USERNAME"]         # z. B. "maxmustermann"
-GITHUB_REPO_NAME = os.environ["GITHUB_REPO_NAME"]       # z. B. "energie-morgen"
+GROQ_API_KEY = os.environ["GROQ_API_KEY"]
+GITHUB_USERNAME = os.environ["GITHUB_USERNAME"]
+GITHUB_REPO_NAME = os.environ["GITHUB_REPO_NAME"]
 PODCAST_TITLE = "Energie Morgen"
 PODCAST_DESC = "Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet."
 PODCAST_LANG = "de"
-PROMPT_FILE = "prompt.txt"                              # Moderations-Richtlinien
+PROMPT_FILE = "prompt.txt"
 
-RSS_URL = (
-    "https://news.google.com/rss/search"
-    "?q=erneuerbare+Energien+Deutschland"
-    "&hl=de&gl=DE&ceid=DE:de"
-)
+# Alle RSS-Feeds – je Suchbegriff ein Feed
+RSS_FEEDS = [
+    ("erneuerbare Energien Deutschland",  "https://news.google.com/rss/search?q=erneuerbare+Energien+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+    ("Windkraft Deutschland",             "https://news.google.com/rss/search?q=Windkraft+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+    ("PV Deutschland",                    "https://news.google.com/rss/search?q=Photovoltaik+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+    ("Solarenergie Deutschland",          "https://news.google.com/rss/search?q=Solarenergie+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+    ("Stromnetz Deutschland",             "https://news.google.com/rss/search?q=Stromnetz+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+]
+
+MAX_PER_FEED = 3    # Artikel pro Feed
+TOP_STORIES = 3     # Groq wählt diese Anzahl für das Skript
 
 # ---------------------------------------------------------------------------
 # Hilfsfunktionen
@@ -58,34 +65,52 @@ def load_prompt_config() -> str:
     return config
 
 
-def fetch_news(max_articles: int = 5) -> list[dict]:
-    """Holt die aktuellen News vom Google News RSS-Feed."""
-    print("📰 News abrufen ...")
-    feed = feedparser.parse(RSS_URL)
-    articles = []
-    for entry in feed.entries[:max_articles]:
-        articles.append({
-            "title": entry.get("title", ""),
-            "summary": entry.get("summary", "")[:300],
-            "source": entry.get("source", {}).get("title", ""),
-            "link": entry.get("link", ""),
-        })
-    if not articles:
-        raise RuntimeError("Keine News gefunden – RSS-Feed leer oder nicht erreichbar.")
-    print(f"   {len(articles)} Artikel geladen.")
-    return articles
+def fetch_all_news() -> list[dict]:
+    """Holt News aus allen konfigurierten RSS-Feeds und dedupliziert nach Titel."""
+    print("📰 News aus allen Feeds abrufen ...")
+    seen_titles = set()
+    all_articles = []
+
+    for topic, url in RSS_FEEDS:
+        feed = feedparser.parse(url)
+        count = 0
+        for entry in feed.entries[:MAX_PER_FEED]:
+            title = entry.get("title", "").strip()
+            # Duplikate überspringen (gleicher Titel aus mehreren Feeds möglich)
+            title_key = title.lower()[:60]
+            if title_key in seen_titles:
+                continue
+            seen_titles.add(title_key)
+            all_articles.append({
+                "topic":   topic,
+                "title":   title,
+                "summary": entry.get("summary", "")[:300],
+                "source":  entry.get("source", {}).get("title", ""),
+                "link":    entry.get("link", ""),
+            })
+            count += 1
+        print(f"   [{topic}] {count} Artikel geladen.")
+        time.sleep(0.3)  # kurze Pause zwischen Requests
+
+    print(f"   Gesamt: {len(all_articles)} eindeutige Artikel aus {len(RSS_FEEDS)} Feeds.")
+    if not all_articles:
+        raise RuntimeError("Keine News gefunden – alle RSS-Feeds leer oder nicht erreichbar.")
+    return all_articles
 
 
 def generate_script(articles: list[dict], prompt_config: str) -> str:
-    """Erstellt ein Podcast-Skript mit Groq auf Basis der Moderations-Richtlinien."""
-    print("✍️  Skript generieren ...")
+    """Groq wählt die 3 spannendsten Themen und erstellt das Podcast-Skript."""
+    print("✍️  Skript generieren (Groq wählt Top-3-Themen) ...")
     client = Groq(api_key=GROQ_API_KEY)
 
     datum = datetime.date.today().strftime("%d. %B %Y")
+
+    # Alle Artikel als nummerierte Liste für Groq aufbereiten
     news_text = "\n".join(
-        f"- [{a['source']}] {a['title']}: {a['summary']}" if a['source']
-        else f"- {a['title']}: {a['summary']}"
-        for a in articles
+        f"{i+1}. [Themenbereich: {a['topic']}]"
+        f"{' [Quelle: ' + a['source'] + ']' if a['source'] else ''}"
+        f" {a['title']}: {a['summary']}"
+        for i, a in enumerate(articles)
     )
 
     prompt = f"""Du bist der Moderator des deutschen Nachrichten-Podcasts „{PODCAST_TITLE}".
@@ -95,12 +120,18 @@ Heute ist der {datum}.
 {prompt_config}
 === ENDE RICHTLINIEN ===
 
-Aktuelle Top-News zu erneuerbaren Energien in Deutschland (mit Quellenangabe in eckigen Klammern):
-{news_text}
+Unten findest du {len(articles)} aktuelle News-Artikel aus verschiedenen Themenbereichen rund um erneuerbare Energien in Deutschland.
 
-Erstelle jetzt ein vollständiges Podcast-Skript mit ca. 700 Wörtern (etwa 5 Minuten Sprechzeit).
-Halte dich strikt an die oben genannten Moderations-Richtlinien.
-Der Text muss direkt von einer Text-to-Speech-Engine gesprochen werden können – kein Markdown, keine Formatierung."""
+DEINE AUFGABE:
+1. Wähle die {TOP_STORIES} spannendsten und relevantesten Artikel aus der Liste aus.
+2. Bevorzuge dabei thematische Vielfalt – nicht zwei sehr ähnliche Meldungen.
+3. Erstelle daraus ein vollständiges Podcast-Skript mit ca. 700 Wörtern (etwa 5 Minuten Sprechzeit).
+4. Halte dich strikt an die Moderations-Richtlinien.
+5. Nenne bei jeder Meldung die Quelle, sofern angegeben.
+6. Der Text muss direkt von einer Text-to-Speech-Engine gesprochen werden können – kein Markdown, keine Formatierung, keine Aufzählungszeichen.
+
+VERFÜGBARE ARTIKEL:
+{news_text}"""
 
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
@@ -192,7 +223,7 @@ def main() -> None:
     script_path = episodes_dir / f"{date_str}.txt"
 
     prompt_config = load_prompt_config()
-    articles = fetch_news()
+    articles = fetch_all_news()
     script = generate_script(articles, prompt_config)
 
     script_path.write_text(script, encoding="utf-8")
