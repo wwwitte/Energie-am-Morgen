@@ -36,7 +36,7 @@ from groq import Groq
 GROQ_API_KEY = os.environ["GROQ_API_KEY"]
 GITHUB_USERNAME = os.environ["GITHUB_USERNAME"]
 GITHUB_REPO_NAME = os.environ["GITHUB_REPO_NAME"]
-PODCAST_TITLE = "Energie Morgen"
+PODCAST_TITLE = "Energie am Morgen"
 PODCAST_DESC = "Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet."
 PODCAST_LANG = "de"
 PROMPT_FILE = "prompt.txt"
@@ -48,9 +48,11 @@ SIMILARITY_THRESHOLD = 3 # Mindestanzahl gemeinsamer Schlüsselwörter für "äh
 RSS_FEEDS = [
     ("erneuerbare Energien Deutschland",  "https://news.google.com/rss/search?q=erneuerbare+Energien+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("Windkraft Deutschland",             "https://news.google.com/rss/search?q=Windkraft+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+    ("Windenergie Deutschland",           "https://news.google.com/rss/search?q=Windenergie+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("PV Deutschland",                    "https://news.google.com/rss/search?q=Photovoltaik+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("Solarenergie Deutschland",          "https://news.google.com/rss/search?q=Solarenergie+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("Stromnetz Deutschland",             "https://news.google.com/rss/search?q=Stromnetz+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+    ("Energiewende",                      "https://news.google.com/rss/search?q=Energiewende&hl=de&gl=DE&ceid=DE:de"),
 ]
 
 MAX_PER_FEED = 3
