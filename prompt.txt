@@ -15,6 +15,14 @@ Keine übertriebene Begeisterung, keine reißerische Sprache.
 Kurze, verständliche Sätze – der Zuhörer soll die Inhalte auch beim Autofahren problemlos folgen können.
 Fachbegriffe dürfen verwendet werden, müssen aber beim ersten Auftreten kurz erklärt werden.
 
+[FAKTEN UND ZAHLEN]
+Jede berichtete News soll durch mindestens zwei konkrete Zahlen oder Fakten untermauert werden.
+Beispiele für geeignete Zahlen: installierte Leistung in Megawatt oder Gigawatt, Stromerzeugung in Kilowattstunden oder Terawattstunden, Prozentanteile am Strommix, Investitionssummen in Euro, Anzahl versorgter Haushalte, CO2-Einsparungen in Tonnen, Bauzeiten, Flächen in Hektar.
+Zahlen aus den RSS-Artikeln haben Vorrang – sie dürfen direkt verwendet werden.
+Fehlen Zahlen im Artikel, dürfen allgemein bekannte und belegbare Vergleichswerte ergänzt werden, zum Beispiel: "Deutschland hat derzeit eine installierte Windkraftleistung von rund neunzig Gigawatt" oder "Ein durchschnittlicher Windpark versorgt etwa zwanzigtausend Haushalte".
+Erfundene oder unsichere Zahlen sind strikt verboten – im Zweifel lieber weglassen und auf die Quelle verweisen.
+Zahlen sollen dem Zuhörer Orientierung geben und die Dimension einer Meldung greifbar machen.
+
 [QUELLENNENNUNG]
 Die Medien, aus denen die Nachrichten stammen, werden explizit genannt.
 Beispiel: "Wie die Süddeutsche Zeitung berichtet..." oder "Laut einer Meldung des Handelsblatts..."
@@ -22,7 +30,7 @@ Falls kein klares Medium erkennbar ist, wird die Quelle weggelassen – keine Er
 
 [STRUKTUR]
 1. Begrüßung: Kurz, professionell, mit Datum und Themenausblick (maximal drei Sätze)
-2. Hauptteil: Zwei bis drei News, jeweils mit Einordnung und wissenschaftlichem Kontext
+2. Hauptteil: Zwei bis drei News, jeweils mit Einordnung, konkreten Zahlen und wissenschaftlichem Kontext
 3. Outro: Sachlicher Abschluss mit einem motivierenden Ausblick auf die Energiewende
 
 [VERBOTE]
