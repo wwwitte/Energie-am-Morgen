@@ -1,5 +1,5 @@
 """
-Energie Morgen – Automatischer Podcast-Generator
+Energie am Morgen – Automatischer Podcast-Generator
 -------------------------------------------------
 Ablauf:
   1. Datenbank laden (docs/memory.json) – Archiv + Sperrfrist-Logik
@@ -48,11 +48,9 @@ SIMILARITY_THRESHOLD = 3 # Mindestanzahl gemeinsamer Schlüsselwörter für "äh
 RSS_FEEDS = [
     ("erneuerbare Energien Deutschland",  "https://news.google.com/rss/search?q=erneuerbare+Energien+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("Windkraft Deutschland",             "https://news.google.com/rss/search?q=Windkraft+Deutschland&hl=de&gl=DE&ceid=DE:de"),
-    ("Windenergie Deutschland",           "https://news.google.com/rss/search?q=Windenergie+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("PV Deutschland",                    "https://news.google.com/rss/search?q=Photovoltaik+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("Solarenergie Deutschland",          "https://news.google.com/rss/search?q=Solarenergie+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("Stromnetz Deutschland",             "https://news.google.com/rss/search?q=Stromnetz+Deutschland&hl=de&gl=DE&ceid=DE:de"),
-    ("Energiewende",                      "https://news.google.com/rss/search?q=Energiewende&hl=de&gl=DE&ceid=DE:de"),
 ]
 
 MAX_PER_FEED = 3
@@ -74,7 +72,7 @@ def load_memory() -> dict:
           "source": "Handelsblatt",
           "topic": "Windkraft Deutschland",
           "date": "2026-04-05",
-          "episode": "Energie Morgen – 05.04.2026"
+          "episode": "Energie am Morgen – 05.04.2026"
         },
         ...
       ]
