@@ -49,7 +49,7 @@ Falls kein klares Medium erkennbar ist, wird die Quelle weggelassen – keine Er
    Beispiel: "Guten Morgen, heute ist Montag, der fünfte April. Wir schauen heute auf einen neuen Rekord bei der Solarenergie, eine stockende Genehmigung in Bayern und was der aktuelle Netzausbau wirklich bedeutet."
 2. Hauptteil: Zwei bis drei News – erst die Nachricht, dann die Einordnung, dann weiter.
 3. Outro: Ein sachlicher Satz der den Tag einordnet, kein Motivationsspruch. Kurze Verabschiedung.
-   Beispiel: "Das war Energie Morgen für heute. Bis morgen."
+   Beispiel: "Das war Energie am Morgen für heute. Bis morgen."
 
 [VERBOTE]
 - Keine erfundenen Fakten oder Statistiken
