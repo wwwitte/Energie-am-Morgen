@@ -1,4 +1,4 @@
-# Energie Morgen – Moderations-Richtlinien
+# Energie am Morgen – Moderations-Richtlinien
 # ==========================================
 # Diese Datei definiert Stil, Haltung und Regeln für die tägliche Skript-Generierung.
 # Änderungen hier wirken sich direkt auf den nächsten Podcast-Run aus.
