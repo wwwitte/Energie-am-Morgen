@@ -2,21 +2,30 @@
 Energie Morgen – Automatischer Podcast-Generator
 -------------------------------------------------
 Ablauf:
-  1. Top-News aus mehreren Google News RSS-Feeds abrufen
-  2. Moderations-Richtlinien aus prompt.txt laden
-  3. Groq wählt die 3 spannendsten Themen und erstellt das Skript
-  4. Audio via gTTS (Google Text-to-Speech, kostenlos) erzeugen
-  5. MP3 + RSS-Feed in docs/ speichern (-> GitHub Pages)
+  1. Datenbank laden (docs/memory.json) – Archiv + Sperrfrist-Logik
+  2. Top-News aus mehreren Google News RSS-Feeds abrufen
+  3. Moderations-Richtlinien aus prompt.txt laden
+  4. Groq wählt die 3 spannendsten neuen Themen und erstellt das Skript
+  5. Audio via gTTS erzeugen
+  6. MP3 + RSS-Feed + Datenbank speichern (-> GitHub Pages)
+
+Datenbank-Logik:
+  - Alle je verwendeten Artikel werden dauerhaft gespeichert (vollständiges Archiv)
+  - Artikel mit ähnlichem Titel werden erst nach REUSE_AFTER_DAYS Tagen wieder zugelassen
+  - Ähnlichkeit wird über gemeinsame Schlüsselwörter erkannt (keine exakte Übereinstimmung nötig)
 """
 
 import datetime
+import json
 import os
+import re
 import time
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from email.utils import formatdate
 
 import feedparser
+import requests
 from gtts import gTTS
 from groq import Groq
 
@@ -31,8 +40,11 @@ PODCAST_TITLE = "Energie Morgen"
 PODCAST_DESC = "Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet."
 PODCAST_LANG = "de"
 PROMPT_FILE = "prompt.txt"
+MEMORY_FILE = "docs/memory.json"
 
-# Alle RSS-Feeds – je Suchbegriff ein Feed
+REUSE_AFTER_DAYS = 30   # Nach dieser Anzahl Tage darf ein ähnliches Thema wieder gebracht werden
+SIMILARITY_THRESHOLD = 3 # Mindestanzahl gemeinsamer Schlüsselwörter für "ähnliches Thema"
+
 RSS_FEEDS = [
     ("erneuerbare Energien Deutschland",  "https://news.google.com/rss/search?q=erneuerbare+Energien+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("Windkraft Deutschland",             "https://news.google.com/rss/search?q=Windkraft+Deutschland&hl=de&gl=DE&ceid=DE:de"),
@@ -41,8 +53,118 @@ RSS_FEEDS = [
     ("Stromnetz Deutschland",             "https://news.google.com/rss/search?q=Stromnetz+Deutschland&hl=de&gl=DE&ceid=DE:de"),
 ]
 
-MAX_PER_FEED = 3    # Artikel pro Feed
-TOP_STORIES = 3     # Groq wählt diese Anzahl für das Skript
+MAX_PER_FEED = 3
+TOP_STORIES = 3
+
+# ---------------------------------------------------------------------------
+# Datenbank-Funktionen
+# ---------------------------------------------------------------------------
+
+def load_memory() -> dict:
+    """
+    Lädt die Datenbank aus docs/memory.json.
+
+    Struktur:
+    {
+      "archive": [
+        {
+          "title": "Windpark Nordsee: Rekordleistung im März",
+          "source": "Handelsblatt",
+          "topic": "Windkraft Deutschland",
+          "date": "2026-04-05",
+          "episode": "Energie Morgen – 05.04.2026"
+        },
+        ...
+      ]
+    }
+    """
+    path = Path(MEMORY_FILE)
+    if not path.exists():
+        print("🗄️  Keine Datenbank gefunden – starte mit leerem Archiv.")
+        return {"archive": []}
+
+    memory = json.loads(path.read_text(encoding="utf-8"))
+    if "archive" not in memory:
+        memory["archive"] = []
+
+    total = len(memory["archive"])
+    # Einträge der letzten 30 Tage für den Sperrfrist-Check
+    cutoff = (datetime.date.today() - datetime.timedelta(days=REUSE_AFTER_DAYS)).isoformat()
+    recent = sum(1 for e in memory["archive"] if e["date"] >= cutoff)
+    print(f"🗄️  Datenbank geladen – {total} Artikel im Archiv, {recent} in aktiver Sperrfrist.")
+    return memory
+
+
+def save_memory(memory: dict) -> None:
+    """Speichert die Datenbank. Das Archiv wächst dauerhaft."""
+    path = Path(MEMORY_FILE)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(memory, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"🗄️  Datenbank gespeichert – {len(memory['archive'])} Artikel im Archiv.")
+
+
+def extract_keywords(title: str) -> set:
+    """Extrahiert bedeutungstragende Wörter aus einem Titel (mind. 4 Zeichen)."""
+    # Stopwörter die keine inhaltliche Bedeutung tragen
+    stopwords = {
+        "eine", "einem", "einer", "eines", "wird", "wurde", "werden", "haben",
+        "dass", "sind", "über", "auch", "beim", "nach", "mehr", "neue", "neuen",
+        "neuer", "neues", "beim", "beim", "durch", "ihre", "ihrem", "ihren",
+        "ihrer", "ihres", "ihrer", "diesem", "dieser", "dieses", "diesen",
+        "gibt", "soll", "kann", "noch", "aber", "oder", "sowie", "beim",
+        "beim", "beim", "beim", "beim", "beim", "beim",
+    }
+    words = re.findall(r'\b[a-zA-ZäöüÄÖÜß]{4,}\b', title.lower())
+    return {w for w in words if w not in stopwords}
+
+
+def is_too_similar(title: str, memory: dict) -> tuple[bool, str]:
+    """
+    Prüft ob ein Artikel-Titel einem kürzlich gebrachten Artikel zu ähnlich ist.
+    Gibt (True, Grund) zurück wenn gesperrt, sonst (False, "").
+
+    Zwei Stufen:
+    1. Exakter Titel-Match → immer gesperrt (innerhalb Sperrfrist)
+    2. Keyword-Overlap ≥ SIMILARITY_THRESHOLD → als ähnliches Thema gesperrt
+    """
+    cutoff = (datetime.date.today() - datetime.timedelta(days=REUSE_AFTER_DAYS)).isoformat()
+    title_clean = title.strip().lower()
+    keywords_new = extract_keywords(title)
+
+    for entry in memory["archive"]:
+        # Nur Einträge innerhalb der Sperrfrist prüfen
+        if entry["date"] < cutoff:
+            continue
+
+        # Stufe 1: Exakter Match (erste 80 Zeichen)
+        if entry["title"].strip().lower()[:80] == title_clean[:80]:
+            return True, f"Exakter Match mit '{entry['title']}' vom {entry['date']}"
+
+        # Stufe 2: Keyword-Ähnlichkeit
+        keywords_existing = extract_keywords(entry["title"])
+        overlap = keywords_new & keywords_existing
+        if len(overlap) >= SIMILARITY_THRESHOLD:
+            return True, (
+                f"Ähnliches Thema: '{entry['title']}' vom {entry['date']} "
+                f"(gemeinsame Schlüsselwörter: {', '.join(sorted(overlap))})"
+            )
+
+    return False, ""
+
+
+def add_to_archive(articles: list[dict], memory: dict, episode_title: str) -> dict:
+    """Fügt verwendete Artikel dauerhaft zum Archiv hinzu."""
+    today = datetime.date.today().isoformat()
+    for article in articles:
+        memory["archive"].append({
+            "title":   article["title"].strip(),
+            "source":  article.get("source", ""),
+            "topic":   article.get("topic", ""),
+            "url":     article.get("link", ""),
+            "date":    today,
+            "episode": episode_title,
+        })
+    return memory
 
 # ---------------------------------------------------------------------------
 # Hilfsfunktionen
@@ -53,48 +175,79 @@ def base_url() -> str:
 
 
 def load_prompt_config() -> str:
-    """Lädt die Moderations-Richtlinien aus prompt.txt."""
     path = Path(PROMPT_FILE)
     if not path.exists():
-        raise FileNotFoundError(
-            f"Prompt-Datei '{PROMPT_FILE}' nicht gefunden. "
-            "Bitte sicherstellen, dass die Datei im Repository liegt."
-        )
+        raise FileNotFoundError(f"Prompt-Datei '{PROMPT_FILE}' nicht gefunden.")
     config = path.read_text(encoding="utf-8").strip()
     print(f"📋 Moderations-Richtlinien geladen ({len(config.splitlines())} Zeilen).")
     return config
 
 
-def fetch_all_news() -> list[dict]:
-    """Holt News aus allen konfigurierten RSS-Feeds und dedupliziert nach Titel."""
+def resolve_url(google_url: str) -> str:
+    """
+    Löst einen Google News Redirect-Link zur echten Original-URL auf.
+    Gibt die Original-URL zurück, oder bei Fehler die Google-URL als Fallback.
+    """
+    try:
+        r = requests.get(
+            google_url,
+            allow_redirects=True,
+            timeout=8,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; PodcastBot/1.0)"},
+        )
+        final_url = r.url
+        # Sicherheitscheck: Falls wir doch auf Google gelandet sind, Fallback
+        if "google.com" in final_url:
+            return google_url
+        return final_url
+    except Exception:
+        return google_url  # Fallback: Google-URL behalten
+
+
+def fetch_all_news(memory: dict) -> list[dict]:
+    """Holt News aus allen RSS-Feeds, filtert gesperrte Artikel heraus."""
     print("📰 News aus allen Feeds abrufen ...")
-    seen_titles = set()
+    seen_keys = set()
     all_articles = []
+    skipped = 0
 
     for topic, url in RSS_FEEDS:
         feed = feedparser.parse(url)
         count = 0
         for entry in feed.entries[:MAX_PER_FEED]:
             title = entry.get("title", "").strip()
-            # Duplikate überspringen (gleicher Titel aus mehreren Feeds möglich)
-            title_key = title.lower()[:60]
-            if title_key in seen_titles:
+            key = title.lower()[:60]
+
+            # Duplikat innerhalb dieses Runs
+            if key in seen_keys:
                 continue
-            seen_titles.add(title_key)
+            seen_keys.add(key)
+
+            # Sperrfrist-Check
+            blocked, reason = is_too_similar(title, memory)
+            if blocked:
+                skipped += 1
+                continue
+
             all_articles.append({
                 "topic":   topic,
                 "title":   title,
                 "summary": entry.get("summary", "")[:300],
                 "source":  entry.get("source", {}).get("title", ""),
-                "link":    entry.get("link", ""),
+                "link":    resolve_url(entry.get("link", "")),
             })
             count += 1
-        print(f"   [{topic}] {count} Artikel geladen.")
-        time.sleep(0.3)  # kurze Pause zwischen Requests
 
-    print(f"   Gesamt: {len(all_articles)} eindeutige Artikel aus {len(RSS_FEEDS)} Feeds.")
+        print(f"   [{topic}] {count} neue Artikel.")
+        time.sleep(0.3)
+
+    print(f"   Gesamt: {len(all_articles)} neue Artikel ({skipped} wegen Sperrfrist übersprungen).")
+
     if not all_articles:
-        raise RuntimeError("Keine News gefunden – alle RSS-Feeds leer oder nicht erreichbar.")
+        raise RuntimeError(
+            "Keine neuen Artikel gefunden – alle Themen wurden kürzlich bereits berichtet. "
+            f"Sperrfrist: {REUSE_AFTER_DAYS} Tage."
+        )
     return all_articles
 
 
@@ -104,8 +257,6 @@ def generate_script(articles: list[dict], prompt_config: str) -> str:
     client = Groq(api_key=GROQ_API_KEY)
 
     datum = datetime.date.today().strftime("%d. %B %Y")
-
-    # Alle Artikel als nummerierte Liste für Groq aufbereiten
     news_text = "\n".join(
         f"{i+1}. [Themenbereich: {a['topic']}]"
         f"{' [Quelle: ' + a['source'] + ']' if a['source'] else ''}"
@@ -120,15 +271,15 @@ Heute ist der {datum}.
 {prompt_config}
 === ENDE RICHTLINIEN ===
 
-Unten findest du {len(articles)} aktuelle News-Artikel aus verschiedenen Themenbereichen rund um erneuerbare Energien in Deutschland.
+Unten findest du {len(articles)} aktuelle News-Artikel. Alle Artikel sind neu und wurden in den letzten 30 Tagen noch nicht im Podcast erwähnt.
 
 DEINE AUFGABE:
-1. Wähle die {TOP_STORIES} spannendsten und relevantesten Artikel aus der Liste aus.
-2. Bevorzuge dabei thematische Vielfalt – nicht zwei sehr ähnliche Meldungen.
+1. Wähle die {TOP_STORIES} spannendsten und relevantesten Artikel aus.
+2. Bevorzuge thematische Vielfalt – nicht zwei sehr ähnliche Meldungen.
 3. Erstelle daraus ein vollständiges Podcast-Skript mit ca. 700 Wörtern (etwa 5 Minuten Sprechzeit).
 4. Halte dich strikt an die Moderations-Richtlinien.
 5. Nenne bei jeder Meldung die Quelle, sofern angegeben.
-6. Der Text muss direkt von einer Text-to-Speech-Engine gesprochen werden können – kein Markdown, keine Formatierung, keine Aufzählungszeichen.
+6. Nur fließender Sprechtext – kein Markdown, keine Formatierung, keine Aufzählungszeichen.
 
 VERFÜGBARE ARTIKEL:
 {news_text}"""
@@ -144,7 +295,6 @@ VERFÜGBARE ARTIKEL:
 
 
 def generate_audio(script: str, output_path: str) -> None:
-    """Wandelt das Skript per gTTS in eine MP3-Datei um."""
     print(f"🎙️  Audio generieren -> {output_path} ...")
     tts = gTTS(text=script, lang="de", slow=False)
     tts.save(output_path)
@@ -158,7 +308,6 @@ def update_rss_feed(
     audio_filename: str,
     audio_size_bytes: int,
 ) -> None:
-    """Fügt die neue Episode dem RSS-Feed hinzu (docs/feed.xml)."""
     print("📡 RSS-Feed aktualisieren ...")
     feed_path = Path("docs/feed.xml")
     feed_path.parent.mkdir(parents=True, exist_ok=True)
@@ -222,23 +371,29 @@ def main() -> None:
     audio_path = str(episodes_dir / audio_filename)
     script_path = episodes_dir / f"{date_str}.txt"
 
+    memory = load_memory()
     prompt_config = load_prompt_config()
-    articles = fetch_all_news()
+    articles = fetch_all_news(memory)
     script = generate_script(articles, prompt_config)
 
     script_path.write_text(script, encoding="utf-8")
     generate_audio(script, audio_path)
+
+    # Verwendete Artikel dauerhaft ins Archiv eintragen
+    memory = add_to_archive(articles, memory, episode_title)
+    save_memory(memory)
 
     audio_size = Path(audio_path).stat().st_size
     episode_desc = f"Die wichtigsten Nachrichten zu erneuerbaren Energien vom {today.strftime('%d.%m.%Y')}."
     update_rss_feed(episode_title, episode_desc, audio_filename, audio_size)
 
     print("\n✅ Fertig!")
-    print(f"   Richtlinien: {PROMPT_FILE}")
-    print(f"   Skript : {script_path}")
-    print(f"   Audio  : {audio_path}")
-    print(f"   Feed   : docs/feed.xml")
-    print(f"   URL    : {base_url()}/episodes/{audio_filename}")
+    print(f"   Richtlinien : {PROMPT_FILE}")
+    print(f"   Datenbank   : {MEMORY_FILE} ({len(memory['archive'])} Einträge gesamt)")
+    print(f"   Skript      : {script_path}")
+    print(f"   Audio       : {audio_path}")
+    print(f"   Feed        : docs/feed.xml")
+    print(f"   URL         : {base_url()}/episodes/{audio_filename}")
 
 
 if __name__ == "__main__":
