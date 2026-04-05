@@ -2,3 +2,4 @@ feedparser==6.0.11
 gtts==2.5.1
 groq>=0.13.0
 httpx>=0.27.0
+requests>=2.31.0
