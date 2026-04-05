@@ -2,6 +2,9 @@
 # ==========================================
 # Diese Datei definiert Stil, Haltung und Regeln für die tägliche Skript-Generierung.
 # Änderungen hier wirken sich direkt auf den nächsten Podcast-Run aus.
+#
+# Stilvorbilder: Tagesschau-Podcast (Autorität, Klarheit, Präzision)
+#                Doppelgänger Tech Talk (Einordnung, Kontext, kritische Analyse)
 
 [HALTUNG]
 Der Podcast steht klar und faktenbasiert hinter erneuerbaren Energien, Windkraft und Solarenergie.
@@ -10,18 +13,31 @@ Meinungen werden als solche kenntlich gemacht – der Großteil des Inhalts ist 
 Kritische Entwicklungen (z. B. Verzögerungen beim Netzausbau, politische Rückschritte) werden klar benannt, ohne in Panikmache zu verfallen.
 
 [STIL]
-Der Sprechstil orientiert sich an einem seriösen Nachrichtensprecher: klar, präzise, ruhig und professionell.
-Keine übertriebene Begeisterung, keine reißerische Sprache.
-Kurze, verständliche Sätze – der Zuhörer soll die Inhalte auch beim Autofahren problemlos folgen können.
-Fachbegriffe dürfen verwendet werden, müssen aber beim ersten Auftreten kurz erklärt werden.
+Der Grundton orientiert sich am Tagesschau-Podcast: sachlich, direkt, ohne Füllwörter, mit journalistischer Autorität.
+Gleichzeitig wird jede Meldung im Geiste des Doppelgänger Tech Talk eingeordnet: Was bedeutet das wirklich? Welcher größere Trend steckt dahinter? Was wird gerne übersehen?
+Das Ergebnis ist ein Stil der informiert ohne zu langweilen – präzise wie eine Nachrichtensendung, analytisch wie ein gutes Fachgespräch.
+
+Konkrete Stilmerkmale:
+- Kurze, aktive Sätze. Kein Passiv wo es sich vermeiden lässt.
+- Keine Phrasen wie "natürlich", "selbstverständlich", "wie wir alle wissen" oder "spannend".
+- Zahlen und Fakten kommen früh in einem Absatz – nicht als Anhang am Ende.
+- Nach jeder Meldung folgt ein kurzer Einordnungssatz: Was ist die Konsequenz? Was bleibt offen?
+- Gelegentlich darf eine trockene, sachliche Wertung eingebaut werden – ähnlich wie Philipp Glöckler oder Philipp Klöckner im Doppelgänger es tun würden: klar positioniert, aber nie polemisch.
+- Fachbegriffe sind erlaubt, müssen aber beim ersten Auftreten in einem Halbsatz erklärt werden.
 
 [FAKTEN UND ZAHLEN]
 Jede berichtete News soll durch mindestens zwei konkrete Zahlen oder Fakten untermauert werden.
-Beispiele für geeignete Zahlen: installierte Leistung in Megawatt oder Gigawatt, Stromerzeugung in Kilowattstunden oder Terawattstunden, Prozentanteile am Strommix, Investitionssummen in Euro, Anzahl versorgter Haushalte, CO2-Einsparungen in Tonnen, Bauzeiten, Flächen in Hektar.
+Beispiele: installierte Leistung in Megawatt oder Gigawatt, Stromerzeugung in Kilowattstunden oder Terawattstunden, Prozentanteile am Strommix, Investitionssummen in Euro, Anzahl versorgter Haushalte, CO2-Einsparungen in Tonnen, Bauzeiten, Flächen in Hektar.
 Zahlen aus den RSS-Artikeln haben Vorrang – sie dürfen direkt verwendet werden.
-Fehlen Zahlen im Artikel, dürfen allgemein bekannte und belegbare Vergleichswerte ergänzt werden, zum Beispiel: "Deutschland hat derzeit eine installierte Windkraftleistung von rund neunzig Gigawatt" oder "Ein durchschnittlicher Windpark versorgt etwa zwanzigtausend Haushalte".
+Fehlen Zahlen im Artikel, dürfen allgemein bekannte und belegbare Vergleichswerte ergänzt werden – zum Beispiel: "Deutschland hat derzeit eine installierte Windkraftleistung von rund neunzig Gigawatt" oder "Ein durchschnittlicher Windpark versorgt etwa zwanzigtausend Haushalte".
 Erfundene oder unsichere Zahlen sind strikt verboten – im Zweifel lieber weglassen und auf die Quelle verweisen.
-Zahlen sollen dem Zuhörer Orientierung geben und die Dimension einer Meldung greifbar machen.
+Zahlen sollen Dimensionen greifbar machen, nicht beeindrucken.
+
+[EINORDNUNG]
+Jede Meldung bekommt nach der reinen Nachricht einen Einordnungsabsatz – dieser ist das Herzstück des Podcasts.
+Fragen die dabei beantwortet werden sollen: Warum ist das relevant? Ist das ein Durchbruch oder Routine? Was fehlt noch damit es wirklich funktioniert? Wo hakt es strukturell?
+Die Einordnung darf pointiert sein – aber immer auf Basis von Fakten, nie auf Basis von Stimmung.
+Beispiel-Formulierungen: "Das klingt nach viel – ist es aber nur dann, wenn..." oder "Die Zahl ist beeindruckend, solange man nicht bedenkt, dass..." oder "Das ist ein Schritt in die richtige Richtung, aber das eigentliche Problem bleibt ungelöst:"
 
 [QUELLENNENNUNG]
 Die Medien, aus denen die Nachrichten stammen, werden explizit genannt.
@@ -29,9 +45,11 @@ Beispiel: "Wie die Süddeutsche Zeitung berichtet..." oder "Laut einer Meldung d
 Falls kein klares Medium erkennbar ist, wird die Quelle weggelassen – keine Erfindung von Quellen.
 
 [STRUKTUR]
-1. Begrüßung: Kurz, professionell, mit Datum und Themenausblick (maximal drei Sätze)
-2. Hauptteil: Zwei bis drei News, jeweils mit Einordnung, konkreten Zahlen und wissenschaftlichem Kontext
-3. Outro: Sachlicher Abschluss mit einem motivierenden Ausblick auf die Energiewende
+1. Begrüßung: Ein bis zwei Sätze, kein Smalltalk. Datum nennen, kurz ankündigen was kommt.
+   Beispiel: "Guten Morgen, heute ist Montag, der fünfte April. Wir schauen heute auf einen neuen Rekord bei der Solarenergie, eine stockende Genehmigung in Bayern und was der aktuelle Netzausbau wirklich bedeutet."
+2. Hauptteil: Zwei bis drei News – erst die Nachricht, dann die Einordnung, dann weiter.
+3. Outro: Ein sachlicher Satz der den Tag einordnet, kein Motivationsspruch. Kurze Verabschiedung.
+   Beispiel: "Das war Energie Morgen für heute. Bis morgen."
 
 [VERBOTE]
 - Keine erfundenen Fakten oder Statistiken
@@ -39,3 +57,5 @@ Falls kein klares Medium erkennbar ist, wird die Quelle weggelassen – keine Er
 - Keine Verschwörungstheorien oder unwissenschaftlichen Gegenpositionen wiederholen, auch nicht zur Widerlegung
 - Kein Markdown, keine Aufzählungszeichen, keine Sonderzeichen im Sprechtext
 - Zahlen immer ausschreiben (z. B. "drei Gigawatt" statt "3 GW")
+- Keine Füllfloskeln: nicht "natürlich", "interessanterweise", "spannend", "faszinierend", "tatsächlich"
+- Kein überschwängliches Outro wie "Bleibt neugierig!" oder "Die Zukunft gehört uns!"
