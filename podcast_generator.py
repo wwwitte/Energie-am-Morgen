@@ -213,8 +213,14 @@ def fetch_all_news(memory: dict) -> list[dict]:
 
     for topic, url in RSS_FEEDS:
         feed = feedparser.parse(url)
+        # Nach Erscheinungsdatum sortieren (neueste zuerst)
+        sorted_entries = sorted(
+            feed.entries,
+            key=lambda e: e.get("published_parsed") or (0,),
+            reverse=True,
+        )
         count = 0
-        for entry in feed.entries[:MAX_PER_FEED]:
+        for entry in sorted_entries[:MAX_PER_FEED]:
             title = entry.get("title", "").strip()
             key = title.lower()[:60]
 
