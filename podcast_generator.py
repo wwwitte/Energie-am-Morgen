@@ -5,7 +5,7 @@ Ablauf:
   1. Datenbank laden (docs/memory.json) – Archiv + Sperrfrist-Logik
   2. Top-News aus mehreren Google News RSS-Feeds abrufen
   3. Moderations-Richtlinien aus prompt.txt laden
-  4. Groq wählt die 3 spannendsten neuen Themen und erstellt das Skript
+  4. Claude wählt die 3 spannendsten neuen Themen und erstellt das Skript
   5. Audio via gTTS erzeugen
   6. MP3 + RSS-Feed + Datenbank speichern (-> GitHub Pages)
 
@@ -27,13 +27,13 @@ from email.utils import formatdate
 import feedparser
 import requests
 from gtts import gTTS
-from groq import Groq
+from anthropic import Anthropic
 
 # ---------------------------------------------------------------------------
 # Konfiguration
 # ---------------------------------------------------------------------------
 
-GROQ_API_KEY = os.environ["GROQ_API_KEY"]
+CLAUDE_API_KEY = os.environ["CLAUDE_API_KEY"]
 GITHUB_USERNAME = os.environ["GITHUB_USERNAME"]
 GITHUB_REPO_NAME = os.environ["GITHUB_REPO_NAME"]
 PODCAST_TITLE = "Energie am Morgen"
@@ -258,9 +258,9 @@ def fetch_all_news(memory: dict) -> list[dict]:
 
 
 def generate_script(articles: list[dict], prompt_config: str) -> str:
-    """Groq wählt die 3 spannendsten Themen und erstellt das Podcast-Skript."""
-    print("✍️  Skript generieren (Groq wählt Top-3-Themen) ...")
-    client = Groq(api_key=GROQ_API_KEY)
+    """Claude wählt die 3 spannendsten Themen und erstellt das Podcast-Skript."""
+    print("✍️  Skript generieren (Claude wählt Top-3-Themen) ...")
+    client = Claude(api_key=CLAUDE_API_KEY)
 
     datum = datetime.date.today().strftime("%d. %B %Y")
     news_text = "\n".join(
