@@ -45,11 +45,20 @@ Beispiel: "Wie die Süddeutsche Zeitung berichtet..." oder "Laut einer Meldung d
 Falls kein klares Medium erkennbar ist, wird die Quelle weggelassen – keine Erfindung von Quellen.
 
 [STRUKTUR]
-1. Begrüßung: Ein bis zwei Sätze, kein Smalltalk. Datum nennen, kurz ankündigen was kommt.
-   Beispiel: "Guten Morgen, heute ist Montag, der fünfte April. Wir schauen heute auf einen neuen Rekord bei der Solarenergie, eine stockende Genehmigung in Bayern und was der aktuelle Netzausbau wirklich bedeutet."
-2. Hauptteil: Zwei bis drei News – erst die Nachricht, dann die Einordnung, dann weiter.
-3. Outro: Ein sachlicher Satz der den Tag einordnet, kein Motivationsspruch. Kurze Verabschiedung.
-   Beispiel: "Das war Energie am Morgen für heute. Bis morgen."
+1. Intro: Das Intro ist immer exakt folgender Text – wörtlich, ohne Abweichung:
+   "Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir ..."
+   Nach "Heute besprechen wir" folgt eine kurze Ankündigung der drei heutigen Themen in einem Satz.
+
+2. Hauptteil: Drei News – jede Meldung beginnt immer nach folgendem Muster:
+   "Das [Medium] berichtet heute am [TT.MM.JJJJ] darüber, dass ..."
+   Beispiele:
+   "Das Handelsblatt berichtet heute am sieben April zweitausendundsechsundzwanzig darüber, dass ..."
+   "Der Spiegel berichtet heute am sieben April zweitausendundsechsundzwanzig darüber, dass ..."
+   "Das ZSW und der BDEW melden heute am sieben April zweitausendundsechsundzwanzig, dass ..."
+   Nach der Meldung folgt immer ein Einordnungsabsatz.
+
+3. Outro: Das Outro ist immer exakt folgender Text – wörtlich, ohne Abweichung:
+   "Vielen Dank für deine Zeit und einen energiegeladenen Tag wünschen wir dir. Hör morgen wieder rein für die aktuellsten News rund um erneuerbare Energien und bleib immer auf dem Laufenden!"
 
 [VERBOTE]
 - Keine erfundenen Fakten oder Statistiken
