@@ -52,6 +52,9 @@ RSS_FEEDS = [
     ("PV Deutschland",                    "https://news.google.com/rss/search?q=Photovoltaik+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("Solarenergie Deutschland",          "https://news.google.com/rss/search?q=Solarenergie+Deutschland&hl=de&gl=DE&ceid=DE:de"),
     ("Stromnetz Deutschland",             "https://news.google.com/rss/search?q=Stromnetz+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+    ("Energiewende Deutschland",          "https://news.google.com/rss/search?q=Energiewende+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+    ("Wärmewende Deutschland",            "https://news.google.com/rss/search?q=W%C3%A4rmewende+Deutschland&hl=de&gl=DE&ceid=DE:de"),
+    ("Bundesministerium Wirtschaft Energie", "https://news.google.com/rss/search?q=Bundesministerium+Wirtschaft+Energie+Deutschland&hl=de&gl=DE&ceid=DE:de"),
 ]
 
 MAX_PER_FEED = 3
@@ -296,7 +299,20 @@ VERFÜGBARE ARTIKEL:
         max_tokens=1500,
         messages=[{"role": "user", "content": prompt}],
     )
-    script = response.content[0].text.strip()
+    raw = response.content[0].text.strip()
+
+    # Vor- und Nachbemerkungen der KI entfernen (z. B. Wortzahl, Hinweise)
+    # Skript beginnt immer mit "Herzlich Willkommen"
+    start_marker = "Herzlich Willkommen"
+    if start_marker in raw:
+        raw = raw[raw.index(start_marker):]
+
+    # Alles nach dem Outro abschneiden
+    end_marker = "auf dem Laufenden!"
+    if end_marker in raw:
+        raw = raw[:raw.index(end_marker) + len(end_marker)]
+
+    script = raw.strip()
     print(f"   Skript generiert ({len(script.split())} Wörter).")
     return script
 
@@ -311,12 +327,13 @@ def generate_audio(script: str, output_path: str) -> None:
     }
     payload = {
         "text": script,
-        "model_id": "eleven_multilingual_v2",
+        "model_id": "eleven_multilingual_v2",      # Bestes Modell für Deutsch
+        "speed": 1.15,                             # Sprechgeschwindigkeit: 0.7–1.2 (1.0 = normal)
         "voice_settings": {
-            "stability": 0.65,
-            "similarity_boost": 0.8,
-            "style": 0.3,
-            "use_speaker_boost": True,
+            "stability": 0.65,         # 0.0–1.0: höher = konsistenter, weniger ausdrucksstark
+            "similarity_boost": 0.8,   # 0.0–1.0: höher = näher an Originalstimme
+            "style": 0.3,              # 0.0–1.0: Ausdrucksstärke / Stil
+            "use_speaker_boost": True, # Klarheit der Stimme verbessern
         },
     }
     response = req_lib.post(url, json=payload, headers=headers, timeout=60)
