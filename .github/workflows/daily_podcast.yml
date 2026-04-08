@@ -2,7 +2,7 @@ name: Täglicher Podcast – Energie am Morgen
 
 on:
   schedule:
-    - cron: "0 8 * * *"    # 08:00 UTC = 10:00 Uhr MEZ
+    - cron: "17 8 * * *"    # 08:17 UTC = ca. 10:17 Uhr MEZ (ungerade Minute = weniger Warteschlange)
   workflow_dispatch:
 
 env:
@@ -30,7 +30,9 @@ jobs:
 
       - name: Podcast generieren
         env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
           GITHUB_REPO_NAME: ${{ github.event.repository.name }}
         run: python podcast_generator.py
