@@ -5,7 +5,7 @@ Ablauf:
   1. Datenbank laden (docs/memory.json) – Archiv + Sperrfrist-Logik
   2. Top-News aus mehreren Google News RSS-Feeds abrufen
   3. Moderations-Richtlinien aus prompt.txt laden
-  4. Claude wählt die 3 spannendsten neuen Themen und erstellt das Skript
+  4. Groq wählt die 3 spannendsten neuen Themen und erstellt das Skript
   5. Audio via gTTS erzeugen
   6. MP3 + RSS-Feed + Datenbank speichern (-> GitHub Pages)
 
@@ -25,15 +25,16 @@ from pathlib import Path
 from email.utils import formatdate
 
 import feedparser
-import requests
-from gtts import gTTS
-from anthropic import Anthropic
+import anthropic
+import requests as req_lib
 
 # ---------------------------------------------------------------------------
 # Konfiguration
 # ---------------------------------------------------------------------------
 
 CLAUDE_API_KEY = os.environ["CLAUDE_API_KEY"]
+ELEVENLABS_API_KEY = os.environ["ELEVENLABS_API_KEY"]
+ELEVENLABS_VOICE_ID = os.environ.get("ELEVENLABS_VOICE_ID", "EXAVITQu4vr4xnSDxMaL")  # Default: Adam
 GITHUB_USERNAME = os.environ["GITHUB_USERNAME"]
 GITHUB_REPO_NAME = os.environ["GITHUB_REPO_NAME"]
 PODCAST_TITLE = "Energie am Morgen"
@@ -260,7 +261,7 @@ def fetch_all_news(memory: dict) -> list[dict]:
 def generate_script(articles: list[dict], prompt_config: str) -> str:
     """Claude wählt die 3 spannendsten Themen und erstellt das Podcast-Skript."""
     print("✍️  Skript generieren (Claude wählt Top-3-Themen) ...")
-    client = Claude(api_key=CLAUDE_API_KEY)
+    client = anthropic.Anthropic(api_key=CLAUDE_API_KEY)
 
     datum = datetime.date.today().strftime("%d. %B %Y")
     news_text = "\n".join(
@@ -290,20 +291,41 @@ DEINE AUFGABE:
 VERFÜGBARE ARTIKEL:
 {news_text}"""
 
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt}],
+    response = client.messages.create(
+        model="claude-haiku-4-5-20251001",
         max_tokens=1500,
+        messages=[{"role": "user", "content": prompt}],
     )
-    script = response.choices[0].message.content.strip()
+    script = response.content[0].text.strip()
     print(f"   Skript generiert ({len(script.split())} Wörter).")
     return script
 
 
 def generate_audio(script: str, output_path: str) -> None:
-    print(f"🎙️  Audio generieren -> {output_path} ...")
-    tts = gTTS(text=script, lang="de", slow=False)
-    tts.save(output_path)
+    """Wandelt das Skript per ElevenLabs API in eine MP3-Datei um."""
+    print(f"🎙️  Audio generieren via ElevenLabs -> {output_path} ...")
+    url = f"https://api.elevenlabs.io/v1/text-to-speech/{ELEVENLABS_VOICE_ID}"
+    headers = {
+        "xi-api-key": ELEVENLABS_API_KEY,
+        "Content-Type": "application/json",
+    }
+    payload = {
+        "text": script,
+        "model_id": "eleven_multilingual_v2",
+        "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.8,
+            "style": 0.2,
+            "use_speaker_boost": True,
+        },
+    }
+    response = req_lib.post(url, json=payload, headers=headers, timeout=60)
+    if response.status_code != 200:
+        raise RuntimeError(
+            f"ElevenLabs API Fehler {response.status_code}: {response.text}"
+        )
+    with open(output_path, "wb") as f:
+        f.write(response.content)
     size_kb = Path(output_path).stat().st_size // 1024
     print(f"   Audio gespeichert ({size_kb} KB).")
 
@@ -396,6 +418,7 @@ def main() -> None:
     print("\n✅ Fertig!")
     print(f"   Richtlinien : {PROMPT_FILE}")
     print(f"   Datenbank   : {MEMORY_FILE} ({len(memory['archive'])} Einträge gesamt)")
+    print(f"   Modell      : claude-haiku-4-5-20251001 + ElevenLabs")
     print(f"   Skript      : {script_path}")
     print(f"   Audio       : {audio_path}")
     print(f"   Feed        : docs/feed.xml")
