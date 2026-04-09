@@ -458,8 +458,8 @@ def update_rss_feed(
     else:
         channel.append(item)
 
-    for old_item in channel.findall("item")[30:]:
-        channel.remove(old_item)
+    # Alle Episoden dauerhaft im Feed behalten – kein Limit
+    # (Spotify, Apple & Co. zeigen alle Folgen an)
 
     ET.indent(root, space="  ")
     tree = ET.ElementTree(root)
