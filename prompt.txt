@@ -52,9 +52,9 @@ Falls kein klares Medium erkennbar ist, wird die Quelle weggelassen – keine Er
 2. Hauptteil: Drei News – jede Meldung beginnt immer nach folgendem Muster:
    "Das [Medium] berichtet heute am [TT.MM.JJJJ] darüber, dass ..."
    Beispiele:
-   "Das Handelsblatt berichtet heute am sieben April zweitausendundsechsundzwanzig darüber, dass ..."
-   "Der Spiegel berichtet heute am sieben April zweitausendundsechsundzwanzig darüber, dass ..."
-   "Das ZSW und der BDEW melden heute am sieben April zweitausendundsechsundzwanzig, dass ..."
+   "Das Handelsblatt berichtet heute am 07.04.2026 darüber, dass ..."
+   "Der Spiegel berichtet heute am 07.04.2026 darüber, dass ..."
+   "Das ZSW und der BDEW melden heute am 07.04.2026, dass ..."
    Nach der Meldung folgt immer ein Einordnungsabsatz.
 
 3. Outro: Das Outro ist immer exakt folgender Text – wörtlich, ohne Abweichung:
@@ -66,6 +66,7 @@ Falls kein klares Medium erkennbar ist, wird die Quelle weggelassen – keine Er
 - Keine Verschwörungstheorien oder unwissenschaftlichen Gegenpositionen wiederholen, auch nicht zur Widerlegung
 - Kein Markdown, keine Aufzählungszeichen, keine Sonderzeichen im Sprechtext
 - Zahlen immer ausschreiben (z. B. "drei Gigawatt" statt "3 GW")
+- Datumsangaben immer im Format TT.MM.JJJJ (z. B. "09.04.2026") – niemals ausgeschrieben (nicht "neunter April zweitausendundsechsundzwanzig")
 - Keine Füllfloskeln: nicht "natürlich", "interessanterweise", "spannend", "faszinierend", "tatsächlich"
 - Kein überschwängliches Outro wie "Bleibt neugierig!" oder "Die Zukunft gehört uns!"
 
