@@ -58,6 +58,7 @@ RSS_FEEDS = [
 ]
 
 MAX_PER_FEED = 3
+MAX_ARTICLE_AGE_HOURS = 24    # Nur Artikel die maximal X Stunden alt sind
 TOP_STORIES = 3
 
 # ---------------------------------------------------------------------------
@@ -223,8 +224,16 @@ def fetch_all_news(memory: dict) -> list[dict]:
             key=lambda e: e.get("published_parsed") or (0,),
             reverse=True,
         )
+        # Nur Artikel der letzten MAX_ARTICLE_AGE_HOURS filtern
+        import time as _time
+        cutoff_ts = _time.time() - MAX_ARTICLE_AGE_HOURS * 3600
+        fresh_entries = [
+            e for e in sorted_entries
+            if e.get("published_parsed") is None
+            or _time.mktime(e["published_parsed"]) >= cutoff_ts
+        ]
         count = 0
-        for entry in sorted_entries[:MAX_PER_FEED]:
+        for entry in fresh_entries[:MAX_PER_FEED]:
             title = entry.get("title", "").strip()
             key = title.lower()[:60]
 
