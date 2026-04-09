@@ -356,44 +356,101 @@ def generate_audio(script: str, output_path: str) -> None:
     print(f"   Audio gespeichert ({size_kb} KB).")
 
 
+# ---------------------------------------------------------------------------
+# Podcast-Metadaten (einmalig anpassen)
+# ---------------------------------------------------------------------------
+PODCAST_AUTHOR      = "Energie am Morgen"
+PODCAST_EMAIL       = ""          # Optional: deine E-Mail für Apple Podcasts
+PODCAST_CATEGORY    = "News"      # iTunes-Hauptkategorie
+PODCAST_EXPLICIT    = "false"
+
+
 def update_rss_feed(
     episode_title: str,
     episode_desc: str,
     audio_filename: str,
     audio_size_bytes: int,
 ) -> None:
+    """Fügt die neue Episode dem RSS-Feed hinzu – Spotify & Apple ready."""
     print("📡 RSS-Feed aktualisieren ...")
     feed_path = Path("docs/feed.xml")
     feed_path.parent.mkdir(parents=True, exist_ok=True)
 
     audio_url = f"{base_url()}/episodes/{audio_filename}"
-    pub_date = formatdate(localtime=False)
+    cover_url = f"{base_url()}/cover.jpg"
+    pub_date  = formatdate(localtime=False)
+    itunes_ns = "http://www.itunes.com/dtds/podcast-1.0.dtd"
+
+    def itag(parent, name, text=None, **attrs):
+        el = ET.SubElement(parent, f"itunes:{name}")
+        if text:
+            el.text = text
+        for k, v in attrs.items():
+            el.set(k, v)
+        return el
 
     if feed_path.exists():
-        ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
+        ET.register_namespace("itunes", itunes_ns)
         tree = ET.parse(feed_path)
         root = tree.getroot()
         channel = root.find("channel")
+        episode_number = len(channel.findall("item")) + 1
     else:
+        ET.register_namespace("itunes", itunes_ns)
         root = ET.Element("rss")
         root.set("version", "2.0")
-        root.set("xmlns:itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
+        root.set("xmlns:itunes", itunes_ns)
         channel = ET.SubElement(root, "channel")
-        ET.SubElement(channel, "title").text = PODCAST_TITLE
-        ET.SubElement(channel, "link").text = base_url()
-        ET.SubElement(channel, "description").text = PODCAST_DESC
-        ET.SubElement(channel, "language").text = PODCAST_LANG
 
+        # Pflichtfelder
+        ET.SubElement(channel, "title").text       = PODCAST_TITLE
+        ET.SubElement(channel, "link").text        = base_url()
+        ET.SubElement(channel, "description").text = PODCAST_DESC
+        ET.SubElement(channel, "language").text    = PODCAST_LANG
+
+        # iTunes / Spotify Metadaten
+        itag(channel, "author",   PODCAST_AUTHOR)
+        itag(channel, "explicit", PODCAST_EXPLICIT)
+        itag(channel, "type",     "episodic")
+        cat = itag(channel, "category")
+        cat.set("text", PODCAST_CATEGORY)
+        img = itag(channel, "image")
+        img.set("href", cover_url)
+
+        if PODCAST_EMAIL:
+            owner = ET.SubElement(channel, "itunes:owner")
+            ET.SubElement(owner, "itunes:name").text  = PODCAST_AUTHOR
+            ET.SubElement(owner, "itunes:email").text = PODCAST_EMAIL
+
+        # Cover auch als RSS-Standard-Bild
+        image_el = ET.SubElement(channel, "image")
+        ET.SubElement(image_el, "url").text   = cover_url
+        ET.SubElement(image_el, "title").text = PODCAST_TITLE
+        ET.SubElement(image_el, "link").text  = base_url()
+
+        episode_number = 1
+
+    # Episode Item
     item = ET.Element("item")
-    ET.SubElement(item, "title").text = episode_title
+    ET.SubElement(item, "title").text       = episode_title
     ET.SubElement(item, "description").text = episode_desc
-    ET.SubElement(item, "pubDate").text = pub_date
-    ET.SubElement(item, "guid").text = audio_url
+    ET.SubElement(item, "pubDate").text     = pub_date
+    ET.SubElement(item, "guid").text        = audio_url
+    ET.SubElement(item, "link").text        = audio_url
 
     enclosure = ET.SubElement(item, "enclosure")
-    enclosure.set("url", audio_url)
-    enclosure.set("type", "audio/mpeg")
+    enclosure.set("url",    audio_url)
+    enclosure.set("type",   "audio/mpeg")
     enclosure.set("length", str(audio_size_bytes))
+
+    # iTunes Episode-Tags
+    itag(item, "title",       episode_title)
+    itag(item, "summary",     episode_desc)
+    itag(item, "explicit",    PODCAST_EXPLICIT)
+    itag(item, "episodeType", "full")
+    itag(item, "episode",     str(episode_number))
+    ep_img = itag(item, "image")
+    ep_img.set("href", cover_url)
 
     existing_items = channel.findall("item")
     if existing_items:
@@ -407,7 +464,7 @@ def update_rss_feed(
     ET.indent(root, space="  ")
     tree = ET.ElementTree(root)
     tree.write(feed_path, encoding="unicode", xml_declaration=True)
-    print(f"   feed.xml gespeichert ({len(channel.findall('item'))} Episoden).")
+    print(f"   feed.xml gespeichert ({len(channel.findall('item'))} Episoden, Episode #{episode_number}).")
 
 
 # ---------------------------------------------------------------------------
@@ -421,6 +478,14 @@ def main() -> None:
 
     episodes_dir = Path("docs/episodes")
     episodes_dir.mkdir(parents=True, exist_ok=True)
+
+    # Cover-Bild in docs/ bereitstellen (wird vom RSS-Feed referenziert)
+    cover_src = Path("cover.jpg")
+    cover_dst = Path("docs/cover.jpg")
+    if cover_src.exists() and not cover_dst.exists():
+        import shutil
+        shutil.copy(cover_src, cover_dst)
+        print("🖼️  Cover-Bild nach docs/ kopiert.")
     audio_filename = f"{date_str}.mp3"
     audio_path = str(episodes_dir / audio_filename)
     script_path = episodes_dir / f"{date_str}.txt"
