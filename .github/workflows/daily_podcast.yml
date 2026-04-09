@@ -2,7 +2,9 @@ name: Täglicher Podcast – Energie am Morgen
 
 on:
   schedule:
-    - cron: "17 8 * * *"    # 08:17 UTC = ca. 10:17 Uhr MEZ (ungerade Minute = weniger Warteschlange)
+    - cron: "43 3 * * *"    # 03:43 UTC = 05:43 Uhr MESZ (Sommerzeit, UTC+2)
+    - cron: "43 4 * * *"    # 04:43 UTC = 05:43 Uhr MEZ  (Winterzeit, UTC+1)
+
   workflow_dispatch:
 
 env:
