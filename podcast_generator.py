@@ -58,7 +58,7 @@ RSS_FEEDS = [
 ]
 
 MAX_PER_FEED = 3
-MAX_ARTICLE_AGE_HOURS = 24    # Nur Artikel die maximal X Stunden alt sind
+MAX_ARTICLE_AGE_HOURS = 48    # Nur Artikel die maximal X Stunden alt sind
 TOP_STORIES = 3
 
 # ---------------------------------------------------------------------------
@@ -225,13 +225,17 @@ def fetch_all_news(memory: dict) -> list[dict]:
             reverse=True,
         )
         # Nur Artikel der letzten MAX_ARTICLE_AGE_HOURS filtern
+        # Artikel ohne Datum werden immer zugelassen (kein published_parsed)
         import time as _time
         cutoff_ts = _time.time() - MAX_ARTICLE_AGE_HOURS * 3600
         fresh_entries = [
             e for e in sorted_entries
-            if e.get("published_parsed") is None
+            if e.get("published_parsed") is None  # kein Datum → zulassen
             or _time.mktime(e["published_parsed"]) >= cutoff_ts
         ]
+        if not fresh_entries:
+            # Fallback: alle Einträge nehmen wenn keine frischen gefunden
+            fresh_entries = sorted_entries
         count = 0
         for entry in fresh_entries[:MAX_PER_FEED]:
             title = entry.get("title", "").strip()
@@ -389,14 +393,22 @@ def update_rss_feed(
             el.set(k, v)
         return el
 
+    # Namespace immer zuerst registrieren – vor dem Parsen
+    ET.register_namespace("itunes", itunes_ns)
+    ET.register_namespace("podcast", "https://podcastindex.org/namespace/1.0")
+
     if feed_path.exists():
-        ET.register_namespace("itunes", itunes_ns)
-        tree = ET.parse(feed_path)
-        root = tree.getroot()
-        channel = root.find("channel")
-        episode_number = len(channel.findall("item")) + 1
-    else:
-        ET.register_namespace("itunes", itunes_ns)
+        try:
+            tree = ET.parse(feed_path)
+            root = tree.getroot()
+            channel = root.find("channel")
+            episode_number = len(channel.findall("item")) + 1
+        except ET.ParseError as e:
+            print(f"⚠️  feed.xml beschädigt ({e}) – erstelle neu.")
+            feed_path.unlink()
+            root = None
+
+    if not feed_path.exists():
         root = ET.Element("rss")
         root.set("version", "2.0")
         root.set("xmlns:itunes", itunes_ns)
