@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
     <title>Energie am Morgen</title>
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
@@ -15,6 +15,20 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 11.04.2026</title>
+      <description>Die wichtigsten Nachrichten zu erneuerbaren Energien vom 11.04.2026.</description>
+      <pubDate>Sat, 11 Apr 2026 04:08:24 -0000</pubDate>
+      <guid>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-11.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-11.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-11.mp3" type="audio/mpeg" length="3891662" />
+      <itunes:title>Energie am Morgen – 11.04.2026</itunes:title>
+      <itunes:summary>Die wichtigsten Nachrichten zu erneuerbaren Energien vom 11.04.2026.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>2</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
     <item>
       <title>Energie am Morgen – 11.04.2026</title>
       <description>Die wichtigsten Nachrichten zu erneuerbaren Energien vom 11.04.2026.</description>
