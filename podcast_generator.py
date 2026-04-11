@@ -158,7 +158,7 @@ def is_too_similar(title: str, memory: dict) -> tuple[bool, str]:
 
 
 def add_to_archive(articles: list[dict], memory: dict, episode_title: str) -> dict:
-    """Fügt verwendete Artikel dauerhaft zum Archiv hinzu."""
+    """Fügt verwendete Artikel dauerhaft zum Archiv hinzu und aktualisiert Hot-Topics."""
     today = datetime.date.today().isoformat()
     for article in articles:
         memory["archive"].append({
@@ -169,7 +169,29 @@ def add_to_archive(articles: list[dict], memory: dict, episode_title: str) -> di
             "date":    today,
             "episode": episode_title,
         })
+
+    # Hot-Topic-Tracking: Keywords der letzten 7 Tage zählen
+    if "hot_topics" not in memory:
+        memory["hot_topics"] = {}
+    cutoff = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
+    # Alte Einträge bereinigen
+    memory["hot_topics"] = {
+        kw: count for kw, count in memory["hot_topics"].items()
+        if isinstance(count, int)
+    }
+    for article in articles:
+        for kw in extract_keywords(article["title"]):
+            if len(kw) >= 5:  # Nur bedeutungsstarke Wörter
+                memory["hot_topics"][kw] = memory["hot_topics"].get(kw, 0) + 1
+
     return memory
+
+
+def get_hot_topics(memory: dict, top_n: int = 5) -> list[str]:
+    """Gibt die aktuell heißesten Themen der letzten 7 Tage zurück."""
+    hot = memory.get("hot_topics", {})
+    sorted_topics = sorted(hot.items(), key=lambda x: x[1], reverse=True)
+    return [kw for kw, count in sorted_topics[:top_n] if count >= 2]
 
 # ---------------------------------------------------------------------------
 # Hilfsfunktionen
@@ -274,12 +296,12 @@ def fetch_all_news(memory: dict) -> list[dict]:
     return all_articles
 
 
-def generate_script(articles: list[dict], prompt_config: str) -> str:
+def generate_script(articles: list[dict], prompt_config: str, hot_topics: list = None) -> str:
     """Claude wählt die 3 spannendsten Themen und erstellt das Podcast-Skript."""
     print("✍️  Skript generieren (Claude wählt Top-3-Themen) ...")
     client = anthropic.Anthropic(api_key=CLAUDE_API_KEY)
 
-    datum = datetime.date.today().strftime("%d. %B %Y")
+    datum = datetime.date.today().strftime("%d.%m.%Y")
     news_text = "\n".join(
         f"{i+1}. [Themenbereich: {a['topic']}]"
         f"{' [Quelle: ' + a['source'] + ']' if a['source'] else ''}"
@@ -287,8 +309,15 @@ def generate_script(articles: list[dict], prompt_config: str) -> str:
         for i, a in enumerate(articles)
     )
 
+    hot_topic_hint = ""
+    if hot_topics:
+        hot_topic_hint = f"""
+
+HEISSE THEMEN DER LETZTEN 7 TAGE: {', '.join(hot_topics)}
+Artikel zu diesen Themen sollen bevorzugt und besonders ausführlich behandelt werden."""
+
     prompt = f"""Du bist der Moderator des deutschen Nachrichten-Podcasts „{PODCAST_TITLE}".
-Heute ist der {datum}.
+Heute ist der {datum}.{hot_topic_hint}
 
 === MODERATIONS-RICHTLINIEN ===
 {prompt_config}
@@ -298,18 +327,19 @@ Unten findest du {len(articles)} aktuelle News-Artikel. Alle Artikel sind neu un
 
 DEINE AUFGABE:
 1. Wähle die {TOP_STORIES} spannendsten und relevantesten Artikel aus.
-2. Bevorzuge thematische Vielfalt – nicht zwei sehr ähnliche Meldungen.
-3. Erstelle daraus ein vollständiges Podcast-Skript mit ca. 700 Wörtern (etwa 5 Minuten Sprechzeit).
-4. Halte dich strikt an die Moderations-Richtlinien.
-5. Nenne bei jeder Meldung die Quelle, sofern angegeben.
+2. Bevorzuge thematische Vielfalt – nicht zwei sehr ähnliche Meldungen. Bei heißen Themen darf ein Thema tiefer behandelt werden.
+3. Erstelle daraus ein vollständiges Podcast-Skript (Ziel: 5 Minuten, max. 10 Minuten wenn Qualität es erfordert).
+4. Halte dich strikt an die Moderations-Richtlinien inkl. Break-Tags.
+5. Nenne bei jeder Meldung Quelle und Datum im Format TT.MM.JJJJ.
 6. Nur fließender Sprechtext – kein Markdown, keine Formatierung, keine Aufzählungszeichen.
+7. Erkläre jeden Artikel ausführlich: Was passiert? Warum ist es wichtig? Was sind die Konsequenzen?
 
 VERFÜGBARE ARTIKEL:
 {news_text}"""
 
     response = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=1500,
+        max_tokens=3000,  # Erhöht für längere, tiefere Skripte (max 10min)
         messages=[{"role": "user", "content": prompt}],
     )
     raw = response.content[0].text.strip()
@@ -505,7 +535,10 @@ def main() -> None:
     memory = load_memory()
     prompt_config = load_prompt_config()
     articles = fetch_all_news(memory)
-    script = generate_script(articles, prompt_config)
+    hot_topics = get_hot_topics(memory)
+    if hot_topics:
+        print(f"🔥 Aktuelle Hot-Topics: {', '.join(hot_topics)}")
+    script = generate_script(articles, prompt_config, hot_topics)
 
     script_path.write_text(script, encoding="utf-8")
     generate_audio(script, audio_path)
