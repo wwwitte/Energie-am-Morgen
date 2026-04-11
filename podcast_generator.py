@@ -387,7 +387,59 @@ def generate_audio(script: str, output_path: str) -> None:
     with open(output_path, "wb") as f:
         f.write(response.content)
     size_kb = Path(output_path).stat().st_size // 1024
-    print(f"   Audio gespeichert ({size_kb} KB).")
+    print(f"   Sprach-Audio gespeichert ({size_kb} KB).")
+
+
+def combine_with_jingle(speech_path: str, output_path: str) -> None:
+    """
+    Fügt Jingle am Anfang und Ende der Episode ein (ffmpeg).
+    Struktur: jingle.mp3 → speech → jingle.mp3
+    Falls kein Jingle vorhanden, wird speech_path einfach nach output_path kopiert.
+    """
+    import subprocess
+    import shutil
+
+    jingle_path = Path("jingle.mp3")
+
+    if not jingle_path.exists():
+        print("ℹ️  Kein jingle.mp3 gefunden – Episode ohne Jingle.")
+        shutil.copy(speech_path, output_path)
+        return
+
+    print("🎵 Jingle einbauen (Anfang + Ende) ...")
+
+    # Temporäre Dateiliste für ffmpeg concat
+    list_path = Path(speech_path).parent / "concat_list.txt"
+    list_path.write_text(
+        f"file '{jingle_path.resolve()}'
+"
+        f"file '{Path(speech_path).resolve()}'
+"
+        f"file '{jingle_path.resolve()}'
+",
+        encoding="utf-8",
+    )
+
+    cmd = [
+        "ffmpeg", "-y",
+        "-f", "concat",
+        "-safe", "0",
+        "-i", str(list_path),
+        "-c", "copy",          # Kein Re-Encoding – schnell und verlustfrei
+        output_path,
+    ]
+
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    list_path.unlink(missing_ok=True)  # Temp-Datei aufräumen
+
+    if result.returncode != 0:
+        print(f"⚠️  ffmpeg Fehler: {result.stderr[-300:]}")
+        print("   Fallback: Episode ohne Jingle.")
+        shutil.copy(speech_path, output_path)
+        return
+
+    size_kb = Path(output_path).stat().st_size // 1024
+    print(f"   Episode mit Jingle gespeichert ({size_kb} KB).")
 
 
 # ---------------------------------------------------------------------------
@@ -541,7 +593,16 @@ def main() -> None:
     script = generate_script(articles, prompt_config, hot_topics)
 
     script_path.write_text(script, encoding="utf-8")
-    generate_audio(script, audio_path)
+
+    # Schritt 1: Nur Sprache generieren (temporäre Datei)
+    speech_path = str(episodes_dir / f"{date_str}_speech.mp3")
+    generate_audio(script, speech_path)
+
+    # Schritt 2: Jingle vorne und hinten einbauen -> finale Episode
+    combine_with_jingle(speech_path, audio_path)
+
+    # Temporäre Sprach-Datei aufräumen
+    Path(speech_path).unlink(missing_ok=True)
 
     # Verwendete Artikel dauerhaft ins Archiv eintragen
     memory = add_to_archive(articles, memory, episode_title)
