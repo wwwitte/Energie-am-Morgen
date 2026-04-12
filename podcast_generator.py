@@ -408,26 +408,23 @@ def combine_with_jingle(speech_path: str, output_path: str) -> None:
 
     print("🎵 Jingle einbauen (Anfang + Ende) ...")
 
-    # Temporäre Dateiliste für ffmpeg concat
-    list_path = Path(speech_path).parent / "concat_list.txt"
-    list_path.write_text(
-        f"file '{jingle_path.resolve()}'
-"
-        f"file '{Path(speech_path).resolve()}'
-"
-        f"file '{jingle_path.resolve()}'
-",
-        encoding="utf-8",
-    )
+# Temporäre Dateiliste für ffmpeg concat
+list_path = Path(speech_path).parent / "concat_list.txt"
+list_path.write_text(
+    f"file '{jingle_path.resolve()}'\n"
+    f"file '{Path(speech_path).resolve()}'\n"
+    f"file '{jingle_path.resolve()}'\n",
+    encoding="utf-8",
+)
 
-    cmd = [
-        "ffmpeg", "-y",
-        "-f", "concat",
-        "-safe", "0",
-        "-i", str(list_path),
-        "-c", "copy",          # Kein Re-Encoding – schnell und verlustfrei
-        output_path,
-    ]
+cmd = [
+    "ffmpeg", "-y",
+    "-f", "concat",
+    "-safe", "0",
+    "-i", str(list_path),
+    "-c", "copy",          # Kein Re-Encoding – schnell und verlustfrei
+    output_path,
+]
 
     result = subprocess.run(cmd, capture_output=True, text=True)
     list_path.unlink(missing_ok=True)  # Temp-Datei aufräumen
