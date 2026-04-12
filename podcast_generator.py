@@ -114,10 +114,11 @@ def extract_keywords(title: str) -> set:
     stopwords = {
         "eine", "einem", "einer", "eines", "wird", "wurde", "werden", "haben",
         "dass", "sind", "über", "auch", "beim", "nach", "mehr", "neue", "neuen",
-        "neuer", "neues", "beim", "beim", "durch", "ihre", "ihrem", "ihren",
-        "ihrer", "ihres", "ihrer", "diesem", "dieser", "dieses", "diesen",
-        "gibt", "soll", "kann", "noch", "aber", "oder", "sowie", "beim",
-        "beim", "beim", "beim", "beim", "beim", "beim",
+        "neuer", "neues", "durch", "ihre", "ihrem", "ihren",
+        "ihrer", "ihres", "diesem", "dieser", "dieses", "diesen",
+        "gibt", "soll", "kann", "noch", "aber", "oder", "sowie",
+        "sein", "seine", "seinem", "seinen", "seiner", "nicht",
+        "sich", "diese", "sehr", "dann", "also", "weil", "wenn",
     }
     words = re.findall(r'\b[a-zA-ZäöüÄÖÜß]{4,}\b', title.lower())
     return {w for w in words if w not in stopwords}
@@ -170,19 +171,15 @@ def add_to_archive(articles: list[dict], memory: dict, episode_title: str) -> di
             "episode": episode_title,
         })
 
-    # Hot-Topic-Tracking: Keywords der letzten 7 Tage zählen
-    if "hot_topics" not in memory:
-        memory["hot_topics"] = {}
-    cutoff = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
-    # Alte Einträge bereinigen
-    memory["hot_topics"] = {
-        kw: count for kw, count in memory["hot_topics"].items()
-        if isinstance(count, int)
-    }
-    for article in articles:
-        for kw in extract_keywords(article["title"]):
-            if len(kw) >= 5:  # Nur bedeutungsstarke Wörter
-                memory["hot_topics"][kw] = memory["hot_topics"].get(kw, 0) + 1
+    # Hot-Topic-Tracking: Keywords aus Archiv-Einträgen der letzten 7 Tage neu berechnen
+    cutoff_7d = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
+    hot_topics_map = {}
+    for entry in memory["archive"]:
+        if entry["date"] >= cutoff_7d:
+            for kw in extract_keywords(entry["title"]):
+                if len(kw) >= 5:  # Nur bedeutungsstarke Wörter
+                    hot_topics_map[kw] = hot_topics_map.get(kw, 0) + 1
+    memory["hot_topics"] = hot_topics_map
 
     return memory
 
@@ -216,7 +213,7 @@ def resolve_url(google_url: str) -> str:
     Gibt die Original-URL zurück, oder bei Fehler die Google-URL als Fallback.
     """
     try:
-        r = requests.get(
+        r = req_lib.get(
             google_url,
             allow_redirects=True,
             timeout=8,
@@ -248,12 +245,11 @@ def fetch_all_news(memory: dict) -> list[dict]:
         )
         # Nur Artikel der letzten MAX_ARTICLE_AGE_HOURS filtern
         # Artikel ohne Datum werden immer zugelassen (kein published_parsed)
-        import time as _time
-        cutoff_ts = _time.time() - MAX_ARTICLE_AGE_HOURS * 3600
+        cutoff_ts = time.time() - MAX_ARTICLE_AGE_HOURS * 3600
         fresh_entries = [
             e for e in sorted_entries
             if e.get("published_parsed") is None  # kein Datum → zulassen
-            or _time.mktime(e["published_parsed"]) >= cutoff_ts
+            or time.mktime(e["published_parsed"]) >= cutoff_ts
         ]
         if not fresh_entries:
             # Fallback: alle Einträge nehmen wenn keine frischen gefunden
@@ -296,8 +292,9 @@ def fetch_all_news(memory: dict) -> list[dict]:
     return all_articles
 
 
-def generate_script(articles: list[dict], prompt_config: str, hot_topics: list = None) -> str:
-    """Claude wählt die 3 spannendsten Themen und erstellt das Podcast-Skript."""
+def generate_script(articles: list[dict], prompt_config: str, hot_topics: list = None) -> tuple[str, list[int]]:
+    """Claude wählt die 3 spannendsten Themen und erstellt das Podcast-Skript.
+    Gibt (script, selected_indices) zurück – Indizes der gewählten Artikel."""
     print("✍️  Skript generieren (Claude wählt Top-3-Themen) ...")
     client = anthropic.Anthropic(api_key=CLAUDE_API_KEY)
 
@@ -333,6 +330,10 @@ DEINE AUFGABE:
 5. Nenne bei jeder Meldung Quelle und Datum im Format TT.MM.JJJJ.
 6. Nur fließender Sprechtext – kein Markdown, keine Formatierung, keine Aufzählungszeichen.
 7. Erkläre jeden Artikel ausführlich: Was passiert? Warum ist es wichtig? Was sind die Konsequenzen?
+8. WICHTIG: Beginne deine Antwort mit genau einer Zeile im Format:
+   AUSWAHL: X, Y, Z
+   (wobei X, Y, Z die Nummern der oben aufgelisteten Artikel sind, die du ausgewählt hast)
+   Danach folgt direkt das Skript ab "Herzlich Willkommen".
 
 VERFÜGBARE ARTIKEL:
 {news_text}"""
@@ -343,6 +344,20 @@ VERFÜGBARE ARTIKEL:
         messages=[{"role": "user", "content": prompt}],
     )
     raw = response.content[0].text.strip()
+
+    # AUSWAHL-Zeile parsen: welche Artikel hat Claude gewählt?
+    selected_indices = []
+    first_line = raw.split("\n")[0] if raw else ""
+    if first_line.startswith("AUSWAHL:"):
+        raw = "\n".join(raw.split("\n")[1:]).strip()
+        try:
+            indices = [int(x.strip()) - 1 for x in first_line.split(":")[1].split(",")]
+            selected_indices = [i for i in indices if 0 <= i < len(articles)]
+            print(f"   Claude hat Artikel {[i+1 for i in selected_indices]} gewählt.")
+        except (ValueError, IndexError):
+            print("   ⚠️  AUSWAHL-Zeile konnte nicht geparst werden.")
+    if not selected_indices:
+        print("   ⚠️  Konnte gewählte Artikel nicht ermitteln – alle werden archiviert.")
 
     # Vor- und Nachbemerkungen der KI entfernen (z. B. Wortzahl, Hinweise)
     # Skript beginnt immer mit "Herzlich Willkommen"
@@ -357,7 +372,7 @@ VERFÜGBARE ARTIKEL:
 
     script = raw.strip()
     print(f"   Skript generiert ({len(script.split())} Wörter).")
-    return script
+    return script, selected_indices
 
 
 def generate_audio(script: str, output_path: str) -> None:
@@ -408,10 +423,22 @@ def combine_with_jingle(speech_path: str, output_path: str) -> None:
         shutil.copy(speech_path, output_path)
         return
 
+    # ffmpeg-Binary finden: System-PATH oder imageio-ffmpeg als Fallback
+    ffmpeg_bin = "ffmpeg"
+    if shutil.which("ffmpeg") is None:
+        try:
+            import imageio_ffmpeg
+            ffmpeg_bin = imageio_ffmpeg.get_ffmpeg_exe()
+            print("   (ffmpeg via imageio-ffmpeg gefunden)")
+        except ImportError:
+            print("⚠️  ffmpeg nicht verfügbar – Episode ohne Jingle.")
+            shutil.copy(speech_path, output_path)
+            return
+
     print("🎵 Jingle einbauen (Anfang + Ende) ...")
 
     cmd = [
-        "ffmpeg", "-y",
+        ffmpeg_bin, "-y",
         "-i", str(jingle_path.resolve()),
         "-i", str(Path(speech_path).resolve()),
         "-i", str(jingle_path.resolve()),
@@ -523,7 +550,9 @@ def update_rss_feed(
     ET.SubElement(item, "title").text       = episode_title
     ET.SubElement(item, "description").text = episode_desc
     ET.SubElement(item, "pubDate").text     = pub_date
-    ET.SubElement(item, "guid").text        = audio_url
+    guid_el = ET.SubElement(item, "guid")
+    guid_el.text = audio_url
+    guid_el.set("isPermaLink", "true")
     ET.SubElement(item, "link").text        = audio_url
 
     enclosure = ET.SubElement(item, "enclosure")
@@ -540,7 +569,17 @@ def update_rss_feed(
     ep_img = itag(item, "image")
     ep_img.set("href", cover_url)
 
+    # Duplikat-Prüfung: Keine Episode doppelt einfügen
     existing_items = channel.findall("item")
+    for existing in existing_items:
+        existing_guid = existing.find("guid")
+        if existing_guid is not None and existing_guid.text == audio_url:
+            print("   ⚠️  Episode bereits im Feed vorhanden – kein Duplikat hinzugefügt.")
+            ET.indent(root, space="  ")
+            tree = ET.ElementTree(root)
+            tree.write(feed_path, encoding="unicode", xml_declaration=True)
+            return
+
     if existing_items:
         channel.insert(list(channel).index(existing_items[0]), item)
     else:
@@ -574,9 +613,17 @@ def main() -> None:
         import shutil
         shutil.copy(cover_src, cover_dst)
         print("🖼️  Cover-Bild nach docs/ kopiert.")
+    elif not cover_dst.exists():
+        print("⚠️  Kein cover.jpg gefunden – RSS-Feed referenziert fehlendes Cover-Bild.")
+
     audio_filename = f"{date_str}.mp3"
     audio_path = str(episodes_dir / audio_filename)
     script_path = episodes_dir / f"{date_str}.txt"
+
+    # Doppelte Ausführung verhindern (z.B. bei Sommer/Winterzeit-Doppel-Cron)
+    if Path(audio_path).exists():
+        print(f"⏭️  Episode für heute ({date_str}) existiert bereits – überspringe.")
+        return
 
     memory = load_memory()
     prompt_config = load_prompt_config()
@@ -584,7 +631,7 @@ def main() -> None:
     hot_topics = get_hot_topics(memory)
     if hot_topics:
         print(f"🔥 Aktuelle Hot-Topics: {', '.join(hot_topics)}")
-    script = generate_script(articles, prompt_config, hot_topics)
+    script, selected_indices = generate_script(articles, prompt_config, hot_topics)
 
     script_path.write_text(script, encoding="utf-8")
 
@@ -598,8 +645,12 @@ def main() -> None:
     # Temporäre Sprach-Datei aufräumen
     Path(speech_path).unlink(missing_ok=True)
 
-    # Verwendete Artikel dauerhaft ins Archiv eintragen
-    memory = add_to_archive(articles, memory, episode_title)
+    # Nur tatsächlich verwendete Artikel ins Archiv eintragen
+    if selected_indices:
+        selected_articles = [articles[i] for i in selected_indices]
+    else:
+        selected_articles = articles  # Fallback: alle archivieren
+    memory = add_to_archive(selected_articles, memory, episode_title)
     save_memory(memory)
 
     audio_size = Path(audio_path).stat().st_size
@@ -609,7 +660,7 @@ def main() -> None:
     print("\n✅ Fertig!")
     print(f"   Richtlinien : {PROMPT_FILE}")
     print(f"   Datenbank   : {MEMORY_FILE} ({len(memory['archive'])} Einträge gesamt)")
-    print(f"   Modell      : claude-haiku-4-5-20251001 + ElevenLabs")
+    print(f"   Modell      : claude-sonnet-4-6 + ElevenLabs")
     print(f"   Skript      : {script_path}")
     print(f"   Audio       : {audio_path}")
     print(f"   Feed        : docs/feed.xml")
