@@ -417,7 +417,7 @@ list_path.write_text(
     encoding="utf-8",
 )
 
-cmd = [
+    cmd = [
     "ffmpeg", "-y",
     "-f", "concat",
     "-safe", "0",
