@@ -216,7 +216,7 @@ def resolve_url(google_url: str) -> str:
     Gibt die Original-URL zurück, oder bei Fehler die Google-URL als Fallback.
     """
     try:
-        r = requests.get(
+        r = req_lib.get(
             google_url,
             allow_redirects=True,
             timeout=8,
@@ -248,12 +248,11 @@ def fetch_all_news(memory: dict) -> list[dict]:
         )
         # Nur Artikel der letzten MAX_ARTICLE_AGE_HOURS filtern
         # Artikel ohne Datum werden immer zugelassen (kein published_parsed)
-        import time as _time
-        cutoff_ts = _time.time() - MAX_ARTICLE_AGE_HOURS * 3600
+        cutoff_ts = time.time() - MAX_ARTICLE_AGE_HOURS * 3600
         fresh_entries = [
             e for e in sorted_entries
             if e.get("published_parsed") is None  # kein Datum → zulassen
-            or _time.mktime(e["published_parsed"]) >= cutoff_ts
+            or time.mktime(e["published_parsed"]) >= cutoff_ts
         ]
         if not fresh_entries:
             # Fallback: alle Einträge nehmen wenn keine frischen gefunden
@@ -408,7 +407,10 @@ def combine_with_jingle(speech_path: str, output_path: str) -> None:
 
     print("🎵 Jingle einbauen (Anfang + Ende) ...")
 
-# Temporäre Dateiliste für ffmpeg concat
+    import imageio_ffmpeg
+    ffmpeg_bin = imageio_ffmpeg.get_ffmpeg_exe()
+
+    # Temporäre Dateiliste für ffmpeg concat
     list_path = Path(speech_path).parent / "concat_list.txt"
     list_path.write_text(
         f"file '{jingle_path.resolve()}'\n"
@@ -418,7 +420,7 @@ def combine_with_jingle(speech_path: str, output_path: str) -> None:
     )
 
     cmd = [
-        "ffmpeg", "-y",
+        ffmpeg_bin, "-y",
         "-f", "concat",
         "-safe", "0",
         "-i", str(list_path),
@@ -612,7 +614,7 @@ def main() -> None:
     print("\n✅ Fertig!")
     print(f"   Richtlinien : {PROMPT_FILE}")
     print(f"   Datenbank   : {MEMORY_FILE} ({len(memory['archive'])} Einträge gesamt)")
-    print(f"   Modell      : claude-haiku-4-5-20251001 + ElevenLabs")
+    print(f"   Modell      : claude-sonnet-4-6 + ElevenLabs")
     print(f"   Skript      : {script_path}")
     print(f"   Audio       : {audio_path}")
     print(f"   Feed        : docs/feed.xml")
