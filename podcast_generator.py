@@ -378,7 +378,20 @@ def generate_audio(script: str, output_path: str) -> None:
             "use_speaker_boost": True, # Klarheit der Stimme verbessern
         },
     }
-    response = req_lib.post(url, json=payload, headers=headers, timeout=60)
+    max_retries = 3
+    for attempt in range(1, max_retries + 1):
+        try:
+            print(f"   Versuch {attempt}/{max_retries} ...")
+            response = req_lib.post(url, json=payload, headers=headers, timeout=180)
+            break  # Erfolgreich → Schleife verlassen
+        except req_lib.exceptions.ReadTimeout:
+            if attempt == max_retries:
+                raise RuntimeError(
+                    f"ElevenLabs API Timeout nach {max_retries} Versuchen (je 180s)."
+                )
+            print(f"   Timeout – warte 10s und versuche erneut ...")
+            time.sleep(10)
+
     if response.status_code != 200:
         raise RuntimeError(
             f"ElevenLabs API Fehler {response.status_code}: {response.text}"
