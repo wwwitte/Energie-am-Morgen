@@ -394,7 +394,30 @@ def generate_audio(script: str, output_path: str) -> None:
             "use_speaker_boost": True, # Klarheit der Stimme verbessern
         },
     }
-    response = req_lib.post(url, json=payload, headers=headers, timeout=60)
+    # Retry-Logik für transiente Netzwerk-/Timeout-Fehler
+    max_retries = 3
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = req_lib.post(url, json=payload, headers=headers, timeout=300)
+            break
+        except req_lib.exceptions.Timeout:
+            if attempt < max_retries:
+                wait = 10 * attempt
+                print(f"   ⏳ Timeout (Versuch {attempt}/{max_retries}) – warte {wait}s und versuche erneut ...")
+                time.sleep(wait)
+            else:
+                raise RuntimeError(
+                    f"ElevenLabs API Timeout nach {max_retries} Versuchen. "
+                    "Das Skript ist möglicherweise zu lang für die API."
+                )
+        except req_lib.exceptions.ConnectionError as e:
+            if attempt < max_retries:
+                wait = 10 * attempt
+                print(f"   🔌 Verbindungsfehler (Versuch {attempt}/{max_retries}) – warte {wait}s ...")
+                time.sleep(wait)
+            else:
+                raise RuntimeError(f"ElevenLabs API Verbindungsfehler: {e}")
+
     if response.status_code != 200:
         raise RuntimeError(
             f"ElevenLabs API Fehler {response.status_code}: {response.text}"
