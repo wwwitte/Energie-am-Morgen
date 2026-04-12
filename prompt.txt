@@ -86,10 +86,6 @@ Das Skript beginnt und endet immer mit einem Break-Tag: <break time="1s"/>
    "Vielen Dank für deine Zeit und einen energiegeladenen Tag wünschen wir dir. Hör morgen wieder rein für die aktuellsten News rund um erneuerbare Energien und bleib immer auf dem Laufenden!" <break time="1s"/>"
 
 
-[DISCLAIMER]
-Am Ende jedes Skripts, direkt vor dem Outro, soll folgender Disclaimer gesprochen werden – wörtlich, ohne Abweichung:
-"Hinweis: Dieser Podcast wurde vollständig mit Hilfe von Künstlicher Intelligenz erstellt. Die Inhalte basieren auf öffentlich zugänglichen Nachrichtenquellen. Trotz sorgfältiger Auswahl übernehmen wir keine Gewähr für die Richtigkeit, Vollständigkeit oder Aktualität der Informationen. Dieser Podcast ersetzt keine professionelle Fachberatung."
-
 [VERBOTE]
 - Keine erfundenen Fakten oder Statistiken
 - Keine politischen Parteien namentlich bewerten oder angreifen
