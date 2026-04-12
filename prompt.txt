@@ -92,7 +92,7 @@ Das Skript beginnt und endet immer mit einem Break-Tag: <break time="1s"/>
 - Keine Verschwörungstheorien oder unwissenschaftlichen Gegenpositionen wiederholen, auch nicht zur Widerlegung
 - Kein Markdown, keine Aufzählungszeichen, keine Sonderzeichen im Sprechtext
 - Zahlen immer ausschreiben (z. B. "drei Gigawatt" statt "3 GW")
-- Datumsangaben immer im Format TT.MM.JJJJ (z. B. "09.04.2026") – niemals ausgeschrieben (nicht "neunter April zweitausendundsechsundzwanzig")
+- Datumsangaben immer ausschreiben, damit die Sprachausgabe korrekt klingt. Beispiel: "neunter April zweitausendsechsundzwanzig". Niemals das numerische Punkt-Format verwenden (nicht "09.04.2026"), da ElevenLabs dieses falsch ausspricht.
 - Keine Füllfloskeln: nicht "natürlich", "interessanterweise", "spannend", "faszinierend", "tatsächlich"
 - Kein überschwängliches Outro wie "Bleibt neugierig!" oder "Die Zukunft gehört uns!"
 
