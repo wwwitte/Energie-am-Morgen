@@ -424,7 +424,7 @@ list_path.write_text(
     "-i", str(list_path),
     "-c", "copy",          # Kein Re-Encoding – schnell und verlustfrei
     output_path,
-]
+    ]
 
     result = subprocess.run(cmd, capture_output=True, text=True)
     list_path.unlink(missing_ok=True)  # Temp-Datei aufräumen
