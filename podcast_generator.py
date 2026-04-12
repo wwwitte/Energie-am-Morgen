@@ -216,7 +216,7 @@ def resolve_url(google_url: str) -> str:
     Gibt die Original-URL zurück, oder bei Fehler die Google-URL als Fallback.
     """
     try:
-        r = req_lib.get(
+        r = requests.get(
             google_url,
             allow_redirects=True,
             timeout=8,
@@ -248,11 +248,12 @@ def fetch_all_news(memory: dict) -> list[dict]:
         )
         # Nur Artikel der letzten MAX_ARTICLE_AGE_HOURS filtern
         # Artikel ohne Datum werden immer zugelassen (kein published_parsed)
-        cutoff_ts = time.time() - MAX_ARTICLE_AGE_HOURS * 3600
+        import time as _time
+        cutoff_ts = _time.time() - MAX_ARTICLE_AGE_HOURS * 3600
         fresh_entries = [
             e for e in sorted_entries
             if e.get("published_parsed") is None  # kein Datum → zulassen
-            or time.mktime(e["published_parsed"]) >= cutoff_ts
+            or _time.mktime(e["published_parsed"]) >= cutoff_ts
         ]
         if not fresh_entries:
             # Fallback: alle Einträge nehmen wenn keine frischen gefunden
@@ -378,20 +379,7 @@ def generate_audio(script: str, output_path: str) -> None:
             "use_speaker_boost": True, # Klarheit der Stimme verbessern
         },
     }
-    max_retries = 3
-    for attempt in range(1, max_retries + 1):
-        try:
-            print(f"   Versuch {attempt}/{max_retries} ...")
-            response = req_lib.post(url, json=payload, headers=headers, timeout=180)
-            break  # Erfolgreich → Schleife verlassen
-        except req_lib.exceptions.ReadTimeout:
-            if attempt == max_retries:
-                raise RuntimeError(
-                    f"ElevenLabs API Timeout nach {max_retries} Versuchen (je 180s)."
-                )
-            print(f"   Timeout – warte 10s und versuche erneut ...")
-            time.sleep(10)
-
+    response = req_lib.post(url, json=payload, headers=headers, timeout=60)
     if response.status_code != 200:
         raise RuntimeError(
             f"ElevenLabs API Fehler {response.status_code}: {response.text}"
@@ -404,9 +392,11 @@ def generate_audio(script: str, output_path: str) -> None:
 
 def combine_with_jingle(speech_path: str, output_path: str) -> None:
     """
-    Fügt Jingle am Anfang und Ende der Episode ein (ffmpeg).
-    Struktur: jingle.mp3 → speech → jingle.mp3
-    Falls kein Jingle vorhanden, wird speech_path einfach nach output_path kopiert.
+    Fügt Jingle am Anfang und Ende der Episode ein.
+    Verwendet ffmpeg filter_complex concat mit Re-Encoding auf 128kbps/44100Hz
+    damit Jingle und Speech-Audio (ggf. unterschiedliche Formate) zuverlässig
+    zusammengefügt werden. -c copy würde bei unterschiedlichen Bitrates/Sample-Rates
+    zu leerer oder kaputten Audio führen.
     """
     import subprocess
     import shutil
@@ -420,38 +410,30 @@ def combine_with_jingle(speech_path: str, output_path: str) -> None:
 
     print("🎵 Jingle einbauen (Anfang + Ende) ...")
 
-    import imageio_ffmpeg
-    ffmpeg_bin = imageio_ffmpeg.get_ffmpeg_exe()
-
-    # Temporäre Dateiliste für ffmpeg concat
-    list_path = Path(speech_path).parent / "concat_list.txt"
-    list_path.write_text(
-        f"file '{jingle_path.resolve()}'\n"
-        f"file '{Path(speech_path).resolve()}'\n"
-        f"file '{jingle_path.resolve()}'\n",
-        encoding="utf-8",
-    )
-
     cmd = [
-        ffmpeg_bin, "-y",
-        "-f", "concat",
-        "-safe", "0",
-        "-i", str(list_path),
-        "-c", "copy",          # Kein Re-Encoding – schnell und verlustfrei
+        "ffmpeg", "-y",
+        "-i", str(jingle_path.resolve()),
+        "-i", str(Path(speech_path).resolve()),
+        "-i", str(jingle_path.resolve()),
+        "-filter_complex", "[0:a][1:a][2:a]concat=n=3:v=0:a=1[out]",
+        "-map", "[out]",
+        "-ar", "44100",
+        "-ab", "128k",
+        "-codec:a", "libmp3lame",
         output_path,
     ]
 
     result = subprocess.run(cmd, capture_output=True, text=True)
-    list_path.unlink(missing_ok=True)  # Temp-Datei aufräumen
 
     if result.returncode != 0:
-        print(f"⚠️  ffmpeg Fehler: {result.stderr[-300:]}")
+        print(f"⚠️  ffmpeg Fehler:\n{result.stderr[-500:]}")
         print("   Fallback: Episode ohne Jingle.")
         shutil.copy(speech_path, output_path)
         return
 
     size_kb = Path(output_path).stat().st_size // 1024
     print(f"   Episode mit Jingle gespeichert ({size_kb} KB).")
+
 
 
 # ---------------------------------------------------------------------------
@@ -627,7 +609,7 @@ def main() -> None:
     print("\n✅ Fertig!")
     print(f"   Richtlinien : {PROMPT_FILE}")
     print(f"   Datenbank   : {MEMORY_FILE} ({len(memory['archive'])} Einträge gesamt)")
-    print(f"   Modell      : claude-sonnet-4-6 + ElevenLabs")
+    print(f"   Modell      : claude-haiku-4-5-20251001 + ElevenLabs")
     print(f"   Skript      : {script_path}")
     print(f"   Audio       : {audio_path}")
     print(f"   Feed        : docs/feed.xml")
