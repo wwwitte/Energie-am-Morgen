@@ -2,6 +2,9 @@ name: Täglicher Podcast – Energie am Morgen
 
 on:
   schedule:
+    # Beide Crons bleiben aktiv – das Python-Skript erkennt und überspringt
+    # doppelte Ausführungen automatisch. So läuft der Podcast immer um ca. 02:43
+    # deutscher Zeit, egal ob Sommer- oder Winterzeit.
     - cron: "43 0 * * *"    # 00:43 UTC = 02:43 Uhr MESZ (Sommerzeit, UTC+2)
     - cron: "43 1 * * *"    # 01:43 UTC = 02:43 Uhr MEZ  (Winterzeit, UTC+1)
 
