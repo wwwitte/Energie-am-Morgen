@@ -42,6 +42,9 @@ PODCAST_DESC = "Täglich die spannendsten News zu erneuerbaren Energien in Deuts
 PODCAST_LANG = "de"
 PROMPT_FILE = "prompt.txt"
 MEMORY_FILE = "docs/memory.json"
+PODCAST_AUTHOR   = "Energie am Morgen"
+PODCAST_EMAIL    = "sebastian.wittmann_1@web.de"   # Für Apple Podcasts empfohlen
+PODCAST_CATEGORY = "Technologie"             # Oder "Science", "Technology"
 
 REUSE_AFTER_DAYS = 30   # Nach dieser Anzahl Tage darf ein ähnliches Thema wieder gebracht werden
 SIMILARITY_THRESHOLD = 3 # Mindestanzahl gemeinsamer Schlüsselwörter für "ähnliches Thema"
