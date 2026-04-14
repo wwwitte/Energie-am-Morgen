@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Energie am Morgen</title>
+    <link>https://wwwitte.github.io/Energie-am-Morgen</link>
+    <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet.</description>
+    <language>de</language>
+    <itunes:author>Energie am Morgen</itunes:author>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:category text="News" />
+    <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    <image>
+      <url>https://wwwitte.github.io/Energie-am-Morgen/cover.jpg</url>
+      <title>Energie am Morgen</title>
+      <link>https://wwwitte.github.io/Energie-am-Morgen</link>
+    </image>
+    <item>
+      <title>Energie am Morgen – 14.04.2026</title>
+      <description>Die wichtigsten Nachrichten zu erneuerbaren Energien vom 14.04.2026.</description>
+      <pubDate>Tue, 14 Apr 2026 03:55:30 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-14.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-14.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-14.mp3" type="audio/mpeg" length="6297016" />
+      <itunes:title>Energie am Morgen – 14.04.2026</itunes:title>
+      <itunes:summary>Die wichtigsten Nachrichten zu erneuerbaren Energien vom 14.04.2026.</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>1</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+  </channel>
+</rss>
