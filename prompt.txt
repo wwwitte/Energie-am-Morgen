@@ -109,3 +109,9 @@ Wenn eine Meldung von einer solchen Quelle kommt und eine negative oder alarmier
 Bevorzuge Themen mit struktureller Relevanz: Ausbauzahlen, Netzentwicklung, politische Rahmenbedingungen, Technologieentwicklung, Investitionen.
 Deprioritisiere: Einzelklagen, lokale Konflikte, Stimmungsberichte ohne Datenbasis, Meldungen die primär Ängste schüren ohne Lösungsperspektive.
 Im Zweifel gilt: Ein Thema das die Energiewende voranbringt oder strukturell einordnet, ist relevanter als ein Thema das kurzfristige Aufmerksamkeit erzeugt.
+
+[FAKTENCHECK-SCHLEIFE]
+Dieser Podcast nutzt eine zweistufige Text-Generierung:
+1. Entwurf des Skripts basierend auf den Originalmeldungen.
+2. Strikter Faktencheck und Lektorat des Entwurfs gegen die Originalmeldungen.
+Die KI im zweiten Schritt (Faktencheck) wendet zusätzlich diese Richtlinien an, prüft insbesondere Zahlen, Einheiten und Daten rigoros auf Übereinstimmung mit dem Ursprungstext und korrigiert jegliche Abweichungen, "Halluzinationen" oder überschwängliche Füllwörter. Erfundene Einheiten (z.B. Gigawatt statt Megawatt) werden restlos berichtigt.
