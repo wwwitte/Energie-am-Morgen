@@ -5,7 +5,7 @@ Ablauf:
   1. Datenbank laden (docs/memory.json) – Archiv + Sperrfrist-Logik
   2. Top-News aus mehreren Google News RSS-Feeds abrufen
   3. Moderations-Richtlinien aus prompt.txt laden
-  4. Groq wählt die 3 spannendsten neuen Themen und erstellt das Skript
+  4. Claude wählt die 3 spannendsten neuen Themen und erstellt das Skript
   5. Audio via gTTS erzeugen
   6. MP3 + RSS-Feed + Datenbank speichern (-> GitHub Pages)
 
@@ -378,6 +378,81 @@ VERFÜGBARE ARTIKEL:
     return script, selected_indices
 
 
+def fact_check_script(script: str, articles: list[dict], prompt_config: str) -> str:
+    """Claude prüft das generierte Skript auf sachliche Fehler im Abgleich mit den Originalmeldungen."""
+    print("🔍 Skript auf Fakten prüfen (Claude liest Korrektur) ...")
+    client = anthropic.Anthropic(api_key=CLAUDE_API_KEY)
+
+    news_text = "\n\n".join(
+        f"[Quelle: {a.get('source', 'Unbekannt')}]\n"
+        f"Titel: {a.get('title', '')}\n"
+        f"Inhalt: {a.get('summary', '')}"
+        for a in articles
+    )
+
+    prompt = f"""Du bist der Chefredakteur des Podcasts "{PODCAST_TITLE}".
+Deine Aufgabe ist es, das vorliegende Podcast-Skript einer strengen Qualitäts- und Faktenprüfung zu unterziehen.
+
+=== ORIGINAL-NACHRICHTEN ===  
+Dies sind die tatsächlichen Nachrichten, auf denen das Skript basieren muss:
+{news_text}
+
+=== GENERIERTES SKRIPT ===
+Hier ist das erstellte Skript, das du prüfen sollst:
+---
+{script}
+---
+
+=== DEINE PRÜF-AUFTRÄGE ===
+1. Zahlen & Fakten: Vergleiche rigoros jede Zahl, Marge, Gigawatt/Megawatt-Angabe und Datumsangabe mit den Original-Nachrichten. Berichtige alles, was abweicht oder erfunden ("halluziniert") wurde.
+2. Quellen: Stelle sicher, dass die in den Nachrichten genannten Quellen auch korrekt im Skript erwähnt werden.
+3. Kein Informationsverlust: Wenn eine wichtige Zahl durch den Faktencheck korrigiert wird, passe den Satzbau an, aber behalte den Informationsgehalt bei.
+4. Richtlinien: Behalte die vorgegebenen Moderations-Richtlinien bei. (Kein Markdown, ausgeschriebene Zahlen, Break-Tags vorhanden, etc.)
+
+=== MODERATIONS-RICHTLINIEN ===
+{prompt_config}
+
+Gib ausschließlich das finale, korrigierte Skript als Text aus. 
+Keine einleitenden Sätze, keine Meta-Kommentare. Das erste Wort muss "Herzlich Willkommen" (oder ein <break time="1s"/> Tag) sein und es darf kein Markdown enthalten.
+"""
+
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=3000,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    
+    corrected_script = response.content[0].text.strip()
+
+    # Marker überprüfen, um reinen Sprechtext sicherzustellen
+    start_marker = "Herzlich Willkommen"
+    if start_marker in corrected_script:
+        # Falls davor noch "Hier ist das korrigierte Skript" o.ä. steht, abschneiden
+        # Den Break-Tag wollen wir aber behalten, falls er direkt davor steht. 
+        idx = corrected_script.index(start_marker)
+        # Suche nach <break time="1s"/> vor dem Startmarker
+        break_tag = '<break time="1s"/>'
+        if break_tag in corrected_script[:idx]:
+            corrected_script = corrected_script[corrected_script.index(break_tag):]
+        else:
+            corrected_script = corrected_script[idx:]
+
+    end_marker = "auf dem Laufenden!"
+    if end_marker in corrected_script:
+        pos = corrected_script.index(end_marker) + len(end_marker)
+        # End-Quotes oder nachfolgenden Break-Tag einschließen
+        if len(corrected_script) > pos and corrected_script[pos:pos+1] == '"':
+            pos += 1
+        # Zusätzlichen Break-Tag einschließen, falls vorhanden
+        if len(corrected_script) >= pos + 20 and '<break time="1s"/>' in corrected_script[pos:pos+20]:
+            corrected_script = corrected_script[:corrected_script.index('<break time="1s"/>', pos) + 20]
+        else:
+            corrected_script = corrected_script[:pos]
+
+    print(f"   Faktencheck abgeschlossen ({len(corrected_script.split())} Wörter).")
+    return corrected_script
+
+
 def generate_audio(script: str, output_path: str) -> None:
     """Wandelt das Skript per ElevenLabs API in eine MP3-Datei um."""
     print(f"🎙️  Audio generieren via ElevenLabs -> {output_path} ...")
@@ -659,6 +734,15 @@ def main() -> None:
         print(f"🔥 Aktuelle Hot-Topics: {', '.join(hot_topics)}")
     script, selected_indices = generate_script(articles, prompt_config, hot_topics)
 
+    # Relevante Artikel für Archiv und Faktencheck auswählen
+    if selected_indices:
+        selected_articles = [articles[i] for i in selected_indices]
+    else:
+        selected_articles = articles  # Fallback: alle
+
+    # Faktencheck-Schleife
+    script = fact_check_script(script, selected_articles, prompt_config)
+
     script_path.write_text(script, encoding="utf-8")
 
     # Schritt 1: Nur Sprache generieren (temporäre Datei)
@@ -672,10 +756,6 @@ def main() -> None:
     Path(speech_path).unlink(missing_ok=True)
 
     # Nur tatsächlich verwendete Artikel ins Archiv eintragen
-    if selected_indices:
-        selected_articles = [articles[i] for i in selected_indices]
-    else:
-        selected_articles = articles  # Fallback: alle archivieren
     memory = add_to_archive(selected_articles, memory, episode_title)
     save_memory(memory)
 
