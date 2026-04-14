@@ -5,9 +5,10 @@ Ablauf:
   1. Datenbank laden (docs/memory.json) – Archiv + Sperrfrist-Logik
   2. Top-News aus mehreren Google News RSS-Feeds abrufen
   3. Moderations-Richtlinien aus prompt.txt laden
-  4. Claude wählt die 3 spannendsten neuen Themen und erstellt das Skript
-  5. Audio via gTTS erzeugen
-  6. MP3 + RSS-Feed + Datenbank speichern (-> GitHub Pages)
+  4. Claude (Anthropic) wählt die 3 spannendsten neuen Themen und erstellt das Skript
+  5. Faktencheck-Schleife: zweiter Claude-Call prüft Skript auf sachliche Fehler
+  6. Audio via ElevenLabs erzeugen
+  7. MP3 + RSS-Feed + Datenbank speichern (-> GitHub Pages)
 
 Datenbank-Logik:
   - Alle je verwendeten Artikel werden dauerhaft gespeichert (vollständiges Archiv)
@@ -44,7 +45,7 @@ PROMPT_FILE = "prompt.txt"
 MEMORY_FILE = "docs/memory.json"
 PODCAST_AUTHOR   = "Energie am Morgen"
 PODCAST_EMAIL = os.environ.get("PODCAST_EMAIL", "")   # Für Apple Podcasts empfohlen
-PODCAST_CATEGORY = "Technologie"             # Oder "Science", "Technology"
+PODCAST_CATEGORY = "News"                    # iTunes-Hauptkategorie
 
 REUSE_AFTER_DAYS = 30   # Nach dieser Anzahl Tage darf ein ähnliches Thema wieder gebracht werden
 SIMILARITY_THRESHOLD = 3 # Mindestanzahl gemeinsamer Schlüsselwörter für "ähnliches Thema"
@@ -330,7 +331,7 @@ DEINE AUFGABE:
 2. Bevorzuge thematische Vielfalt – nicht zwei sehr ähnliche Meldungen. Bei heißen Themen darf ein Thema tiefer behandelt werden.
 3. Erstelle daraus ein vollständiges Podcast-Skript (Ziel: 5 Minuten, max. 10 Minuten wenn Qualität es erfordert).
 4. Halte dich strikt an die Moderations-Richtlinien inkl. Break-Tags.
-5. Nenne bei jeder Meldung Quelle und Datum im Format TT.MM.JJJJ.
+5. Nenne bei jeder Meldung die Quelle und das Datum. Datumsangaben immer ausschreiben (z.B. "vierzehnter April zweitausendsechsundzwanzig"), NIEMALS numerisch.
 6. Nur fließender Sprechtext – kein Markdown, keine Formatierung, keine Aufzählungszeichen.
 7. Erkläre jeden Artikel ausführlich: Was passiert? Warum ist es wichtig? Was sind die Konsequenzen?
 8. WICHTIG: Beginne deine Antwort mit genau einer Zeile im Format:
@@ -440,12 +441,11 @@ Keine einleitenden Sätze, keine Meta-Kommentare. Das erste Wort muss "Herzlich 
     end_marker = "auf dem Laufenden!"
     if end_marker in corrected_script:
         pos = corrected_script.index(end_marker) + len(end_marker)
-        # End-Quotes oder nachfolgenden Break-Tag einschließen
-        if len(corrected_script) > pos and corrected_script[pos:pos+1] == '"':
-            pos += 1
-        # Zusätzlichen Break-Tag einschließen, falls vorhanden
-        if len(corrected_script) >= pos + 20 and '<break time="1s"/>' in corrected_script[pos:pos+20]:
-            corrected_script = corrected_script[:corrected_script.index('<break time="1s"/>', pos) + 20]
+        # Nachfolgenden Break-Tag einschließen (mit Toleranz für Whitespace/Anführungszeichen)
+        remaining = corrected_script[pos:pos+50]
+        break_tag = '<break time="1s"/>'
+        if break_tag in remaining:
+            corrected_script = corrected_script[:pos + remaining.index(break_tag) + len(break_tag)]
         else:
             corrected_script = corrected_script[:pos]
 
@@ -565,11 +565,8 @@ def combine_with_jingle(speech_path: str, output_path: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Podcast-Metadaten (einmalig anpassen)
+# Podcast-Metadaten
 # ---------------------------------------------------------------------------
-PODCAST_AUTHOR      = "Energie am Morgen"
-PODCAST_EMAIL       = ""          # Optional: deine E-Mail für Apple Podcasts
-PODCAST_CATEGORY    = "News"      # iTunes-Hauptkategorie
 PODCAST_EXPLICIT    = "false"
 
 
