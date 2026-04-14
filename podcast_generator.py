@@ -24,6 +24,7 @@ import time
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from email.utils import formatdate
+from calendar import timegm
 
 import feedparser
 import anthropic
@@ -331,7 +332,7 @@ DEINE AUFGABE:
 2. Bevorzuge thematische Vielfalt – nicht zwei sehr ähnliche Meldungen. Bei heißen Themen darf ein Thema tiefer behandelt werden.
 3. Erstelle daraus ein vollständiges Podcast-Skript (Ziel: 5 Minuten, max. 10 Minuten wenn Qualität es erfordert).
 4. Halte dich strikt an die Moderations-Richtlinien inkl. Break-Tags.
-5. Nenne bei jeder Meldung die Quelle und das Datum. Datumsangaben immer ausschreiben (z.B. "vierzehnter April zweitausendsechsundzwanzig"), NIEMALS numerisch.
+5. Nenne bei jeder Meldung die Quelle. Datumsangaben immer ausschreiben (z.B. "vierzehnter April zweitausendsechsundzwanzig"), NIEMALS numerisch.
 6. Nur fließender Sprechtext – kein Markdown, keine Formatierung, keine Aufzählungszeichen.
 7. Erkläre jeden Artikel ausführlich: Was passiert? Warum ist es wichtig? Was sind die Konsequenzen?
 8. WICHTIG: Beginne deine Antwort mit genau einer Zeile im Format:
@@ -570,21 +571,30 @@ def combine_with_jingle(speech_path: str, output_path: str) -> None:
 PODCAST_EXPLICIT    = "false"
 
 
-def update_rss_feed(
-    episode_title: str,
-    episode_desc: str,
-    audio_filename: str,
-    audio_size_bytes: int,
-) -> None:
-    """Fügt die neue Episode dem RSS-Feed hinzu – Spotify & Apple ready."""
-    print("📡 RSS-Feed aktualisieren ...")
+def rebuild_rss_feed() -> None:
+    """Baut den RSS-Feed komplett neu aus allen MP3-Dateien in docs/episodes/.
+
+    Bei jedem Run wird der Feed von Grund auf generiert, sodass er immer
+    exakt die Episoden enthält, die als MP3 im Verzeichnis liegen.
+    Zusatzinfos (Beschreibung) werden aus der gleichnamigen .txt-Datei gelesen,
+    falls vorhanden.
+    """
+    print("📡 RSS-Feed neu aufbauen ...")
+    episodes_dir = Path("docs/episodes")
     feed_path = Path("docs/feed.xml")
     feed_path.parent.mkdir(parents=True, exist_ok=True)
 
-    audio_url = f"{base_url()}/episodes/{audio_filename}"
+    # Alle MP3s finden und nach Datum sortieren (älteste zuerst → Episode #1)
+    mp3_files = sorted(episodes_dir.glob("*.mp3"))
+    if not mp3_files:
+        print("   ⚠️  Keine MP3-Dateien in docs/episodes/ gefunden – Feed wird nicht erstellt.")
+        return
+
     cover_url = f"{base_url()}/cover.jpg"
-    pub_date  = formatdate(localtime=False)
     itunes_ns = "http://www.itunes.com/dtds/podcast-1.0.dtd"
+
+    ET.register_namespace("itunes", itunes_ns)
+    ET.register_namespace("podcast", "https://podcastindex.org/namespace/1.0")
 
     def itag(parent, name, text=None, **attrs):
         el = ET.SubElement(parent, f"itunes:{name}")
@@ -594,102 +604,100 @@ def update_rss_feed(
             el.set(k, v)
         return el
 
-    # Namespace immer zuerst registrieren – vor dem Parsen
-    ET.register_namespace("itunes", itunes_ns)
-    ET.register_namespace("podcast", "https://podcastindex.org/namespace/1.0")
+    # --- Channel aufbauen ---
+    root = ET.Element("rss")
+    root.set("version", "2.0")
+    root.set("xmlns:itunes", itunes_ns)
+    channel = ET.SubElement(root, "channel")
 
-    if feed_path.exists():
+    ET.SubElement(channel, "title").text       = PODCAST_TITLE
+    ET.SubElement(channel, "link").text        = base_url()
+    ET.SubElement(channel, "description").text = PODCAST_DESC
+    ET.SubElement(channel, "language").text    = PODCAST_LANG
+
+    itag(channel, "author",   PODCAST_AUTHOR)
+    itag(channel, "explicit", PODCAST_EXPLICIT)
+    itag(channel, "type",     "episodic")
+    cat = itag(channel, "category")
+    cat.set("text", PODCAST_CATEGORY)
+    img = itag(channel, "image")
+    img.set("href", cover_url)
+
+    if PODCAST_EMAIL:
+        owner = ET.SubElement(channel, f"itunes:owner")
+        ET.SubElement(owner, f"itunes:name").text  = PODCAST_AUTHOR
+        ET.SubElement(owner, f"itunes:email").text = PODCAST_EMAIL
+
+    image_el = ET.SubElement(channel, "image")
+    ET.SubElement(image_el, "url").text   = cover_url
+    ET.SubElement(image_el, "title").text = PODCAST_TITLE
+    ET.SubElement(image_el, "link").text  = base_url()
+
+    # --- Episoden hinzufügen (neueste zuerst im Feed, älteste = Episode #1) ---
+    for episode_number, mp3_path in enumerate(mp3_files, start=1):
+        date_str = mp3_path.stem  # z.B. "2026-04-14"
+
+        # Datum parsen
         try:
-            tree = ET.parse(feed_path)
-            root = tree.getroot()
-            channel = root.find("channel")
-            episode_number = len(channel.findall("item")) + 1
-        except ET.ParseError as e:
-            print(f"⚠️  feed.xml beschädigt ({e}) – erstelle neu.")
-            feed_path.unlink()
-            root = None
+            ep_date = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+        except ValueError:
+            print(f"   ⚠️  Dateiname '{mp3_path.name}' hat kein gültiges Datum – überspringe.")
+            continue
 
-    if not feed_path.exists():
-        root = ET.Element("rss")
-        root.set("version", "2.0")
-        root.set("xmlns:itunes", itunes_ns)
-        channel = ET.SubElement(root, "channel")
+        ep_title = f"{PODCAST_TITLE} – {ep_date.strftime('%d.%m.%Y')}"
+        audio_url = f"{base_url()}/episodes/{mp3_path.name}"
+        audio_size = mp3_path.stat().st_size
 
-        # Pflichtfelder
-        ET.SubElement(channel, "title").text       = PODCAST_TITLE
-        ET.SubElement(channel, "link").text        = base_url()
-        ET.SubElement(channel, "description").text = PODCAST_DESC
-        ET.SubElement(channel, "language").text    = PODCAST_LANG
+        # pubDate: RFC 2822 Format, 06:00 UTC (≈ Veröffentlichungszeit)
+        pub_date = formatdate(timeval=timegm(ep_date.replace(hour=6).timetuple()), localtime=False)
 
-        # iTunes / Spotify Metadaten
-        itag(channel, "author",   PODCAST_AUTHOR)
-        itag(channel, "explicit", PODCAST_EXPLICIT)
-        itag(channel, "type",     "episodic")
-        cat = itag(channel, "category")
-        cat.set("text", PODCAST_CATEGORY)
-        img = itag(channel, "image")
-        img.set("href", cover_url)
+        # Beschreibung aus .txt-Datei lesen, falls vorhanden
+        txt_path = episodes_dir / f"{date_str}.txt"
+        if txt_path.exists():
+            script_text = txt_path.read_text(encoding="utf-8").strip()
+            # Erste 300 Zeichen des Skripts als Beschreibung (ohne Break-Tags)
+            desc_text = re.sub(r'<break[^>]*/?>', '', script_text)[:300].strip()
+            if len(script_text) > 300:
+                desc_text += " ..."
+            episode_desc = desc_text
+        else:
+            episode_desc = f"Die wichtigsten Nachrichten zu erneuerbaren Energien vom {ep_date.strftime('%d.%m.%Y')}."
 
-        if PODCAST_EMAIL:
-            owner = ET.SubElement(channel, "itunes:owner")
-            ET.SubElement(owner, "itunes:name").text  = PODCAST_AUTHOR
-            ET.SubElement(owner, "itunes:email").text = PODCAST_EMAIL
+        # Item erstellen
+        item = ET.SubElement(channel, "item")
+        ET.SubElement(item, "title").text       = ep_title
+        ET.SubElement(item, "description").text = episode_desc
+        ET.SubElement(item, "pubDate").text     = pub_date
+        guid_el = ET.SubElement(item, "guid")
+        guid_el.text = audio_url
+        guid_el.set("isPermaLink", "true")
+        ET.SubElement(item, "link").text        = audio_url
 
-        # Cover auch als RSS-Standard-Bild
-        image_el = ET.SubElement(channel, "image")
-        ET.SubElement(image_el, "url").text   = cover_url
-        ET.SubElement(image_el, "title").text = PODCAST_TITLE
-        ET.SubElement(image_el, "link").text  = base_url()
+        enclosure = ET.SubElement(item, "enclosure")
+        enclosure.set("url",    audio_url)
+        enclosure.set("type",   "audio/mpeg")
+        enclosure.set("length", str(audio_size))
 
-        episode_number = 1
+        itag(item, "title",       ep_title)
+        itag(item, "summary",     episode_desc)
+        itag(item, "explicit",    PODCAST_EXPLICIT)
+        itag(item, "episodeType", "full")
+        itag(item, "episode",     str(episode_number))
+        ep_img = itag(item, "image")
+        ep_img.set("href", cover_url)
 
-    # Episode Item
-    item = ET.Element("item")
-    ET.SubElement(item, "title").text       = episode_title
-    ET.SubElement(item, "description").text = episode_desc
-    ET.SubElement(item, "pubDate").text     = pub_date
-    guid_el = ET.SubElement(item, "guid")
-    guid_el.text = audio_url
-    guid_el.set("isPermaLink", "true")
-    ET.SubElement(item, "link").text        = audio_url
-
-    enclosure = ET.SubElement(item, "enclosure")
-    enclosure.set("url",    audio_url)
-    enclosure.set("type",   "audio/mpeg")
-    enclosure.set("length", str(audio_size_bytes))
-
-    # iTunes Episode-Tags
-    itag(item, "title",       episode_title)
-    itag(item, "summary",     episode_desc)
-    itag(item, "explicit",    PODCAST_EXPLICIT)
-    itag(item, "episodeType", "full")
-    itag(item, "episode",     str(episode_number))
-    ep_img = itag(item, "image")
-    ep_img.set("href", cover_url)
-
-    # Duplikat-Prüfung: Keine Episode doppelt einfügen
-    existing_items = channel.findall("item")
-    for existing in existing_items:
-        existing_guid = existing.find("guid")
-        if existing_guid is not None and existing_guid.text == audio_url:
-            print("   ⚠️  Episode bereits im Feed vorhanden – kein Duplikat hinzugefügt.")
-            ET.indent(root, space="  ")
-            tree = ET.ElementTree(root)
-            tree.write(feed_path, encoding="unicode", xml_declaration=True)
-            return
-
-    if existing_items:
-        channel.insert(list(channel).index(existing_items[0]), item)
-    else:
+    # Episoden im Channel: neueste zuerst (RSS-Standard)
+    items = channel.findall("item")
+    non_items = [el for el in channel if el.tag != "item"]
+    for item in items:
+        channel.remove(item)
+    for item in reversed(items):  # reversed: älteste waren zuerst, jetzt neueste zuerst
         channel.append(item)
-
-    # Alle Episoden dauerhaft im Feed behalten – kein Limit
-    # (Spotify, Apple & Co. zeigen alle Folgen an)
 
     ET.indent(root, space="  ")
     tree = ET.ElementTree(root)
     tree.write(feed_path, encoding="unicode", xml_declaration=True)
-    print(f"   feed.xml gespeichert ({len(channel.findall('item'))} Episoden, Episode #{episode_number}).")
+    print(f"   feed.xml gespeichert ({len(items)} Episoden).")
 
 
 # ---------------------------------------------------------------------------
@@ -756,9 +764,8 @@ def main() -> None:
     memory = add_to_archive(selected_articles, memory, episode_title)
     save_memory(memory)
 
-    audio_size = Path(audio_path).stat().st_size
-    episode_desc = f"Die wichtigsten Nachrichten zu erneuerbaren Energien vom {today.strftime('%d.%m.%Y')}."
-    update_rss_feed(episode_title, episode_desc, audio_filename, audio_size)
+    # RSS-Feed komplett neu aufbauen (scannt alle MP3s in docs/episodes/)
+    rebuild_rss_feed()
 
     print("\n✅ Fertig!")
     print(f"   Richtlinien : {PROMPT_FILE}")
