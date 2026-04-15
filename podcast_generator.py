@@ -17,6 +17,7 @@ Datenbank-Logik:
 """
 
 import datetime
+import sys
 import json
 import os
 import re
@@ -35,10 +36,10 @@ import requests as req_lib
 # ---------------------------------------------------------------------------
 
 CLAUDE_API_KEY = os.environ["CLAUDE_API_KEY"]
-ELEVENLABS_API_KEY = os.environ["ELEVENLABS_API_KEY"]
+ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "")  # Im Test-Modus nicht benötigt
 ELEVENLABS_VOICE_ID = os.environ.get("ELEVENLABS_VOICE_ID", "EXAVITQu4vr4xnSDxMaL")  # Default: Adam
-GITHUB_USERNAME = os.environ["GITHUB_USERNAME"]
-GITHUB_REPO_NAME = os.environ["GITHUB_REPO_NAME"]
+GITHUB_USERNAME = os.environ.get("GITHUB_USERNAME", "")
+GITHUB_REPO_NAME = os.environ.get("GITHUB_REPO_NAME", "")
 PODCAST_TITLE = "Energie am Morgen"
 PODCAST_DESC = "Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen"
 PODCAST_LANG = "de"
@@ -786,5 +787,56 @@ def main() -> None:
     print(f"   URL         : {base_url()}/episodes/{audio_filename}")
 
 
+# ---------------------------------------------------------------------------
+# Test-Modus: --test
+# ---------------------------------------------------------------------------
+
+def main_test() -> None:
+    """
+    Testmodus: Führt den kompletten Skript-Generierungsprozess durch
+    (News abrufen → Claude-Skript → Faktencheck), speichert das Ergebnis
+    als .txt in test-output/ und beendet sich dann.
+
+    Kein ElevenLabs, kein Audio, kein Archiv, kein Memory-Update, kein RSS.
+    """
+    today = datetime.date.today()
+    date_str = today.strftime("%Y-%m-%d")
+
+    test_dir = Path("test-output")
+    test_dir.mkdir(parents=True, exist_ok=True)
+    output_path = test_dir / f"skript_{date_str}.txt"
+
+    print("🧪 TEST-MODUS – kein Audio, kein Archiv, kein Memory-Update")
+    print(f"   Ausgabedatei: {output_path}")
+    print()
+
+    # Speicher nur lesend laden (für Sperrfrist-Check), aber NICHT speichern
+    memory = load_memory()
+    prompt_config = load_prompt_config()
+    articles = fetch_all_news(memory)
+    hot_topics = get_hot_topics(memory)
+    if hot_topics:
+        print(f"🔥 Aktuelle Hot-Topics: {', '.join(hot_topics)}")
+
+    script, selected_indices = generate_script(articles, prompt_config, hot_topics)
+
+    if selected_indices:
+        selected_articles = [articles[i] for i in selected_indices]
+    else:
+        selected_articles = articles  # Fallback
+
+    script = fact_check_script(script, selected_articles, prompt_config)
+
+    output_path.write_text(script, encoding="utf-8")
+
+    print()
+    print("✅ Test abgeschlossen – Skript gespeichert (kein Audio, kein Commit):")
+    print(f"   {output_path}")
+    print(f"   Wörter: {len(script.split())}")
+
+
 if __name__ == "__main__":
-    main()
+    if "--test" in sys.argv:
+        main_test()
+    else:
+        main()
