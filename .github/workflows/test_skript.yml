@@ -1,0 +1,37 @@
+name: Test Skript-Generierung
+
+on:
+  workflow_dispatch: # Erlaubt es, diesen Workflow manuell über das "Actions" Tab auf GitHub zu starten
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  test-skript:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python 3.12 einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Testlauf: Skript generieren (ohne Audio)
+        env:
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          # Kein ELEVENLABS_API_KEY benötigt!
+        run: python podcast_generator.py --test
+
+      - name: Generiertes Skript hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-skript-ausgabe
+          path: test-output/
+          retention-days: 7 # Behält den Download für 7 Tage
