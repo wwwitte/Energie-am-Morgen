@@ -3,15 +3,11 @@
   <channel>
     <title>Energie am Morgen</title>
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
-    <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes and Disclaimer: https://tinyurl.com/energieammorgen</description>
+    <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet.</description>
     <language>de</language>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <itunes:owner>
-    <itunes:name>Energie am Morgen</itunes:name>
-    <itunes:email>energieammorgen@gmail.com</itunes:email>
-    </itunes:owner>
     <itunes:category text="News" />
     <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
     <image>
@@ -19,5 +15,209 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 15.04.2026</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den aktuellen Stand der deutschen Energiewende, eine wichtige Meldung rund um die Siemens Energy Aktie und warum die gemeinschaftliche Gebäudeversorgung mit Solarstrom bei den mei ...</description>
+      <pubDate>Wed, 15 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-15.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-15.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-15.mp3" type="audio/mpeg" length="5289734" />
+      <itunes:title>Energie am Morgen – 15.04.2026</itunes:title>
+      <itunes:summary>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den aktuellen Stand der deutschen Energiewende, eine wichtige Meldung rund um die Siemens Energy Aktie und warum die gemeinschaftliche Gebäudeversorgung mit Solarstrom bei den mei ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>13</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 14.04.2026</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum Windkraft der Schlüssel zu Deutschlands Klimaneutralität bis zweitausendvierundvierzig sein soll, welche Windaktien nach Jahren des Kursrutsches wieder auf dem Radar von In ...</description>
+      <pubDate>Tue, 14 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-14.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-14.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-14.mp3" type="audio/mpeg" length="6297016" />
+      <itunes:title>Energie am Morgen – 14.04.2026</itunes:title>
+      <itunes:summary>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum Windkraft der Schlüssel zu Deutschlands Klimaneutralität bis zweitausendvierundvierzig sein soll, welche Windaktien nach Jahren des Kursrutsches wieder auf dem Radar von In ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>12</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 13.04.2026</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum Deutschlands Stromnetze an ihre Grenzen stoßen, welchen Risiken ein teurer Energieplan der neuen Bundesregierung birgt und warum die Wärmewende mehr ist als nur Klimaschutz ...</description>
+      <pubDate>Mon, 13 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-13.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-13.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-13.mp3" type="audio/mpeg" length="6974110" />
+      <itunes:title>Energie am Morgen – 13.04.2026</itunes:title>
+      <itunes:summary>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum Deutschlands Stromnetze an ihre Grenzen stoßen, welchen Risiken ein teurer Energieplan der neuen Bundesregierung birgt und warum die Wärmewende mehr ist als nur Klimaschutz ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>11</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 12.04.2026</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die strategische Debatte um Speicher und Netze als Kern der Energiewende, die Frage ob RWE mit seinem Umbau zu erneuerbaren Energien langfristig eine attraktive Aktie bleibt, und ...</description>
+      <pubDate>Sun, 12 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-12.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-12.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-12.mp3" type="audio/mpeg" length="6635145" />
+      <itunes:title>Energie am Morgen – 12.04.2026</itunes:title>
+      <itunes:summary>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die strategische Debatte um Speicher und Netze als Kern der Energiewende, die Frage ob RWE mit seinem Umbau zu erneuerbaren Energien langfristig eine attraktive Aktie bleibt, und ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>10</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 11.04.2026</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir ein Modellprojekt aus der Lausitz, das zeigt wie grüne Wärme bezahlbar werden kann, was das für die Wärmewende in ganz Deutschland bedeutet und welche strukturellen Fragen dabei n ...</description>
+      <pubDate>Sat, 11 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-11.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-11.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-11.mp3" type="audio/mpeg" length="3891662" />
+      <itunes:title>Energie am Morgen – 11.04.2026</itunes:title>
+      <itunes:summary>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir ein Modellprojekt aus der Lausitz, das zeigt wie grüne Wärme bezahlbar werden kann, was das für die Wärmewende in ganz Deutschland bedeutet und welche strukturellen Fragen dabei n ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>9</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 10.04.2026</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Beteiligung des US-Finanzriesen Blackstone an einem deutschen Solarunternehmen, die Debatte rund um die neue Bundesenergieministerin Katherina Reiche und einen lokalen Widerst ...</description>
+      <pubDate>Fri, 10 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-10.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-10.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-10.mp3" type="audio/mpeg" length="4621418" />
+      <itunes:title>Energie am Morgen – 10.04.2026</itunes:title>
+      <itunes:summary>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Beteiligung des US-Finanzriesen Blackstone an einem deutschen Solarunternehmen, die Debatte rund um die neue Bundesenergieministerin Katherina Reiche und einen lokalen Widerst ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>8</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 09.04.2026</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die unterschätzte Rolle der Wasserkraft in Deutschland, neue Chancen für Geothermie als Wärmequelle und warum der Stromnetzausbau zum entscheidenden Engpass wird.
+
+Das Energie &amp; M ...</description>
+      <pubDate>Thu, 09 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-09.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-09.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-09.mp3" type="audio/mpeg" length="4352253" />
+      <itunes:title>Energie am Morgen – 09.04.2026</itunes:title>
+      <itunes:summary>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die unterschätzte Rolle der Wasserkraft in Deutschland, neue Chancen für Geothermie als Wärmequelle und warum der Stromnetzausbau zum entscheidenden Engpass wird.
+
+Das Energie &amp; M ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>7</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 08.04.2026</title>
+      <description># ENERGIE AM MORGEN – PODCAST-SKRIPT
+## 08. April 2026
+
+---
+
+Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir neue Umfragen zur Energieunabhängigkeit, die Auswirkungen von Windkraftanlagen auf Immobilienwerte und einen Wechsel i ...</description>
+      <pubDate>Wed, 08 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-08.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-08.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-08.mp3" type="audio/mpeg" length="3965222" />
+      <itunes:title>Energie am Morgen – 08.04.2026</itunes:title>
+      <itunes:summary># ENERGIE AM MORGEN – PODCAST-SKRIPT
+## 08. April 2026
+
+---
+
+Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir neue Umfragen zur Energieunabhängigkeit, die Auswirkungen von Windkraftanlagen auf Immobilienwerte und einen Wechsel i ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>6</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 07.04.2026</title>
+      <description>Guten Morgen, heute ist Donnerstag, der siebte April. Wir schauen heute auf eine wichtige Entwicklung im Bereich der Solarenergie, eine Herausforderung im Stromnetz und wie die Windkraft in Deutschland vorankommt.
+
+Laut einer Meldung von adac.de gibt es für Hausbesitzer in Deutschland ab diesem Jahr ...</description>
+      <pubDate>Tue, 07 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-07.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-07.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-07.mp3" type="audio/mpeg" length="1501056" />
+      <itunes:title>Energie am Morgen – 07.04.2026</itunes:title>
+      <itunes:summary>Guten Morgen, heute ist Donnerstag, der siebte April. Wir schauen heute auf eine wichtige Entwicklung im Bereich der Solarenergie, eine Herausforderung im Stromnetz und wie die Windkraft in Deutschland vorankommt.
+
+Laut einer Meldung von adac.de gibt es für Hausbesitzer in Deutschland ab diesem Jahr ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>5</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 06.04.2026</title>
+      <description>Guten Morgen, heute ist der sechste April zweitausendsechsundzwanzig. Wir schauen heute auf einen neuen Rekord bei der Solarenergie, die Pläne der Bundesregierung für den Ausbau der Windkraft und was der aktuelle Netzausbau wirklich bedeutet.
+
+Zunächst einmal zur Solarenergie: Wie die Statista beric ...</description>
+      <pubDate>Mon, 06 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-06.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-06.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-06.mp3" type="audio/mpeg" length="1481664" />
+      <itunes:title>Energie am Morgen – 06.04.2026</itunes:title>
+      <itunes:summary>Guten Morgen, heute ist der sechste April zweitausendsechsundzwanzig. Wir schauen heute auf einen neuen Rekord bei der Solarenergie, die Pläne der Bundesregierung für den Ausbau der Windkraft und was der aktuelle Netzausbau wirklich bedeutet.
+
+Zunächst einmal zur Solarenergie: Wie die Statista beric ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>4</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 05.04.2026</title>
+      <description>Guten Morgen, ich begrüße Sie herzlich zum heutigen Nachrichten-Podcast "Energie Morgen" am fünften April zweitausendsechsundzwanzig. Heute sprechen wir über die aktuellen Entwicklungen in der Welt der erneuerbaren Energien, insbesondere in Deutschland. Wir werden uns mit dem aktuellen Strommix, den ...</description>
+      <pubDate>Sun, 05 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-05.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-05.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-05.mp3" type="audio/mpeg" length="1920960" />
+      <itunes:title>Energie am Morgen – 05.04.2026</itunes:title>
+      <itunes:summary>Guten Morgen, ich begrüße Sie herzlich zum heutigen Nachrichten-Podcast "Energie Morgen" am fünften April zweitausendsechsundzwanzig. Heute sprechen wir über die aktuellen Entwicklungen in der Welt der erneuerbaren Energien, insbesondere in Deutschland. Wir werden uns mit dem aktuellen Strommix, den ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>3</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 04.04.2026</title>
+      <description>Guten Tag und herzlich willkommen zum heutigen Podcast "Energie Morgen" am vierten April zweitausendsechsundzwanzig. Heute sprechen wir über einige der wichtigsten Entwicklungen im Bereich der erneuerbaren Energien in Deutschland. Wir werden uns mit dem aktuellen Stand des Strommixes in Deutschland ...</description>
+      <pubDate>Sat, 04 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-04.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-04.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-04.mp3" type="audio/mpeg" length="1776384" />
+      <itunes:title>Energie am Morgen – 04.04.2026</itunes:title>
+      <itunes:summary>Guten Tag und herzlich willkommen zum heutigen Podcast "Energie Morgen" am vierten April zweitausendsechsundzwanzig. Heute sprechen wir über einige der wichtigsten Entwicklungen im Bereich der erneuerbaren Energien in Deutschland. Wir werden uns mit dem aktuellen Stand des Strommixes in Deutschland ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>2</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
+    <item>
+      <title>Energie am Morgen – 03.04.2026</title>
+      <description>Guten Morgen und herzlich willkommen zum Nachrichten-Podcast "Energie Morgen". Heute ist der drei April zweitausendsechsundzwanzig. Wir blicken auf einen Tag, der wieder zahlreiche Entwicklungen im Bereich der erneuerbaren Energien in Deutschland mit sich bringt. In diesem Podcast werden wir uns mit ...</description>
+      <pubDate>Fri, 03 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-03.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-03.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-03.mp3" type="audio/mpeg" length="1713984" />
+      <itunes:title>Energie am Morgen – 03.04.2026</itunes:title>
+      <itunes:summary>Guten Morgen und herzlich willkommen zum Nachrichten-Podcast "Energie Morgen". Heute ist der drei April zweitausendsechsundzwanzig. Wir blicken auf einen Tag, der wieder zahlreiche Entwicklungen im Bereich der erneuerbaren Energien in Deutschland mit sich bringt. In diesem Podcast werden wir uns mit ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>1</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
   </channel>
 </rss>
