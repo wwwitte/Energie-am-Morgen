@@ -23,7 +23,7 @@ jobs:
       - name: Abhängigkeiten installieren
         run: pip install -r requirements.txt
 
-      - name: Testlauf: Skript generieren (ohne Audio)
+      - name: "Testlauf: Skript generieren (ohne Audio)"
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           # Kein ELEVENLABS_API_KEY benötigt!
