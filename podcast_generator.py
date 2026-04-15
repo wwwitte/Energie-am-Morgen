@@ -392,30 +392,39 @@ def fact_check_script(script: str, articles: list[dict], prompt_config: str) -> 
         for a in articles
     )
 
-    prompt = f"""Du bist der Chefredakteur des Podcasts "{PODCAST_TITLE}".
-Deine Aufgabe ist es, das vorliegende Podcast-Skript einer strengen Qualitäts- und Faktenprüfung zu unterziehen.
+    prompt = f"""Du bist der Korrekteur des Podcasts "{PODCAST_TITLE}".
+Deine einzige Aufgabe ist eine CHIRURGISCHE FAKTENPRÜFUNG – kein Lektorat, kein Umschreiben, keine Stilverbesserungen.
 
-=== ORIGINAL-NACHRICHTEN ===  
-Dies sind die tatsächlichen Nachrichten, auf denen das Skript basieren muss:
+=== ORIGINAL-NACHRICHTEN ===
 {news_text}
 
-=== GENERIERTES SKRIPT ===
-Hier ist das erstellte Skript, das du prüfen sollst:
+=== ZU PRÜFENDES SKRIPT ===
 ---
 {script}
 ---
 
-=== DEINE PRÜF-AUFTRÄGE ===
-1. Zahlen & Fakten: Vergleiche rigoros jede Zahl, Marge, Gigawatt/Megawatt-Angabe und Datumsangabe mit den Original-Nachrichten. Berichtige alles, was abweicht oder erfunden ("halluziniert") wurde.
-2. Quellen: Stelle sicher, dass die in den Nachrichten genannten Quellen auch korrekt im Skript erwähnt werden.
-3. Kein Informationsverlust: Wenn eine wichtige Zahl durch den Faktencheck korrigiert wird, passe den Satzbau an, aber behalte den Informationsgehalt bei.
-4. Richtlinien: Behalte die vorgegebenen Moderations-Richtlinien bei. (Kein Markdown, ausgeschriebene Zahlen, Break-Tags vorhanden, etc.)
+=== STRIKTE PRÜFREGELN ===
 
-=== MODERATIONS-RICHTLINIEN ===
-{prompt_config}
+WAS DU KORRIGIEREN DARFST (und musst):
+• Zahlen, die nicht mit den Original-Nachrichten übereinstimmen → auf den korrekten Wert aus der Quelle setzen.
+• Einheiten, die falsch sind (z. B. „Gigawatt" statt „Megawatt") → korrigieren.
+• Datumsangaben, die falsch sind → korrigieren. Datumsangaben müssen immer ausgeschrieben sein (z. B. „fünfzehnter April zweitausendsechsundzwanzig"), niemals numerisch.
+• Zahlen müssen immer ausgeschrieben sein (z. B. „drei Gigawatt" statt „3 GW") → falls numerisch, ausschreiben.
+• Quellennennung, die nachweislich falsch ist → korrigieren.
+• Wortlaut, der eine sachlich falsche Behauptung transportiert (z. B. „sinkt" statt „steigt") → nur den falschen Begriff ersetzen, sonst nichts anfassen.
 
-Gib ausschließlich das finale, korrigierte Skript als Text aus. 
-Keine einleitenden Sätze, keine Meta-Kommentare. Das erste Wort muss "Herzlich Willkommen" (oder ein <break time="1s"/> Tag) sein und es darf kein Markdown enthalten.
+WAS DU KEINESFALLS ÄNDERN DARFST:
+• Satzstruktur, Satzbau, Reihenfolge von Sätzen oder Absätzen.
+• Formulierungen, Wortwahl und Stil – auch wenn du es besser formulieren würdest.
+• Einordnungspassagen, Übergänge, Metaphern, Einleitungen, Outros.
+• Break-Tags (<break time="1s"/>), die bereits im Skript stehen.
+• Alles, was stilistisch oder journalistisch, aber nicht faktisch falsch ist.
+
+GOLDENE REGEL: Wenn eine Stelle keine nachweislich falsche Zahl, Einheit, kein falsches Datum und keine sachlich falsche Behauptung enthält – lass sie UNVERÄNDERT.
+
+Gib ausschließlich das geprüfte Skript als reinen Text aus.
+Keine einleitenden Sätze, keine Anmerkungen, keine Meta-Kommentare, kein Markdown.
+Das erste Element muss <break time="1s"/> gefolgt von „Herzlich Willkommen" sein.
 """
 
     response = client.messages.create(
