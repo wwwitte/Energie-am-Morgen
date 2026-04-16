@@ -276,11 +276,16 @@ def fetch_all_news(memory: dict) -> list[dict]:
                 skipped += 1
                 continue
 
+            # Veröffentlichungsdatum extrahieren
+            pub_struct = entry.get("published_parsed")
+            pub_date_str = time.strftime("%d.%m.%Y", pub_struct) if pub_struct else "Unbekannt"
+
             all_articles.append({
                 "topic":   topic,
                 "title":   title,
                 "summary": entry.get("summary", "")[:300],
                 "source":  entry.get("source", {}).get("title", ""),
+                "date":    pub_date_str,
                 "link":    resolve_url(entry.get("link", "")),
             })
             count += 1
@@ -306,7 +311,7 @@ def generate_script(articles: list[dict], prompt_config: str, hot_topics: list =
 
     datum = datetime.date.today().strftime("%d.%m.%Y")
     news_text = "\n".join(
-        f"{i+1}. [Themenbereich: {a['topic']}]"
+        f"{i+1}. [Datum: {a['date']}] [Themenbereich: {a['topic']}]"
         f"{' [Quelle: ' + a['source'] + ']' if a['source'] else ''}"
         f" {a['title']}: {a['summary']}"
         for i, a in enumerate(articles)
@@ -340,6 +345,8 @@ DEINE AUFGABE:
    AUSWAHL: X, Y, Z
    (wobei X, Y, Z die Nummern der oben aufgelisteten Artikel sind, die du ausgewählt hast)
    Danach folgt direkt das Skript ab "Herzlich Willkommen".
+
+9. ZEITLICHE EINORDNUNG: Nutze das [Datum] der Meldung nur zur korrekten zeitlichen Einordnung im Sprechtext (z. B. "gestern", "am Dienstag" oder "am [Datum]"). Lies niemals die Bezeichnung "[Datum: ...]" vor. Wenn eine Meldung vom Vortag ist, stelle dies klar heraus.
 
 VERFÜGBARE ARTIKEL:
 {news_text}"""
@@ -387,7 +394,7 @@ def fact_check_script(script: str, articles: list[dict], prompt_config: str) -> 
     client = anthropic.Anthropic(api_key=CLAUDE_API_KEY)
 
     news_text = "\n\n".join(
-        f"[Quelle: {a.get('source', 'Unbekannt')}]\n"
+        f"[Quelle: {a.get('source', 'Unbekannt')}] [Datum: {a.get('date', 'Unbekannt')}]\n"
         f"Titel: {a.get('title', '')}\n"
         f"Inhalt: {a.get('summary', '')}"
         for a in articles
