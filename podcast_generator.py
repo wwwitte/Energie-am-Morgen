@@ -303,9 +303,9 @@ def fetch_all_news(memory: dict) -> list[dict]:
     return all_articles
 
 
-def generate_script(articles: list[dict], prompt_config: str, hot_topics: list = None) -> tuple[str, list[int]]:
+def generate_script(articles: list[dict], prompt_config: str, hot_topics: list = None) -> tuple[str, list[int], str]:
     """Claude wählt die 3 spannendsten Themen und erstellt das Podcast-Skript.
-    Gibt (script, selected_indices) zurück – Indizes der gewählten Artikel."""
+    Gibt (script, selected_indices, title_tag) zurück."""
     print("✍️  Skript generieren (Claude wählt Top-3-Themen) ...")
     client = anthropic.Anthropic(api_key=CLAUDE_API_KEY)
 
@@ -341,9 +341,11 @@ DEINE AUFGABE:
 5. Nenne bei jeder Meldung die Quelle. Datumsangaben immer ausschreiben (z.B. "vierzehnter April zweitausendsechsundzwanzig"), NIEMALS numerisch.
 6. Nur fließender Sprechtext – kein Markdown, keine Formatierung, keine Aufzählungszeichen.
 7. Erkläre jeden Artikel ausführlich: Was passiert? Warum ist es wichtig? Was sind die Konsequenzen?
-8. WICHTIG: Beginne deine Antwort mit genau einer Zeile im Format:
+8. WICHTIG: Beginne deine Antwort mit genau zwei Zeilen im Format:
    AUSWAHL: X, Y, Z
-   (wobei X, Y, Z die Nummern der oben aufgelisteten Artikel sind, die du ausgewählt hast)
+   TITEL: Thema 1, Thema 2 & Thema 3
+   (AUSWAHL: Artikel-Nummern. TITEL: Kurz und knackig für den Episoden-Titel, ca. 50-80 Zeichen)
+
    Danach folgt direkt das Skript ab "Herzlich Willkommen".
 
 9. ZEITLICHE EINORDNUNG: Nutze das [Datum] der Meldung nur zur korrekten zeitlichen Einordnung im Sprechtext (z. B. "gestern", "am Dienstag" oder "am [Datum]"). Lies niemals die Bezeichnung "[Datum: ...]" vor. Wenn eine Meldung vom Vortag ist, stelle dies klar heraus.
@@ -358,17 +360,28 @@ VERFÜGBARE ARTIKEL:
     )
     raw = response.content[0].text.strip()
 
-    # AUSWAHL-Zeile parsen: welche Artikel hat Claude gewählt?
+    # Metadaten-Zeilen parsen (AUSWAHL und TITEL)
     selected_indices = []
-    first_line = raw.split("\n")[0] if raw else ""
-    if first_line.startswith("AUSWAHL:"):
-        raw = "\n".join(raw.split("\n")[1:]).strip()
-        try:
-            indices = [int(x.strip()) - 1 for x in first_line.split(":")[1].split(",")]
-            selected_indices = [i for i in indices if 0 <= i < len(articles)]
-            print(f"   Claude hat Artikel {[i+1 for i in selected_indices]} gewählt.")
-        except (ValueError, IndexError):
-            print("   ⚠️  AUSWAHL-Zeile konnte nicht geparst werden.")
+    title_tag = ""
+    lines = raw.split("\n")
+    cleaned_lines = []
+    
+    for line in lines:
+        if line.startswith("AUSWAHL:"):
+            try:
+                indices = [int(x.strip()) - 1 for x in line.split(":")[1].split(",")]
+                selected_indices = [i for i in indices if 0 <= i < len(articles)]
+                print(f"   Claude hat Artikel {[i+1 for i in selected_indices]} gewählt.")
+            except (ValueError, IndexError):
+                print("   ⚠️  AUSWAHL-Zeile konnte nicht geparst werden.")
+        elif line.startswith("TITEL:"):
+            title_tag = line.replace("TITEL:", "").strip()
+            print(f"   Vorgeschlagener Titel: {title_tag}")
+        else:
+            cleaned_lines.append(line)
+            
+    raw = "\n".join(cleaned_lines).strip()
+
     if not selected_indices:
         print("   ⚠️  Konnte gewählte Artikel nicht ermitteln – alle werden archiviert.")
 
@@ -385,7 +398,7 @@ VERFÜGBARE ARTIKEL:
 
     script = raw.strip()
     print(f"   Skript generiert ({len(script.split())} Wörter).")
-    return script, selected_indices
+    return script, selected_indices, title_tag
 
 
 def fact_check_script(script: str, articles: list[dict], prompt_config: str) -> str:
@@ -668,10 +681,22 @@ def rebuild_rss_feed() -> None:
         # pubDate: RFC 2822 Format, 06:00 UTC (≈ Veröffentlichungszeit)
         pub_date = formatdate(timeval=timegm(ep_date.replace(hour=6).timetuple()), localtime=False)
 
-        # Beschreibung aus .txt-Datei lesen, falls vorhanden
+        # Beschreibung und Titel aus .txt-Datei lesen, falls vorhanden
         txt_path = episodes_dir / f"{date_str}.txt"
         if txt_path.exists():
-            script_text = txt_path.read_text(encoding="utf-8").strip()
+            full_txt = txt_path.read_text(encoding="utf-8").strip()
+            if "===" in full_txt:
+                parts = full_txt.split("===", 1)
+                meta = parts[0].strip()
+                script_text = parts[1].strip()
+                
+                # Titel aus Meta-Informationen extrahieren
+                for line in meta.splitlines():
+                    if line.startswith("TITEL:"):
+                        ep_title = f"{PODCAST_TITLE} – {ep_date.strftime('%d.%m.%Y')}: {line.replace('TITEL:', '').strip()}"
+            else:
+                script_text = full_txt
+            
             # Erste 300 Zeichen des Skripts als Beschreibung (ohne Break-Tags)
             desc_text = re.sub(r'<break[^>]*/?>', '', script_text)[:300].strip()
             if len(script_text) > 300:
@@ -754,7 +779,7 @@ def main() -> None:
     hot_topics = get_hot_topics(memory)
     if hot_topics:
         print(f"🔥 Aktuelle Hot-Topics: {', '.join(hot_topics)}")
-    script, selected_indices = generate_script(articles, prompt_config, hot_topics)
+    script, selected_indices, title_tag = generate_script(articles, prompt_config, hot_topics)
 
     # Relevante Artikel für Archiv und Faktencheck auswählen
     if selected_indices:
@@ -765,7 +790,13 @@ def main() -> None:
     # Faktencheck-Schleife
     script = fact_check_script(script, selected_articles, prompt_config)
 
-    script_path.write_text(script, encoding="utf-8")
+    # Datei-Inhalt vorbereiten (Metadaten + Skript)
+    file_content = ""
+    if title_tag:
+        file_content += f"TITEL: {title_tag}\n===\n"
+    file_content += script
+    
+    script_path.write_text(file_content, encoding="utf-8")
 
     # Schritt 1: Nur Sprache generieren (temporäre Datei)
     speech_path = str(episodes_dir / f"{date_str}_speech.mp3")
@@ -825,7 +856,7 @@ def main_test() -> None:
     if hot_topics:
         print(f"🔥 Aktuelle Hot-Topics: {', '.join(hot_topics)}")
 
-    script, selected_indices = generate_script(articles, prompt_config, hot_topics)
+    script, selected_indices, title_tag = generate_script(articles, prompt_config, hot_topics)
 
     if selected_indices:
         selected_articles = [articles[i] for i in selected_indices]
@@ -834,7 +865,13 @@ def main_test() -> None:
 
     script = fact_check_script(script, selected_articles, prompt_config)
 
-    output_path.write_text(script, encoding="utf-8")
+    # Datei-Inhalt vorbereiten (Metadaten + Skript)
+    file_content = ""
+    if title_tag:
+        file_content += f"TITEL: {title_tag}\n===\n"
+    file_content += script
+
+    output_path.write_text(file_content, encoding="utf-8")
 
     print()
     print("✅ Test abgeschlossen – Skript gespeichert (kein Audio, kein Commit):")
