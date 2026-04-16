@@ -3,7 +3,7 @@
   <channel>
     <title>Energie am Morgen</title>
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
-    <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet.</description>
+    <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
@@ -15,5 +15,27 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 16.04.2026</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir bundesweite Demonstrationen für die Energiewende, die Beschäftigungszahlen der Offshore-Windbranche und einen globalen Vergleich beim Stromnetzausbau.
+
+
+
+ZDFheute berichtet heute ...</description>
+      <pubDate>Thu, 16 Apr 2026 06:00:00 -0000</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-16.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-16.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-16.mp3" type="audio/mpeg" length="6530655" />
+      <itunes:title>Energie am Morgen – 16.04.2026</itunes:title>
+      <itunes:summary>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir bundesweite Demonstrationen für die Energiewende, die Beschäftigungszahlen der Offshore-Windbranche und einen globalen Vergleich beim Stromnetzausbau.
+
+
+
+ZDFheute berichtet heute ...</itunes:summary>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>1</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover.jpg" />
+    </item>
   </channel>
 </rss>
