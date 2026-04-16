@@ -757,10 +757,10 @@ def main() -> None:
     # Cover-Bild in docs/ bereitstellen (wird vom RSS-Feed referenziert)
     cover_src = Path("cover.jpg")
     cover_dst = Path("docs/cover.jpg")
-    if cover_src.exists() and not cover_dst.exists():
+    if cover_src.exists():
         import shutil
         shutil.copy(cover_src, cover_dst)
-        print("🖼️  Cover-Bild nach docs/ kopiert.")
+        print("🖼️  Cover-Bild in docs/ aktualisiert.")
     elif not cover_dst.exists():
         print("⚠️  Kein cover.jpg gefunden – RSS-Feed referenziert fehlendes Cover-Bild.")
 
