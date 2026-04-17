@@ -22,6 +22,7 @@ import json
 import os
 import re
 import time
+import hashlib
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from email.utils import formatdate
@@ -202,6 +203,17 @@ def get_hot_topics(memory: dict, top_n: int = 5) -> list[str]:
 
 def base_url() -> str:
     return f"https://{GITHUB_USERNAME}.github.io/{GITHUB_REPO_NAME}"
+
+
+def get_file_hash(path: Path) -> str:
+    """Berechnet einen kurzen MD5-Hash einer Datei."""
+    if not path.exists():
+        return "default"
+    hasher = hashlib.md5()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            hasher.update(chunk)
+    return hasher.hexdigest()[:8]
 
 
 def load_prompt_config() -> str:
@@ -620,7 +632,13 @@ def rebuild_rss_feed() -> None:
         print("   ⚠️  Keine MP3-Dateien in docs/episodes/ gefunden – Feed wird nicht erstellt.")
         return
 
-    cover_url = f"{base_url()}/cover.jpg"
+    # Cover-URL ermitteln (suche nach cover_*.jpg in docs/)
+    cover_file = "cover.jpg"
+    for f in episodes_dir.parent.glob("cover_*.jpg"):
+        cover_file = f.name
+        break
+    
+    cover_url = f"{base_url()}/{cover_file}"
     itunes_ns = "http://www.itunes.com/dtds/podcast-1.0.dtd"
 
     ET.register_namespace("itunes", itunes_ns)
@@ -754,23 +772,40 @@ def main() -> None:
     episodes_dir = Path("docs/episodes")
     episodes_dir.mkdir(parents=True, exist_ok=True)
 
-    # Cover-Bild in docs/ bereitstellen (wird vom RSS-Feed referenziert)
+    # Cover-Bild in docs/ bereitstellen (mit Hash im Dateinamen gegen Caching)
     cover_src = Path("cover.jpg")
-    cover_dst = Path("docs/cover.jpg")
+    docs_dir = Path("docs")
     if cover_src.exists():
         import shutil
-        shutil.copy(cover_src, cover_dst)
-        print("🖼️  Cover-Bild in docs/ aktualisiert.")
-    elif not cover_dst.exists():
-        print("⚠️  Kein cover.jpg gefunden – RSS-Feed referenziert fehlendes Cover-Bild.")
+        img_hash = get_file_hash(cover_src)
+        cover_dst = docs_dir / f"cover_{img_hash}.jpg"
+        
+        # Nur kopieren wenn die Zieldatei noch nicht exakt so existiert
+        if not cover_dst.exists():
+            # Alte cover_*.jpg Dateien entfernen
+            for old_cover in docs_dir.glob("cover_*.jpg"):
+                try:
+                    old_cover.unlink()
+                except Exception:
+                    pass
+            
+            shutil.copy(cover_src, cover_dst)
+            print(f"🖼️  Cover-Bild aktualisiert: {cover_dst.name}")
+        else:
+            print(f"🖼️  Cover-Bild ist bereits aktuell ({cover_dst.name}).")
+    elif not any(docs_dir.glob("cover_*.jpg")):
+        print("⚠️  Kein cover.jpg gefunden – RSS-Feed referenziert möglicherweise fehlendes Cover-Bild.")
 
     audio_filename = f"{date_str}.mp3"
     audio_path = str(episodes_dir / audio_filename)
     script_path = episodes_dir / f"{date_str}.txt"
 
-    # Doppelte Ausführung verhindern (z.B. bei Sommer/Winterzeit-Doppel-Cron)
+    # Falls die Episode schon existiert, aktualisieren wir nur den Feed (z.B. für Cover-Updates)
     if Path(audio_path).exists():
-        print(f"⏭️  Episode für heute ({date_str}) existiert bereits – überspringe.")
+        print(f"⏭️  Episode für heute ({date_str}) existiert bereits.")
+        print("📡 Aktualisiere trotzdem RSS-Feed (für mögliche Cover- oder Metadaten-Updates) ...")
+        rebuild_rss_feed()
+        print("✅ Feed-Update abgeschlossen.")
         return
 
     memory = load_memory()
