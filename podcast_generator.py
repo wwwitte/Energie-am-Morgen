@@ -662,6 +662,9 @@ def rebuild_rss_feed() -> None:
     ET.SubElement(channel, "link").text        = base_url()
     ET.SubElement(channel, "description").text = PODCAST_DESC
     ET.SubElement(channel, "language").text    = PODCAST_LANG
+    
+    # lastBuildDate hilft Catchern zu erkennen, wann sich der Feed zuletzt geändert hat
+    ET.SubElement(channel, "lastBuildDate").text = formatdate(usegmt=True)
 
     itag(channel, "author",   PODCAST_AUTHOR)
     itag(channel, "explicit", PODCAST_EXPLICIT)
@@ -672,9 +675,9 @@ def rebuild_rss_feed() -> None:
     img.set("href", cover_url)
 
     if PODCAST_EMAIL:
-        owner = ET.SubElement(channel, f"itunes:owner")
-        ET.SubElement(owner, f"itunes:name").text  = PODCAST_AUTHOR
-        ET.SubElement(owner, f"itunes:email").text = PODCAST_EMAIL
+        owner = ET.SubElement(channel, "{%s}owner" % itunes_ns)
+        ET.SubElement(owner, "{%s}name" % itunes_ns).text  = PODCAST_AUTHOR
+        ET.SubElement(owner, "{%s}email" % itunes_ns).text = PODCAST_EMAIL
 
     image_el = ET.SubElement(channel, "image")
     ET.SubElement(image_el, "url").text   = cover_url
@@ -696,8 +699,8 @@ def rebuild_rss_feed() -> None:
         audio_url = f"{base_url()}/episodes/{mp3_path.name}"
         audio_size = mp3_path.stat().st_size
 
-        # pubDate: RFC 2822 Format, 06:00 UTC (≈ Veröffentlichungszeit)
-        pub_date = formatdate(timeval=timegm(ep_date.replace(hour=6).timetuple()), localtime=False)
+        # pubDate: RFC 2822 Format (GMT)
+        pub_date = formatdate(timeval=timegm(ep_date.replace(hour=6).timetuple()), localtime=False, usegmt=True)
 
         # Beschreibung und Titel aus .txt-Datei lesen, falls vorhanden
         txt_path = episodes_dir / f"{date_str}.txt"
@@ -739,7 +742,7 @@ def rebuild_rss_feed() -> None:
         enclosure.set("length", str(audio_size))
 
         itag(item, "title",       ep_title)
-        itag(item, "summary",     episode_desc)
+        itag(item, "author",      PODCAST_AUTHOR)
         itag(item, "explicit",    PODCAST_EXPLICIT)
         itag(item, "episodeType", "full")
         itag(item, "episode",     str(episode_number))
