@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sun, 19 Apr 2026 04:38:15 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2026 04:04:43 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -16,6 +16,20 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 20.04.2026: Deutschlands Solarstrom, Ørsted-Boom &amp; Wärmewende in Gefahr</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Deutschlands Photovoltaik-Ausbau und seine Rolle für den europäischen Energiemarkt, den Offshore-Windboom bei Ørsted trotz wachsender Kostenrisiken, und warum die Umsetzung der W ...</description>
+      <pubDate>Mon, 20 Apr 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-20.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-20.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-20.mp3" type="audio/mpeg" length="6544030" />
+      <itunes:title>Energie am Morgen – 20.04.2026: Deutschlands Solarstrom, Ørsted-Boom &amp; Wärmewende in Gefahr</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>5</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+    </item>
     <item>
       <title>Energie am Morgen – 19.04.2026: Klimastrafen, Kostendruck &amp; Protest – Deutschlands Energiewende unter Druck</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir drohende Milliardenstrafen für Deutschland beim Klimaschutz, eine Umfrage zur tiefen Spaltung der Gesellschaft bei den Energiewendekosten und die großen Proteste, die gestern durc ...</description>
