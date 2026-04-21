@@ -5,8 +5,9 @@ Ablauf:
   1. Datenbank laden (docs/memory.json) – Archiv + Sperrfrist-Logik
   2. Top-News aus mehreren Google News RSS-Feeds abrufen
   3. Moderations-Richtlinien aus prompt.txt laden
+  3b. Gesicherte Faktenbasis aus facts.txt laden (via update_facts.py aktuell gehalten)
   4. Claude (Anthropic) wählt die 3 spannendsten neuen Themen und erstellt das Skript
-  5. Faktencheck-Schleife: zweiter Claude-Call prüft Skript auf sachliche Fehler
+  5. Faktencheck-Schleife: zweiter Claude-Call prüft Skript gegen Faktenbasis und Originalartikel
   6. Audio via ElevenLabs erzeugen
   7. MP3 + RSS-Feed + Datenbank speichern (-> GitHub Pages)
 
@@ -45,6 +46,7 @@ PODCAST_TITLE = "Energie am Morgen"
 PODCAST_DESC = "Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen"
 PODCAST_LANG = "de"
 PROMPT_FILE = "prompt.txt"
+FACTS_FILE  = "facts.txt"                              # Gesicherte Faktenbasis – automatisch durch update_facts.py aktualisiert
 MEMORY_FILE = "docs/memory.json"
 PODCAST_AUTHOR   = "Energie am Morgen"
 PODCAST_EMAIL = os.environ.get("PODCAST_EMAIL", "")   # Für Apple Podcasts empfohlen
@@ -225,6 +227,17 @@ def load_prompt_config() -> str:
     return config
 
 
+def load_facts() -> str:
+    """Lädt die gesicherte Faktenbasis aus facts.txt."""
+    path = Path(FACTS_FILE)
+    if not path.exists():
+        print("⚠️  facts.txt nicht gefunden – Skript ohne gesicherte Faktenbasis.")
+        return ""
+    facts = path.read_text(encoding="utf-8").strip()
+    print(f"✅ Faktenbasis geladen ({len(facts.splitlines())} Zeilen).")
+    return facts
+
+
 def resolve_url(google_url: str) -> str:
     """
     Löst einen Google News Redirect-Link zur echten Original-URL auf.
@@ -336,8 +349,20 @@ def generate_script(articles: list[dict], prompt_config: str, hot_topics: list =
 HEISSE THEMEN DER LETZTEN 7 TAGE: {', '.join(hot_topics)}
 Artikel zu diesen Themen sollen bevorzugt und besonders ausführlich behandelt werden."""
 
+    # Faktenbasis laden falls verfügbar
+    facts_section = ""
+    facts_path = Path(FACTS_FILE)
+    if facts_path.exists():
+        facts_content = facts_path.read_text(encoding="utf-8").strip()
+        facts_section = f"""
+
+=== GESICHERTE FAKTENBASIS – NUR DIESE ZAHLEN UND ROLLEN VERWENDEN ===
+{facts_content}
+=== ENDE FAKTENBASIS ===
+WICHTIG: Verwende ausschließlich Zahlen aus der Faktenbasis. Erfinde keine Werte, Prozentzahlen oder Personenrollen."""
+
     prompt = f"""Du bist der Moderator des deutschen Nachrichten-Podcasts „{PODCAST_TITLE}".
-Heute ist der {datum}.{hot_topic_hint}
+Heute ist der {datum}.{hot_topic_hint}{facts_section}
 
 === MODERATIONS-RICHTLINIEN ===
 {prompt_config}
@@ -425,8 +450,22 @@ def fact_check_script(script: str, articles: list[dict], prompt_config: str) -> 
         for a in articles
     )
 
+    # Faktenbasis für den Check laden
+    facts_section_fc = ""
+    facts_path_fc = Path(FACTS_FILE)
+    if facts_path_fc.exists():
+        facts_content_fc = facts_path_fc.read_text(encoding="utf-8").strip()
+        facts_section_fc = f"""
+
+=== GESICHERTE FAKTENBASIS ===
+{facts_content_fc}
+=== ENDE FAKTENBASIS ===
+Prüfe Zahlen, Jahreszahlen und Personenrollen zuerst gegen diese Faktenbasis.
+Werte die nicht in der Faktenbasis stehen und im Artikel nicht belegt sind: entfernen oder als "nach Angaben des Artikels" kennzeichnen.
+"""
+
     prompt = f"""Du bist der Korrekteur des Podcasts "{PODCAST_TITLE}".
-Deine einzige Aufgabe ist eine CHIRURGISCHE FAKTENPRÜFUNG – kein Lektorat, kein Umschreiben, keine Stilverbesserungen.
+Deine einzige Aufgabe ist eine CHIRURGISCHE FAKTENPRÜFUNG – kein Lektorat, kein Umschreiben, keine Stilverbesserungen.{facts_section_fc}
 
 === ORIGINAL-NACHRICHTEN ===
 {news_text}
@@ -813,6 +852,7 @@ def main() -> None:
 
     memory = load_memory()
     prompt_config = load_prompt_config()
+    facts = load_facts()
     articles = fetch_all_news(memory)
     hot_topics = get_hot_topics(memory)
     if hot_topics:
@@ -889,6 +929,7 @@ def main_test() -> None:
     # Speicher nur lesend laden (für Sperrfrist-Check), aber NICHT speichern
     memory = load_memory()
     prompt_config = load_prompt_config()
+    facts = load_facts()
     articles = fetch_all_news(memory)
     hot_topics = get_hot_topics(memory)
     if hot_topics:
