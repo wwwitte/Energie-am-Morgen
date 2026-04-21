@@ -1,0 +1,56 @@
+# Energie am Morgen – Gesicherte Faktenbasis
+# Automatisch aktualisiert: 21.04.2026
+# Quellen: SMARD (Bundesnetzagentur), energy-charts.info (Fraunhofer ISE)
+# Manuelle Ergänzungen: statische Ziele und politische Rollen
+
+[AKTUELLE MESSWERTE – AUTOMATISCH AKTUALISIERT]
+PV installierte Leistung: 0.2 Gigawatt (energy-charts.info, Stand 2030)
+Windkraft Onshore installiert: 0.1 Gigawatt (energy-charts.info, Stand 2030)
+Windkraft Offshore installiert: 0.0 Gigawatt (energy-charts.info, Stand 2030)
+Windkraft gesamt installiert: 0.1 Gigawatt (energy-charts.info, Stand 2030)
+Erneuerbare-Anteil Strommix: 22.5 Prozent (energy-charts.info, Stand 03/2026)
+
+[KLIMAZIELE DEUTSCHLAND]
+Klimaneutralität Deutschland: 2045 (Klimaschutzgesetz)
+THG-Reduktion 2030 vs. 1990: 65 Prozent (Klimaschutzgesetz)
+THG-Reduktion 2040 vs. 1990: 88 Prozent (Klimaschutzgesetz)
+Erneuerbaren-Ziel 2030 Strommix: 80 Prozent (EEG 2023)
+
+[PHOTOVOLTAIK - GESETZLICHE ZIELE]
+PV Ausbauziel 2030: 215 Gigawatt (EEG 2023)
+PV notwendiger Zubau jährlich bis 2030: 22 Gigawatt (Fraunhofer ISE)
+Balkonsolaranlagen: ca. 4,2 Millionen (UBA, Stand 2025)
+
+[WINDKRAFT - GESETZLICHE ZIELE]
+Windkraft Ausbauziel Onshore 2030: 115 Gigawatt (EEG 2023)
+Windkraft Ausbauziel Offshore 2030: 30 Gigawatt (EEG 2023)
+Windkraft Zubau Onshore 2025: 4,5 Gigawatt (BDEW)
+Genehmigte Windanlagen 2025: über 3.300 (Tagesschau)
+
+[NETZ & INFRASTRUKTUR]
+Smart Meter Pflichtquote: 20 Prozent (Messstellenbetriebsgesetz)
+Bundesnetzagentur Verfahren Smart Meter: 77 (Stand 27.03.2026)
+Netzpaket gefährdete Projekte: 32,2 Gigawatt (Enervis-Studie, 03/2026)
+Netzpaket gefährdete Investitionen: 45 Milliarden Euro (Enervis-Studie, 03/2026)
+Betroffene Landkreise Netzpaket: 90 (Enervis-Studie, 03/2026)
+
+[INVESTITIONEN & CO2]
+Investitionen Erneuerbare 2025: 37,6 Milliarden Euro (UBA)
+CO2-Einsparung durch Erneuerbare 2025: 265 Millionen Tonnen (UBA)
+
+[AKTUELLE POLITISCHE ROLLEN - DEUTSCHLAND]
+Bundeswirtschaftsministerin: Katherina Reiche (CDU, seit 2025)
+Bundeskanzler: Friedrich Merz (CDU, seit 2025)
+BDEW-Hauptgeschäftsführerin: Kerstin Andreae
+Bundesnetzagentur-Präsident: Klaus Müller (Stand 2025)
+
+[REGELN FÜR PERSONEN UND ROLLEN]
+Personen NUR erwähnen wenn sie im Quellartikel namentlich genannt sind
+Keine Rollen oder Titel erfinden oder ergänzen
+Bei Unsicherheit über eine Rolle: Person ohne Titel oder weglassen
+Neue Positionen nur berichten wenn der Artikel sie explizit bestätigt
+
+[FORMATREGELN]
+Zahlen immer ausschreiben: "dreiundzwanzig Komma eins Prozent" nicht "23,1%"
+Einheiten ausschreiben: "Gigawatt" nicht "GW", "Terawattstunden" nicht "TWh"
+Datum immer: TT.MM.JJJJ Format
