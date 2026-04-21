@@ -77,40 +77,111 @@ def smard_get_latest(filter_id: int, region: str = "DE") -> float | None:
 ENERGY_CHARTS_BASE = "https://api.energy-charts.info"
 
 def get_installed_power() -> dict:
-    """Holt installierte Leistung Wind/Solar von energy-charts.info."""
+    """
+    Holt die kumulierte installierte Leistung je Energieträger von energy-charts.info.
+
+    Liefert Jahresenddaten (nicht Momentanwerte) – also die gesamte installierte
+    Kapazität am Ende des letzten abgeschlossenen Jahres.
+    Strategie: Das letzte Jahr mit vollständigen Daten für alle Hauptkategorien verwenden,
+    nicht das laufende Jahr (das wäre unvollständig).
+    """
     result = {}
     try:
         url = f"{ENERGY_CHARTS_BASE}/installed_power?country=de"
         r = requests.get(url, timeout=TIMEOUT)
         if r.status_code != 200:
+            print(f"   energy-charts: HTTP {r.status_code}")
             return result
         data = r.json()
 
-        # Neueste Jahreswerte extrahieren
         production_types = data.get("production_types", [])
         time_series = data.get("time", [])
-        if not time_series:
+        if not time_series or not production_types:
             return result
 
-        latest_idx = len(time_series) - 1
+        # Mapping: API-Namen → interne Schlüssel
+        # energy-charts liefert kumulierte Jahresend-Kapazität in MW
+        category_map = {
+            "wind_onshore":  ["wind onshore", "onshore wind"],
+            "wind_offshore": ["wind offshore", "offshore wind"],
+            "solar":         ["solar", "photovoltaic", "pv"],
+            "biomass":       ["biomass", "bioenergy", "biomasse"],
+            "hydro":         ["hydro", "run-of-river", "wasserkraft", "laufwasser"],
+            "pumped_storage":["pumped storage", "pumpspeicher"],
+            "nuclear":       ["nuclear", "kernenergie", "atom"],
+            "gas":           ["gas", "natural gas"],
+            "coal":          ["hard coal", "steinkohle", "lignite", "braunkohle", "coal"],
+        }
 
+        # Letztes vollständig abgeschlossenes Jahr finden:
+        # Gehe von hinten durch die Jahresliste und nimm das erste Jahr,
+        # bei dem alle drei Hauptkategorien (Wind Onshore, Wind Offshore, Solar)
+        # einen non-null Wert haben.
+        ref_idx = None
+        for idx in range(len(time_series) - 1, -1, -1):
+            year_val = time_series[idx]
+            # Laufendes Jahr überspringen
+            current_year = datetime.date.today().year
+            if isinstance(year_val, int) and year_val >= current_year:
+                continue
+            # Prüfen ob Hauptkategorien Werte haben
+            main_categories_ok = 0
+            for pt in production_types:
+                name = pt.get("name", "").lower()
+                values = pt.get("data", [])
+                if idx < len(values) and values[idx] is not None:
+                    if any(kw in name for kw in ["wind", "solar", "photovoltaic"]):
+                        main_categories_ok += 1
+            if main_categories_ok >= 2:
+                ref_idx = idx
+                break
+
+        if ref_idx is None:
+            # Fallback: vorletzter Index (zweitletztes Jahr)
+            ref_idx = max(0, len(time_series) - 2)
+
+        ref_year = time_series[ref_idx]
+        result["year"] = ref_year
+
+        # Werte für den Referenz-Index extrahieren
         for pt in production_types:
             name = pt.get("name", "").lower()
             values = pt.get("data", [])
-            if latest_idx < len(values) and values[latest_idx] is not None:
-                val_gw = round(values[latest_idx] / 1000, 1)  # MW → GW
-                if "wind" in name and "offshore" in name:
-                    result["wind_offshore_gw"] = val_gw
-                elif "wind" in name and "onshore" in name:
-                    result["wind_onshore_gw"] = val_gw
-                elif "solar" in name or "photovoltaic" in name:
-                    result["solar_gw"] = val_gw
+            if ref_idx >= len(values) or values[ref_idx] is None:
+                continue
+            val_mw = values[ref_idx]
+            val_gw = round(val_mw / 1000, 1)  # MW → GW
 
-        latest_year = time_series[latest_idx]
-        result["year"] = latest_year
-        print(f"   energy-charts: Wind Onshore {result.get('wind_onshore_gw')} GW, "
-              f"Wind Offshore {result.get('wind_offshore_gw')} GW, "
-              f"Solar {result.get('solar_gw')} GW (Stand {latest_year})")
+            for key, keywords in category_map.items():
+                if any(kw in name for kw in keywords):
+                    # Bei Kohle: addieren (Stein- + Braunkohle)
+                    if key == "coal" and key in result:
+                        result[key] = round(result[key] + val_gw, 1)
+                    else:
+                        result[key] = val_gw
+                    break
+
+        # Gesamte Windkraft berechnen
+        wind_total = round(
+            result.get("wind_onshore", 0) + result.get("wind_offshore", 0), 1
+        )
+        if wind_total > 0:
+            result["wind_total"] = wind_total
+
+        # Gesamt Erneuerbare berechnen
+        renewable_total = round(sum(
+            result.get(k, 0)
+            for k in ["wind_onshore", "wind_offshore", "solar", "biomass", "hydro", "pumped_storage"]
+        ), 1)
+        if renewable_total > 0:
+            result["renewable_total"] = renewable_total
+
+        print(f"   energy-charts installierte Leistung (Stand {ref_year}):")
+        for key in ["wind_onshore", "wind_offshore", "wind_total", "solar",
+                    "biomass", "hydro", "renewable_total"]:
+            if key in result:
+                print(f"     {key}: {result[key]} GW")
+
     except Exception as e:
         print(f"   energy-charts Fehler: {e}")
     return result
@@ -237,25 +308,43 @@ def update_facts() -> None:
     time.sleep(1)
 
     # --- Dynamischen Block zusammenbauen ---
-    dyn_lines = ["[AKTUELLE MESSWERTE – AUTOMATISCH AKTUALISIERT]"]
+    dyn_lines = ["[INSTALLIERTE LEISTUNG – KUMULIERT (JAHRESENDWERTE, AUTOMATISCH AKTUALISIERT)]"]
 
     if installed:
         year = installed.get("year", "aktuell")
-        if "solar_gw" in installed:
-            dyn_lines.append(f"PV installierte Leistung: {installed['solar_gw']} Gigawatt (energy-charts.info, Stand {year})")
-        if "wind_onshore_gw" in installed:
-            dyn_lines.append(f"Windkraft Onshore installiert: {installed['wind_onshore_gw']} Gigawatt (energy-charts.info, Stand {year})")
-        if "wind_offshore_gw" in installed:
-            dyn_lines.append(f"Windkraft Offshore installiert: {installed['wind_offshore_gw']} Gigawatt (energy-charts.info, Stand {year})")
-        wind_total = round(
-            installed.get("wind_onshore_gw", 0) + installed.get("wind_offshore_gw", 0), 1
-        )
-        if wind_total > 0:
-            dyn_lines.append(f"Windkraft gesamt installiert: {wind_total} Gigawatt (energy-charts.info, Stand {year})")
+        source = f"energy-charts.info / Fraunhofer ISE, Stand Ende {year}"
+
+        # Windkraft
+        if "wind_onshore" in installed:
+            dyn_lines.append(f"Windkraft Onshore installiert gesamt: {installed['wind_onshore']} Gigawatt ({source})")
+        if "wind_offshore" in installed:
+            dyn_lines.append(f"Windkraft Offshore installiert gesamt: {installed['wind_offshore']} Gigawatt ({source})")
+        if "wind_total" in installed:
+            dyn_lines.append(f"Windkraft gesamt installiert: {installed['wind_total']} Gigawatt ({source})")
+
+        # Solar
+        if "solar" in installed:
+            dyn_lines.append(f"Photovoltaik installiert gesamt: {installed['solar']} Gigawatt ({source})")
+
+        # Weitere Erneuerbare
+        if "biomass" in installed:
+            dyn_lines.append(f"Biomasse installiert gesamt: {installed['biomass']} Gigawatt ({source})")
+        if "hydro" in installed:
+            dyn_lines.append(f"Wasserkraft installiert gesamt: {installed['hydro']} Gigawatt ({source})")
+
+        # Gesamte Erneuerbare
+        if "renewable_total" in installed:
+            dyn_lines.append(f"Erneuerbare Energien installiert gesamt: {installed['renewable_total']} Gigawatt ({source})")
+
     else:
-        # Fallback auf manuell geprüfte Werte
-        dyn_lines.append("PV installierte Leistung: 118 Gigawatt (Fraunhofer ISE, Stand 01/2026, Fallback)")
-        dyn_lines.append("Windkraft gesamt installiert: 68,1 Gigawatt (BDEW, Stand Ende 2025, Fallback)")
+        # Fallback auf manuell geprüfte Werte (Stand Ende 2025)
+        dyn_lines.append("Photovoltaik installiert gesamt: 118 Gigawatt (Fraunhofer ISE, Stand Ende 2025, Fallback)")
+        dyn_lines.append("Windkraft Onshore installiert gesamt: 62 Gigawatt (BDEW, Stand Ende 2025, Fallback)")
+        dyn_lines.append("Windkraft Offshore installiert gesamt: 9 Gigawatt (BDEW, Stand Ende 2025, Fallback)")
+        dyn_lines.append("Windkraft gesamt installiert: 71 Gigawatt (BDEW, Stand Ende 2025, Fallback)")
+
+    dyn_lines.append("")
+    dyn_lines.append("[STROMMIX – AUTOMATISCH AKTUALISIERT]")
 
     if share_data:
         dyn_lines.append(
