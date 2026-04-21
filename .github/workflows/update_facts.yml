@@ -1,0 +1,44 @@
+name: Faktenbasis aktualisieren
+
+on:
+  # Nur manuell auslösbar – kein automatischer Schedule
+  workflow_dispatch:
+
+  # Optional: wöchentlich automatisch aktualisieren (jeden Sonntag 03:00 UTC)
+  # Auskommentieren um zu aktivieren:
+  # schedule:
+  #   - cron: "0 3 * * 0"
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-facts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python 3.12 einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Faktenbasis aktualisieren
+        run: python update_facts.py
+
+      - name: facts.txt committen
+        run: |
+          git config user.name  "Fakten-Bot"
+          git config user.email "podcast-bot@users.noreply.github.com"
+          git add facts.txt
+          git diff --staged --quiet && echo "Keine Änderungen in facts.txt." || git commit -m "📊 Faktenbasis aktualisiert: $(date +'%d.%m.%Y %H:%M UTC')"
+          git push
