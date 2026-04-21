@@ -100,7 +100,6 @@ def get_installed_power() -> dict:
             return result
 
         # Mapping: API-Namen → interne Schlüssel
-        # energy-charts liefert kumulierte Jahresend-Kapazität in MW
         category_map = {
             "wind_onshore":  ["wind onshore", "onshore wind"],
             "wind_offshore": ["wind offshore", "offshore wind"],
@@ -114,16 +113,28 @@ def get_installed_power() -> dict:
         }
 
         # Letztes vollständig abgeschlossenes Jahr finden:
-        # Gehe von hinten durch die Jahresliste und nimm das erste Jahr,
-        # bei dem alle drei Hauptkategorien (Wind Onshore, Wind Offshore, Solar)
-        # einen non-null Wert haben.
         ref_idx = None
         for idx in range(len(time_series) - 1, -1, -1):
             year_val = time_series[idx]
-            # Laufendes Jahr überspringen
             current_year = datetime.date.today().year
-            if isinstance(year_val, int) and year_val >= current_year:
+            
+            # --- NEU: Robustes Parsen des Jahres ---
+            if isinstance(year_val, int):
+                if year_val > 10000:  # Ist sehr wahrscheinlich ein UNIX-Timestamp
+                    # API nutzt manchmal Millisekunden, daher durch 1000 teilen falls > 1e11
+                    ts = year_val / 1000 if year_val > 1e11 else year_val
+                    parsed_year = datetime.datetime.fromtimestamp(ts).year
+                else:
+                    parsed_year = year_val
+            elif isinstance(year_val, str):
+                parsed_year = int(year_val[:4])  # Holt "2025" aus "2025-01-01T..."
+            else:
+                parsed_year = 0
+
+            # Laufendes Jahr überspringen
+            if parsed_year >= current_year:
                 continue
+
             # Prüfen ob Hauptkategorien Werte haben
             main_categories_ok = 0
             for pt in production_types:
@@ -134,14 +145,13 @@ def get_installed_power() -> dict:
                         main_categories_ok += 1
             if main_categories_ok >= 2:
                 ref_idx = idx
+                result["year"] = parsed_year # Speichere das tatsächliche Jahr
                 break
 
         if ref_idx is None:
-            # Fallback: vorletzter Index (zweitletztes Jahr)
+            # Fallback: vorletzter Index
             ref_idx = max(0, len(time_series) - 2)
-
-        ref_year = time_series[ref_idx]
-        result["year"] = ref_year
+            result["year"] = "Fallback"
 
         # Werte für den Referenz-Index extrahieren
         for pt in production_types:
@@ -149,8 +159,11 @@ def get_installed_power() -> dict:
             values = pt.get("data", [])
             if ref_idx >= len(values) or values[ref_idx] is None:
                 continue
-            val_mw = values[ref_idx]
-            val_gw = round(val_mw / 1000, 1)  # MW → GW
+            
+            val_raw = values[ref_idx]
+            # --- NEU: Dynamische Einheiten-Erkennung (MW oder GW) ---
+            # Wenn der Wert über 1000 liegt, sind es MW, andernfalls bereits GW.
+            val_gw = round(val_raw / 1000, 1) if val_raw > 1000 else round(val_raw, 1)
 
             for key, keywords in category_map.items():
                 if any(kw in name for kw in keywords):
@@ -176,7 +189,7 @@ def get_installed_power() -> dict:
         if renewable_total > 0:
             result["renewable_total"] = renewable_total
 
-        print(f"   energy-charts installierte Leistung (Stand {ref_year}):")
+        print(f"   energy-charts installierte Leistung (Stand {result.get('year')}):")
         for key in ["wind_onshore", "wind_offshore", "wind_total", "solar",
                     "biomass", "hydro", "renewable_total"]:
             if key in result:
