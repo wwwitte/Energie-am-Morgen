@@ -3,11 +3,14 @@
 # Quellen: SMARD (Bundesnetzagentur), energy-charts.info (Fraunhofer ISE)
 # Manuelle Ergänzungen: statische Ziele und politische Rollen
 
-[AKTUELLE MESSWERTE – AUTOMATISCH AKTUALISIERT]
-PV installierte Leistung: 0.2 Gigawatt (energy-charts.info, Stand 2030)
-Windkraft Onshore installiert: 0.1 Gigawatt (energy-charts.info, Stand 2030)
-Windkraft Offshore installiert: 0.0 Gigawatt (energy-charts.info, Stand 2030)
-Windkraft gesamt installiert: 0.1 Gigawatt (energy-charts.info, Stand 2030)
+[INSTALLIERTE LEISTUNG – KUMULIERT (JAHRESENDWERTE, AUTOMATISCH AKTUALISIERT)]
+Windkraft Onshore installiert gesamt: 0.1 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Windkraft Offshore installiert gesamt: 0.0 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Windkraft gesamt installiert: 0.1 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Photovoltaik installiert gesamt: 0.2 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Erneuerbare Energien installiert gesamt: 0.3 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+
+[STROMMIX – AUTOMATISCH AKTUALISIERT]
 Erneuerbare-Anteil Strommix: 22.5 Prozent (energy-charts.info, Stand 03/2026)
 
 [KLIMAZIELE DEUTSCHLAND]
@@ -43,9 +46,6 @@ Bundeswirtschaftsministerin: Katherina Reiche (CDU, seit 2025)
 Bundeskanzler: Friedrich Merz (CDU, seit 2025)
 BDEW-Hauptgeschäftsführerin: Kerstin Andreae
 Bundesnetzagentur-Präsident: Klaus Müller (Stand 2025)
-Vorstandsvorsitzender von E.ON: Leonhard Birnbaum
-Vorsitzender der Geschäftsführung von 50Hertz: Stefan Kapferer
-Präsident des Bundesverbandes Erneuerbare Energie (BEE): Simone Peter
 
 [REGELN FÜR PERSONEN UND ROLLEN]
 Personen NUR erwähnen wenn sie im Quellartikel namentlich genannt sind
