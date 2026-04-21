@@ -33,19 +33,23 @@ jobs:
       - name: Abhängigkeiten installieren
         run: pip install -r requirements.txt
 
+      - name: Faktenbasis aktualisieren (API-Daten)
+        run: python update_facts.py
+
       - name: Podcast generieren
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+          PODCAST_EMAIL: ${{ secrets.PODCAST_EMAIL }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
           GITHUB_REPO_NAME: ${{ github.event.repository.name }}
         run: python podcast_generator.py
 
-      - name: Episode committen
+      - name: Episode und Faktenbasis committen
         run: |
           git config user.name  "Podcast-Bot"
           git config user.email "podcast-bot@users.noreply.github.com"
-          git add docs/
-          git diff --staged --quiet || git commit -m "🎙️ Neue Episode: $(date +'%d.%m.%Y')"
+          git add docs/ facts.txt
+          git diff --staged --quiet || git commit -m "🎙️ Neue Episode + Faktenbasis: $(date +'%d.%m.%Y')"
           git push
