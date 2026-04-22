@@ -4,17 +4,16 @@
 # Manuelle Ergänzungen: statische Ziele und politische Rollen
 
 [INSTALLIERTE LEISTUNG – KUMULIERT (JAHRESENDWERTE, AUTOMATISCH AKTUALISIERT)]
-Windkraft Onshore installiert gesamt: einhundertfünfzehn Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
-Windkraft Offshore installiert gesamt: dreißig Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
-Windkraft gesamt installiert: einhundertfünfundvierzig Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
-Photovoltaik installiert gesamt: zweihundertfünfzehn Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
-Erneuerbare Energien installiert gesamt: dreihundertsechzig Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Photovoltaik installiert gesamt: 118 Gigawatt (Fraunhofer ISE, Stand Ende 2025, Fallback)
+Windkraft Onshore installiert gesamt: 62 Gigawatt (BDEW, Stand Ende 2025, Fallback)
+Windkraft Offshore installiert gesamt: 9 Gigawatt (BDEW, Stand Ende 2025, Fallback)
+Windkraft gesamt installiert: 71 Gigawatt (BDEW, Stand Ende 2025, Fallback)
 
 [STROMMIX – AUTOMATISCH AKTUALISIERT]
 Erneuerbare-Anteil Strommix: siebenundfünfzig Komma vier Prozent (energy-charts.info, Stand Q-2026)
 
 [KLIMAZIELE DEUTSCHLAND]
-Klimaneutralität Deutschland: zweitausendundvierundvierzig (Klimaschutzgesetz)
+Klimaneutralität Deutschland: zweitausendundfünfundvierzig (Klimaschutzgesetz)
 THG-Reduktion zweitausenddreißig vs. neunzehnhundertneunzig: fünfundsechzig Prozent (Klimaschutzgesetz)
 THG-Reduktion zweitausendvierzig vs. neunzehnhundertneunzig: achtundachtzig Prozent (Klimaschutzgesetz)
 Erneuerbaren-Ziel zweitausenddreißig Strommix: achtzig Prozent (EEG 2023)
