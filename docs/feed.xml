@@ -1,21 +1,39 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Energie am Morgen</title>
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 21 Apr 2026 06:28:23 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 03:54:00 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <itunes:category text="News" />
     <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+    <itunes:owner>
+      <itunes:name>Energie am Morgen</itunes:name>
+      <itunes:email>energieammorgen@gmail.com</itunes:email>
+    </itunes:owner>
     <image>
       <url>https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg</url>
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 22.04.2026: Offshore-Boom, Solar-Rebound &amp; Energiewende unter Druck</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen neuen Auftrag zur Offshore-Standortvermessung in der Nordsee, einen wenig bekannten Nebeneffekt der Solartransformation namens Rebound-Effekt, und warum die Frankfurter Rund ...</description>
+      <pubDate>Wed, 22 Apr 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-22.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-22.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-04-22.mp3" type="audio/mpeg" length="6490531" />
+      <itunes:title>Energie am Morgen – 22.04.2026: Offshore-Boom, Solar-Rebound &amp; Energiewende unter Druck</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>7</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+    </item>
     <item>
       <title>Energie am Morgen – 21.04.2026: Offshore-Steuer, Solar-Leichtgewicht &amp; Netzdruck in Deutschland</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Steuererleichterungen für die Offshore-Windbranche, ein neues Leichtgewicht-Solarmodul von Jinkosolar und den wachsenden politischen Druck auf deutsche Netzbetreiber. 

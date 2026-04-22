@@ -1,5 +1,5 @@
 # Energie am Morgen – Gesicherte Faktenbasis
-# Automatisch aktualisiert: 21.04.2026
+# Automatisch aktualisiert: 22.04.2026
 # Quellen: SMARD (Bundesnetzagentur), energy-charts.info (Fraunhofer ISE)
 # Manuelle Ergänzungen: statische Ziele und politische Rollen
 
