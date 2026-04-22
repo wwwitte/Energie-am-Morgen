@@ -337,7 +337,7 @@ def _get_share_quarterly() -> dict:
 # ---------------------------------------------------------------------------
 
 STATIC_FACTS = """[KLIMAZIELE DEUTSCHLAND]
-Klimaneutralität Deutschland: zweitausendundvierundvierzig (Klimaschutzgesetz)
+Klimaneutralität Deutschland: zweitausendundfünfundvierzig (Klimaschutzgesetz)
 THG-Reduktion zweitausenddreißig vs. neunzehnhundertneunzig: fünfundsechzig Prozent (Klimaschutzgesetz)
 THG-Reduktion zweitausendvierzig vs. neunzehnhundertneunzig: achtundachtzig Prozent (Klimaschutzgesetz)
 Erneuerbaren-Ziel zweitausenddreißig Strommix: achtzig Prozent (EEG 2023)
