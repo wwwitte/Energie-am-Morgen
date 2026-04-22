@@ -305,6 +305,12 @@ def fetch_all_news(memory: dict) -> list[dict]:
             pub_struct = entry.get("published_parsed")
             pub_date_str = time.strftime("%d.%m.%Y", pub_struct) if pub_struct else "Unbekannt"
 
+            # Warnung wenn Artikel älter als 3 Tage ist
+            if pub_struct:
+                age_hours = (time.time() - time.mktime(pub_struct)) / 3600
+                if age_hours > 72:
+                    print(f"   ⚠️  Alter Artikel ({pub_date_str}, {int(age_hours)}h): {title[:60]}")
+
             all_articles.append({
                 "topic":   topic,
                 "title":   title,
@@ -620,12 +626,19 @@ def combine_with_jingle(speech_path: str, output_path: str) -> None:
 
     print("🎵 Jingle einbauen (Anfang + Ende) ...")
 
+    # Lautstärke: Jingle auf 60% reduzieren, Sprache auf 100% belassen
+    # dann normalisieren auf einheitlichen Pegel (loudnorm)
     cmd = [
         ffmpeg_bin, "-y",
         "-i", str(jingle_path.resolve()),
         "-i", str(Path(speech_path).resolve()),
         "-i", str(jingle_path.resolve()),
-        "-filter_complex", "[0:a][1:a][2:a]concat=n=3:v=0:a=1[out]",
+        "-filter_complex",
+        "[0:a]volume=0.6[j1];"
+        "[2:a]volume=0.6[j2];"
+        "[1:a]volume=1.0[sp];"
+        "[j1][sp][j2]concat=n=3:v=0:a=1[mixed];"
+        "[mixed]loudnorm=I=-16:TP=-1.5:LRA=11[out]",
         "-map", "[out]",
         "-ar", "44100",
         "-ab", "128k",
