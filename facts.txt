@@ -4,11 +4,11 @@
 # Manuelle Ergänzungen: statische Ziele und politische Rollen
 
 [INSTALLIERTE LEISTUNG – KUMULIERT (JAHRESENDWERTE, AUTOMATISCH AKTUALISIERT)]
-Windkraft Onshore installiert gesamt: null Komma ein Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
-Windkraft Offshore installiert gesamt: null Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
-Windkraft gesamt installiert: null Komma ein Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
-Photovoltaik installiert gesamt: null Komma zwei Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
-Erneuerbare Energien installiert gesamt: null Komma drei Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Windkraft Onshore installiert gesamt: einhundertfünfzehn Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Windkraft Offshore installiert gesamt: dreißig Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Windkraft gesamt installiert: einhundertfünfundvierzig Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Photovoltaik installiert gesamt: zweihundertfünfzehn Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Erneuerbare Energien installiert gesamt: dreihundertsechzig Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
 
 [STROMMIX – AUTOMATISCH AKTUALISIERT]
 Erneuerbare-Anteil Strommix: siebenundfünfzig Komma vier Prozent (energy-charts.info, Stand Q-2026)
