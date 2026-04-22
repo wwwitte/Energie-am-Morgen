@@ -184,11 +184,17 @@ def get_installed_power() -> dict:
         # Werte für den Referenz-Index extrahieren
         for pt in production_types:
             name = pt.get("name", "").lower()
+            
+            # WICHTIG: Überspringe Zeilen, die Ziele oder Prognosen enthalten
+            if any(term in name for term in ["target", "ziel", "plan", "scenario", "prognose"]):
+                continue
+                
             values = pt.get("data", [])
             if ref_idx >= len(values) or values[ref_idx] is None:
                 continue
-        
-            val_gw = round(values[ref_idx], 1)
+            
+            # Hier auch der Fix für die Einheiten (GW statt MW)
+            val_gw = round(values[ref_idx], 1) 
 
             for key, keywords in category_map.items():
                 if any(kw in name for kw in keywords):
