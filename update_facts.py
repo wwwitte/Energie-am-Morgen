@@ -187,8 +187,8 @@ def get_installed_power() -> dict:
             values = pt.get("data", [])
             if ref_idx >= len(values) or values[ref_idx] is None:
                 continue
-            val_mw = values[ref_idx]
-            val_gw = round(val_mw / 1000, 1)  # MW → GW
+        
+            val_gw = round(values[ref_idx], 1)
 
             for key, keywords in category_map.items():
                 if any(kw in name for kw in keywords):
