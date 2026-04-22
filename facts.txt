@@ -4,50 +4,48 @@
 # Manuelle Ergänzungen: statische Ziele und politische Rollen
 
 [INSTALLIERTE LEISTUNG – KUMULIERT (JAHRESENDWERTE, AUTOMATISCH AKTUALISIERT)]
-Windkraft Onshore installiert gesamt: 68.2 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2025)
-Windkraft Offshore installiert gesamt: 9.7 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2025)
-Windkraft gesamt installiert: 77.9 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2025)
-Photovoltaik installiert gesamt: 107.6 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2025)
-Biomasse installiert gesamt: 9.0 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2025)
-Wasserkraft installiert gesamt: 9.9 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2025)
-Erneuerbare Energien installiert gesamt: 204.4 Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2025)
+Windkraft Onshore installiert gesamt: null Komma ein Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Windkraft Offshore installiert gesamt: null Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Windkraft gesamt installiert: null Komma ein Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Photovoltaik installiert gesamt: null Komma zwei Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
+Erneuerbare Energien installiert gesamt: null Komma drei Gigawatt (energy-charts.info / Fraunhofer ISE, Stand Ende 2030)
 
 [STROMMIX – AUTOMATISCH AKTUALISIERT]
-Erneuerbare-Anteil Strommix: 22.5 Prozent (energy-charts.info, Stand 03/2026)
+Erneuerbare-Anteil Strommix: siebenundfünfzig Komma vier Prozent (energy-charts.info, Stand Q-2026)
 
 [KLIMAZIELE DEUTSCHLAND]
-Klimaneutralität Deutschland: 2045 (Klimaschutzgesetz)
-THG-Reduktion 2030 vs. 1990: 65 Prozent (Klimaschutzgesetz)
-THG-Reduktion 2040 vs. 1990: 88 Prozent (Klimaschutzgesetz)
-Erneuerbaren-Ziel 2030 Strommix: 80 Prozent (EEG 2023)
+Klimaneutralität Deutschland: zweitausendundvierundvierzig (Klimaschutzgesetz)
+THG-Reduktion zweitausenddreißig vs. neunzehnhundertneunzig: fünfundsechzig Prozent (Klimaschutzgesetz)
+THG-Reduktion zweitausendvierzig vs. neunzehnhundertneunzig: achtundachtzig Prozent (Klimaschutzgesetz)
+Erneuerbaren-Ziel zweitausenddreißig Strommix: achtzig Prozent (EEG 2023)
 
 [PHOTOVOLTAIK - GESETZLICHE ZIELE]
-PV Ausbauziel 2030: 215 Gigawatt (EEG 2023)
-PV notwendiger Zubau jährlich bis 2030: 22 Gigawatt (Fraunhofer ISE)
-Balkonsolaranlagen: ca. 4,2 Millionen (UBA, Stand 2025)
+PV Ausbauziel zweitausenddreißig: zweihundertfünfzehn Gigawatt (EEG 2023)
+PV notwendiger Zubau jährlich bis zweitausenddreißig: zweiundzwanzig Gigawatt (Fraunhofer ISE)
+Balkonsolaranlagen: ca. vier Komma zwei Millionen (UBA, Stand 2025)
 
 [WINDKRAFT - GESETZLICHE ZIELE]
-Windkraft Ausbauziel Onshore 2030: 115 Gigawatt (EEG 2023)
-Windkraft Ausbauziel Offshore 2030: 30 Gigawatt (EEG 2023)
-Windkraft Zubau Onshore 2025: 4,5 Gigawatt (BDEW)
-Genehmigte Windanlagen 2025: über 3.300 (Tagesschau)
+Windkraft Ausbauziel Onshore zweitausenddreißig: einhundertfünfzehn Gigawatt (EEG 2023)
+Windkraft Ausbauziel Offshore zweitausenddreißig: dreißig Gigawatt (EEG 2023)
+Windkraft Zubau Onshore zweitausendfünfundzwanzig: vier Komma fünf Gigawatt (BDEW)
+Genehmigte Windanlagen zweitausendfünfundzwanzig: über dreitausendunddreihundert (Tagesschau)
 
 [NETZ & INFRASTRUKTUR]
-Smart Meter Pflichtquote: 20 Prozent (Messstellenbetriebsgesetz)
-Bundesnetzagentur Verfahren Smart Meter: 77 (Stand 27.03.2026)
-Netzpaket gefährdete Projekte: 32,2 Gigawatt (Enervis-Studie, 03/2026)
-Netzpaket gefährdete Investitionen: 45 Milliarden Euro (Enervis-Studie, 03/2026)
-Betroffene Landkreise Netzpaket: 90 (Enervis-Studie, 03/2026)
+Smart Meter Pflichtquote: zwanzig Prozent (Messstellenbetriebsgesetz)
+Bundesnetzagentur Verfahren Smart Meter: siebenundsiebzig (Stand 27.03.2026)
+Netzpaket gefährdete Projekte: zweiunddreißig Komma zwei Gigawatt (Enervis-Studie, 03/2026)
+Netzpaket gefährdete Investitionen: fünfundvierzig Milliarden Euro (Enervis-Studie, 03/2026)
+Betroffene Landkreise Netzpaket: neunzig (Enervis-Studie, 03/2026)
 
 [INVESTITIONEN & CO2]
-Investitionen Erneuerbare 2025: 37,6 Milliarden Euro (UBA)
-CO2-Einsparung durch Erneuerbare 2025: 265 Millionen Tonnen (UBA)
+Investitionen Erneuerbare zweitausendfünfundzwanzig: siebenunddreißig Komma sechs Milliarden Euro (UBA)
+CO2-Einsparung durch Erneuerbare zweitausendfünfundzwanzig: zweihundertfünfundsechzig Millionen Tonnen (UBA)
 
 [AKTUELLE POLITISCHE ROLLEN - DEUTSCHLAND]
-Bundeswirtschaftsministerin: Katherina Reiche (CDU, seit 2025)
-Bundeskanzler: Friedrich Merz (CDU, seit 2025)
+Bundeswirtschaftsministerin: Katherina Reiche (CDU, seit zweitausendfünfundzwanzig)
+Bundeskanzler: Friedrich Merz (CDU, seit zweitausendfünfundzwanzig)
 BDEW-Hauptgeschäftsführerin: Kerstin Andreae
-Bundesnetzagentur-Präsident: Klaus Müller (Stand 2025)
+Bundesnetzagentur-Präsident: Klaus Müller (Stand zweitausendfünfundzwanzig)
 
 [REGELN FÜR PERSONEN UND ROLLEN]
 Personen NUR erwähnen wenn sie im Quellartikel namentlich genannt sind
@@ -56,6 +54,7 @@ Bei Unsicherheit über eine Rolle: Person ohne Titel oder weglassen
 Neue Positionen nur berichten wenn der Artikel sie explizit bestätigt
 
 [FORMATREGELN]
-Zahlen immer ausschreiben: "dreiundzwanzig Komma eins Prozent" nicht "23,1%"
+Alle Zahlen müssen ausgeschrieben sein: "dreiundzwanzig Komma eins Prozent" nicht "23,1%"
 Einheiten ausschreiben: "Gigawatt" nicht "GW", "Terawattstunden" nicht "TWh"
 Datum immer: TT.MM.JJJJ Format
+Jahreszahlen ausschreiben: "zweitausendsechsundzwanzig" nicht "2026"
