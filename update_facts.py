@@ -345,7 +345,6 @@ Erneuerbaren-Ziel zweitausenddreißig Strommix: achtzig Prozent (EEG 2023)
 [PHOTOVOLTAIK - GESETZLICHE ZIELE]
 PV Ausbauziel zweitausenddreißig: zweihundertfünfzehn Gigawatt (EEG 2023)
 PV notwendiger Zubau jährlich bis zweitausenddreißig: zweiundzwanzig Gigawatt (Fraunhofer ISE)
-Balkonsolaranlagen: ca. vier Komma zwei Millionen (UBA, Stand 2025)
 
 [WINDKRAFT - GESETZLICHE ZIELE]
 Windkraft Ausbauziel Onshore zweitausenddreißig: einhundertfünfzehn Gigawatt (EEG 2023)
