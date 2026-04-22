@@ -681,7 +681,8 @@ def rebuild_rss_feed() -> None:
     itunes_ns = "http://www.itunes.com/dtds/podcast-1.0.dtd"
 
     ET.register_namespace("itunes", itunes_ns)
-    ET.register_namespace("podcast", "https://podcastindex.org/namespace/1.0")
+    # HINWEIS: xmlns:itunes wird durch ET.register_namespace gesetzt – NICHT manuell
+    # via root.set("xmlns:itunes", ...) setzen, da das zu doppelter Deklaration führt.
 
     def itag(parent, name, text=None, **attrs):
         el = ET.SubElement(parent, f"itunes:{name}")
@@ -694,7 +695,7 @@ def rebuild_rss_feed() -> None:
     # --- Channel aufbauen ---
     root = ET.Element("rss")
     root.set("version", "2.0")
-    root.set("xmlns:itunes", itunes_ns)
+    # xmlns:itunes wird automatisch durch ET.register_namespace korrekt gesetzt
     channel = ET.SubElement(root, "channel")
 
     ET.SubElement(channel, "title").text       = PODCAST_TITLE
