@@ -1,12 +1,12 @@
 # Energie am Morgen – Gesicherte Faktenbasis
-# Automatisch aktualisiert: 23.04.2026
+# Automatisch aktualisiert: 24.04.2026
 # Quellen: SMARD (Bundesnetzagentur), energy-charts.info (Fraunhofer ISE)
 # Manuelle Ergänzungen: statische Ziele und politische Rollen
 
 [INSTALLIERTE LEISTUNG – KUMULIERT (JAHRESENDWERTE, AUTOMATISCH AKTUALISIERT)]
 
 [STROMMIX – AUTOMATISCH AKTUALISIERT]
-Erneuerbare-Anteil Strommix 2025: 59 Prozent (Fraunhofer ISE, Fallback)
+Erneuerbare-Anteil Strommix: siebenundfünfzig Komma vier Prozent (energy-charts.info, Stand Q-2026)
 
 [KLIMAZIELE DEUTSCHLAND]
 Klimaneutralität Deutschland: zweitausendundfünfundvierzig (Klimaschutzgesetz)
