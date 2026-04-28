@@ -6,7 +6,7 @@
 [INSTALLIERTE LEISTUNG – KUMULIERT (JAHRESENDWERTE, AUTOMATISCH AKTUALISIERT)]
 
 [STROMMIX – AUTOMATISCH AKTUALISIERT]
-Erneuerbare-Anteil Strommix: siebenundfünfzig Komma vier Prozent (energy-charts.info, Stand Q-2026)
+Erneuerbare-Anteil Strommix 2025: 59 Prozent (Fraunhofer ISE, Fallback)
 
 [KLIMAZIELE DEUTSCHLAND]
 Klimaneutralität Deutschland: zweitausendundfünfundvierzig (Klimaschutzgesetz)
