@@ -1,0 +1,31 @@
+TITEL: Windkraft ohne Veto, Kommunen bremsen & Solar verliert Tempo
+===
+Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum Bürger gegen neue Windräder bald kaum noch klagen können, wo die Energiewende in deutschen Kommunen strukturell hakt und warum der Solarausbau an Tempo verliert – während Batteriespeicher boomen.
+
+<break time="1s"/>
+
+Die Tagesschau berichtet am dritten Mai zweitausendsechsundzwanzig darüber, dass Widerstand gegen Windkraftanlagen in Deutschland durch jüngste Gesetzesänderungen zunehmend ins Leere läuft. Konkret geht es darum, dass Klagen von Anwohnern und Gemeinden gegen neue Windräder durch verschärfte Regelungen im Planungs- und Genehmigungsrecht erheblich eingeschränkt wurden. Im Jahr zweitausendfünfundzwanzig wurden bereits über dreitausenddreihundert Windanlagen genehmigt – ein deutlicher Anstieg gegenüber den Vorjahren. Der Zubau an Onshore-Windkraft, also Windkraft an Land, lag zweitausendfünfundzwanzig bei vier Komma fünf Gigawatt.
+
+Was bedeutet das konkret? Deutschland hat ein gesetzliches Ausbauziel von einhundertfünfzehn Gigawatt installierter Onshore-Windkraft bis zweitausenddreißig. Um das zu erreichen, muss der Ausbau in den nächsten Jahren in diesem Tempo mindestens gehalten, besser noch gesteigert werden. Bislang war eines der größten Hemmnisse genau das: Klagen. Ein einzelnes Widerspruchsverfahren konnte einen Windpark jahrelang blockieren – selbst wenn die Genehmigung rechtlich einwandfrei war. Die neuen Regelungen setzen an dieser Stelle an. Sie schränken Klagerechte ein, verkürzen Fristen und erklären den Ausbau erneuerbarer Energien explizit zum überragenden öffentlichen Interesse. Das ist rechtlich relevant, weil Gerichte bei der Abwägung genau diesen Punkt berücksichtigen müssen.
+
+Hier lohnt ein zweiter Blick: Das ist kein Freibrief für schlechte Planung. Artenschutz, Mindestabstände und kommunale Beteiligung bleiben bestehen. Aber die Verschiebung im rechtlichen Rahmen ist real und dürfte die Projektrealisierung beschleunigen. Offen bleibt, wie Gerichte die neuen Regelungen in der Praxis auslegen und ob der Fachkräftemangel im Handwerk den gewonnenen Zeitvorteil nicht sofort wieder auffrisst.
+
+<break time="1s"/>
+
+ECOreporter berichtet am dritten Mai zweitausendsechsundzwanzig darüber, dass die Energiewende in deutschen Kommunen vor allem an zwei konkreten Problemen scheitert: fehlender Infrastruktur und mangelnder Finanzierung. Kommunen sind für die Umsetzung der Energiewende vor Ort entscheidend – sie planen Wärmenetze, genehmigen Solaranlagen auf öffentlichen Gebäuden, koordinieren Ladeinfrastruktur und entwickeln kommunale Wärmeplanung. Die Herausforderung: Viele Gemeinden, insbesondere kleinere, haben weder die personellen Kapazitäten noch ausreichend Haushaltsmittel, um diese Aufgaben vollständig zu stemmen.
+
+Der Kontext dazu: Die Energiewende ist in Deutschland zwar auf Bundesebene reguliert, wird aber zu einem erheblichen Teil auf kommunaler Ebene umgesetzt. Das Investitionsvolumen in erneuerbare Energien lag zweitausendfünfundzwanzig bei siebenunddreißig Komma sechs Milliarden Euro – aber ein wesentlicher Teil dieser Investitionen hängt davon ab, dass Kommunen die nötige Planung und Genehmigungsstruktur bereitstellen. Tun sie das nicht oder zu langsam, entsteht ein Flaschenhals, der auch ambitionierte Bundesziele unterlaufen kann.
+
+Das verdient eine genauere Betrachtung: Das Ziel, bis zweitausenddreißig achtzig Prozent des deutschen Stroms aus erneuerbaren Quellen zu erzeugen, ist nur erreichbar, wenn Planung, Genehmigung und Netzanschluss auch lokal funktionieren. Dort fehlt es derzeit systematisch: an Fachpersonal in Bauämtern, an digitaler Infrastruktur für Genehmigungsverfahren und an kommunalem Kapital für Vorleistungen. Das ist kein lokales Randproblem – es ist ein strukturelles Umsetzungsrisiko für die gesamte Energiewende. Was offen bleibt: ob und in welcher Form der Bund gezielt Transfermittel für diese kommunale Umsetzungskapazität bereitstellt.
+
+<break time="1s"/>
+
+Die Süddeutsche Zeitung berichtet am dritten Mai zweitausendsechsundzwanzig darüber, dass der Zubau neuer Solaranlagen in Deutschland zu Beginn des Jahres zweitausendsechsundzwanzig deutlich langsamer verlaufen ist als noch im Vorjahr. Gleichzeitig steigt die Zahl neu installierter Batteriespeicher – also Systeme, die erzeugten Solarstrom zwischenspeichern und zeitversetzt nutzen.
+
+Was steckt dahinter? Der Boom bei Photovoltaik-Anlagen der vergangenen Jahre war zum Teil durch günstige Einspeisevergütungen und eine hohe Nachfrage bei Privatinstallationen getrieben. Beides verändert sich gerade. Die Einspeisevergütung für neue Anlagen ist gesunken, der wirtschaftliche Anreiz für reine Einspeisung ins Netz schwächer geworden. Gleichzeitig machen sinkende Preise für Batteriespeicher deren Kombination mit Solaranlagen attraktiver – Strom selbst verbrauchen statt einspeisen lohnt sich zunehmend. Der Trend weg von reiner Einspeisung hin zu Eigenverbrauch mit Speicher ist technisch und ökonomisch eine sinnvolle Entwicklung.
+
+Zur Perspektive: Deutschland hat laut EEG zweitausenddreiundzwanzig ein Ausbauziel von zweihundertfünfzehn Gigawatt installierter Photovoltaik-Leistung bis zweitausenddreißig. Fraunhofer ISE beziffert den dafür nötigen jährlichen Zubau auf zweiundzwanzig Gigawatt. Ein schwacher Jahresauftakt ist deshalb nicht dramatisch, wenn er sich im Jahresverlauf aufholt – er ist aber ein Warnsignal, wenn er strukturelle Ursachen hat. Die eigentliche Frage ist, ob der Rückgang ein vorübergehender Effekt oder ein anhaltender Trend ist. Was viele dabei übersehen: Mehr Batteriespeicher im System erhöhen die Flexibilität des Gesamtnetzes und können künftig dabei helfen, Überproduktion zu puffern statt abzuregeln. Das ist mittel- bis langfristig ein Gewinn – auch wenn die reine Zubaukurve kurzfristig flacher aussieht.
+
+<break time="1s"/>
+
+Vielen Dank für deine Zeit und einen energiegeladenen Tag wünschen wir dir. Hör morgen wieder rein für die aktuellsten News rund um erneuerbare Energien und bleib immer auf dem Laufenden!
