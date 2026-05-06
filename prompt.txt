@@ -86,7 +86,7 @@ Das Skript beginnt und endet immer mit einem Break-Tag: <break time="1s"/>
 
 3. Vor dem Outro immer: <break time="1s"/>
    Outro: Das Outro ist immer exakt folgender Text – wörtlich, ohne Abweichung:
-   "Vielen Dank für deine Zeit und einen energiegeladenen Tag wünschen wir dir. Hör morgen wieder rein für die aktuellsten News rund um erneuerbare Energien und bleib immer auf dem Laufenden!" <break time="1s"/>"
+   "Vielen Dank für deine Zeit. Wenn dir dieser Podcast hilft, die Energiewende besser zu verstehen, dann abonniere uns, teile diese Folge mit anderen oder hinterlasse uns eine Bewertung. Wir wünschen dir einen energiegeladenen Tag. Hör morgen wieder rein für die aktuellsten News rund um erneuerbare Energien und bleib immer auf dem Laufenden!" <break time="1s"/>"
 
 
 [VERBOTE]
