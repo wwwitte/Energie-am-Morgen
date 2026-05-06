@@ -295,6 +295,20 @@ def fetch_all_news(memory: dict) -> list[dict]:
                 continue
             seen_keys.add(key)
 
+            # Dauerhaft gesperrte Themen (bereits ausführlich behandelt,
+            # nur bei echter Neuigkeit wieder aufgreifen)
+            PERMANENT_TOPIC_BLOCKS = [
+                "enervis",
+                "grundstückswert",
+                "grundstückswertminderung",
+            ]
+            title_lower = title.lower()
+            permanently_blocked = any(block in title_lower for block in PERMANENT_TOPIC_BLOCKS)
+            if permanently_blocked:
+                print(f"   🚫 Dauerhaft geblockt: {title[:60]}")
+                skipped += 1
+                continue
+
             # Sperrfrist-Check
             blocked, reason = is_too_similar(title, memory)
             if blocked:
@@ -801,6 +815,14 @@ def rebuild_rss_feed() -> None:
         itag(item, "episode",     str(episode_number))
         ep_img = itag(item, "image")
         ep_img.set("href", cover_url)
+        # itunes:duration – Spotify braucht das um Episoden als "neu" zu erkennen
+        try:
+            duration_sec = int(audio_size / 16000)  # Näherung: 128kbps ≈ 16000 bytes/s
+            h, rem = divmod(duration_sec, 3600)
+            m, s   = divmod(rem, 60)
+            itag(item, "duration", f"{h:02d}:{m:02d}:{s:02d}" if h else f"{m:02d}:{s:02d}")
+        except Exception:
+            pass
 
     # Episoden im Channel: neueste zuerst (RSS-Standard)
     items = channel.findall("item")
