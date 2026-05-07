@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Wed, 06 May 2026 05:00:40 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 04:27:44 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -21,6 +21,21 @@
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
     <item>
+      <title>Energie am Morgen – 07.05.2026: Digitalisierung spart Milliarden, PV-Zubau schwächelt &amp; Solarstrom aus dem Moor</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, wie Digitalisierung die Energiewende günstiger machen könnte, warum der Solarausbau in Deutschland an Tempo verliert und was es mit Deutschlands größter Photovoltaikanlage mitte ...</description>
+      <pubDate>Thu, 07 May 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-07.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-07.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-07.mp3" type="audio/mpeg" length="6155327" />
+      <itunes:title>Energie am Morgen – 07.05.2026: Digitalisierung spart Milliarden, PV-Zubau schwächelt &amp; Solarstrom aus dem Moor</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>22</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:24</itunes:duration>
+    </item>
+    <item>
       <title>Energie am Morgen – 06.05.2026: Netzausbau-Krise, 15 Jahre Baltic 1 &amp; Vestas-Aufträge in Deutschland</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den stockenden Netzausbau und seine Gefahr für die Energiewende, fünfzehn Jahre Offshore-Windkraft in Deutschland, und frische Windkraft-Aufträge von Vestas über einhundertsiebzeh ...</description>
       <pubDate>Wed, 06 May 2026 06:00:00 GMT</pubDate>
@@ -33,6 +48,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>21</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>07:34</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 05.05.2026: Reiche-Pläne unter Beschuss, Windkraft vorn &amp; Systemkosten-Mythos</title>
@@ -47,6 +63,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>20</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>07:41</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 04.05.2026: Windkraft ohne Veto, Kommunen bremsen &amp; Solar verliert Tempo</title>
@@ -61,6 +78,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>19</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:20</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 03.05.2026: Stromexport-Paradox, Solar-Einbruch &amp; Heizungsgesetz-Rückschritt</title>
@@ -75,6 +93,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>18</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:02</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 02.05.2026: Rekord-Negativpreise, Netzausbau-Streit &amp; Windkraft-Subventionen</title>
@@ -89,6 +108,7 @@
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>17</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:57</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 01.05.2026: Riesenspeicher, Kommunen &amp; Energiewende – Was jetzt zählt</title>
@@ -107,6 +127,7 @@ Utopia.de ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>16</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:32</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 30.04.2026: Solarüberfluss, Erdkabel-Kehrtwende &amp; Windkraft-Faktencheck</title>
@@ -121,6 +142,7 @@ Utopia.de ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>15</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>07:08</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 29.04.2026: Versteckte Studie, Gaskraftwerke &amp; Bürgermeister unter Druck</title>
@@ -135,6 +157,7 @@ Utopia.de ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>14</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:12</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 28.04.2026: Ökostrom schlägt Gas, Netzkollaps in Holland &amp; Geothermie im Aufwind</title>
@@ -149,6 +172,7 @@ Utopia.de ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>13</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>07:23</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 27.04.2026: Atomkraft-Debatte, Windkraft-Boom &amp; Batteriespeicher für Deutschland</title>
@@ -163,6 +187,7 @@ Utopia.de ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>12</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:28</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 26.04.2026: Studie verschwunden, Windkraft-Mythen &amp; Bauern als Energiewende-Gewinner</title>
@@ -177,6 +202,7 @@ Utopia.de ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>11</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:29</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 25.04.2026: Solar-Studie verschwiegen, PV-Boom &amp; Windkraft weltweit</title>
@@ -195,6 +221,7 @@ Die Fra ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>10</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:15</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 24.04.2026: Reiche provoziert Energiekonzerne, Siemens Energy boomt &amp; Solar-Widerstand</title>
@@ -209,6 +236,7 @@ Die Fra ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>9</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:24</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 23.04.2026: Fernwärme-Revolution, Batterie-Paradoxon &amp; Atomstreit 2026</title>
@@ -223,6 +251,7 @@ Die Fra ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>8</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:37</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 22.04.2026: Offshore-Boom, Solar-Rebound &amp; Energiewende unter Druck</title>
@@ -237,6 +266,7 @@ Die Fra ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>7</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:45</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 21.04.2026: Offshore-Steuer, Solar-Leichtgewicht &amp; Netzdruck in Deutschland</title>
@@ -253,6 +283,7 @@ Die Fra ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>6</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>07:01</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 20.04.2026: Deutschlands Solarstrom, Ørsted-Boom &amp; Wärmewende in Gefahr</title>
@@ -267,6 +298,7 @@ Die Fra ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>5</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:49</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 19.04.2026: Klimastrafen, Kostendruck &amp; Protest – Deutschlands Energiewende unter Druck</title>
@@ -281,6 +313,7 @@ Die Fra ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>4</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:00</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 18.04.2026: Mehrheit für Energiewende, VW Vehicle-to-Grid &amp; WWF-Appell</title>
@@ -297,6 +330,7 @@ Die Fra ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>3</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:43</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 17.04.2026: Klingbeil warnt, Batteriespeicher boomen &amp; Kraftwerksstrategie</title>
@@ -311,6 +345,7 @@ Die Fra ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>2</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:25</itunes:duration>
     </item>
     <item>
       <title>Energie am Morgen – 16.04.2026</title>
@@ -329,6 +364,7 @@ ZDFheute berichtet heute ...</description>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>1</itunes:episode>
       <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:48</itunes:duration>
     </item>
   </channel>
 </rss>
