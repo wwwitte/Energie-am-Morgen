@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sat, 09 May 2026 04:55:57 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 04:38:26 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 10.05.2026: Reiches Energiepolitik, Kohlekraftwerk-Sprengung &amp; Negative Strompreise</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, wie Bundeswirtschaftsministerin Katherina Reiches Energiepolitik deutsche Industrieunternehmen ins Ausland treibt, warum zwei Kühltürme eines alten Kohlekraftwerks gesprengt wur ...</description>
+      <pubDate>Sun, 10 May 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-10.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-10.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-10.mp3" type="audio/mpeg" length="6413208" />
+      <itunes:title>Energie am Morgen – 10.05.2026: Reiches Energiepolitik, Kohlekraftwerk-Sprengung &amp; Negative Strompreise</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>25</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:40</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 09.05.2026: Batterie-Rekord, E.On-Chef-Kritik &amp; Erneuerbare im Aufwind</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den Rekord-Zubau bei Großspeichern im ersten Quartal zweitausendsechsundzwanzig, die Kritik von E.On-Chef Birnbaum an den Kosten der Energiewende und den aktuellen Stand beim Ausb ...</description>
