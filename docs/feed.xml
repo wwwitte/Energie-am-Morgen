@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sun, 10 May 2026 05:22:37 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 04:49:44 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 11.05.2026: Sinkende Solarprämien, Blackout-Analyse &amp; lahme Energiewende</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir sinkende Einspeisevergütungen für Solarstrom, die Frage ob erneuerbare Energien am Stromausfall in Südeuropa schuld waren, und einen kritischen Blick auf das Tempo der deutschen E ...</description>
+      <pubDate>Mon, 11 May 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-11.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-11.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-11.mp3" type="audio/mpeg" length="6056271" />
+      <itunes:title>Energie am Morgen – 11.05.2026: Sinkende Solarprämien, Blackout-Analyse &amp; lahme Energiewende</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>26</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:18</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 10.05.2026: Reiches Energiepolitik, Kohlekraftwerk-Sprengung &amp; Negative Strompreise</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, wie Bundeswirtschaftsministerin Katherina Reiches Energiepolitik deutsche Industrieunternehmen ins Ausland treibt, warum zwei Kühltürme eines alten Kohlekraftwerks gesprengt wur ...</description>
