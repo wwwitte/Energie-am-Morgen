@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 12 May 2026 05:24:41 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 04:35:55 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 13.05.2026: Offshore-Sicherheit, Energiegesetze im Überblick &amp; Extremwetter am Netz</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die wachsende Bedrohung durch Drohnen über europäischen Offshore-Windparks, den aktuellen Stand der deutschen Energiegesetzgebung und neue Erkenntnisse darüber, wie Extremwetter d ...</description>
+      <pubDate>Wed, 13 May 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-13.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-13.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-13.mp3" type="audio/mpeg" length="5841858" />
+      <itunes:title>Energie am Morgen – 13.05.2026: Offshore-Sicherheit, Energiegesetze im Überblick &amp; Extremwetter am Netz</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>28</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:05</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 12.05.2026: Solarausbau bremst, Wärmewende zieht an &amp; China im Stromnetz</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den verlangsamten Solarausbau in Deutschland, positive Signale bei Wärmepumpe und serieller Sanierung sowie chinesische Technik im deutschen Stromnetz.
