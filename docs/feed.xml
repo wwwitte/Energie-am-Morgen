@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 19 May 2026 05:50:44 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 04:53:43 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 20.05.2026: Offshore-Rückzug, Klimastress im Netz &amp; Energiewende-Streit der Länder</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den Rückzug von BP und Total aus der deutschen Offshore-Windkraft, warum der Klimawandel Stromnetze zunehmend unter Druck setzt und wie die Bundesländer auf Norderney über die Zuk ...</description>
+      <pubDate>Wed, 20 May 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-20.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-20.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-20.mp3" type="audio/mpeg" length="5976859" />
+      <itunes:title>Energie am Morgen – 20.05.2026: Offshore-Rückzug, Klimastress im Netz &amp; Energiewende-Streit der Länder</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>35</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:13</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 19.05.2026: Offshore-Rückzug, Stromexport-Comeback &amp; neues Heizungsgesetz</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den drohenden Rückzug großer Ölkonzerne aus deutschen Offshore-Windprojekten, Deutschlands Rückkehr als Strom-Nettoexporteur im ersten Quartal zweitausendundsechsundzwanzig und di ...</description>
