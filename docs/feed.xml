@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Thu, 21 May 2026 05:53:27 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 05:52:51 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 22.05.2026: Energiewende im Faktencheck, Offshore-Krise &amp; Ministerkonferenz Norderney</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen Faktencheck zur These vom Fehlschlag der Energiewende, eine drohende Krise im deutschen Offshore-Windsektor und die Ergebnisse der Energieministerkonferenz auf Norderney. ...</description>
+      <pubDate>Fri, 22 May 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-22.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-22.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-22.mp3" type="audio/mpeg" length="6829078" />
+      <itunes:title>Energie am Morgen – 22.05.2026: Energiewende im Faktencheck, Offshore-Krise &amp; Ministerkonferenz Norderney</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>37</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>07:06</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 21.05.2026: Solar überholt Erdgas, Netzausbau-Tempo &amp; bidirektionales Laden</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen historischen Meilenstein im globalen Strommix, warum Deutschland alle drei Monate eine neue Stromleitung quer durchs Land braucht, und was ein geplanter EU-Standard beim Lad ...</description>
