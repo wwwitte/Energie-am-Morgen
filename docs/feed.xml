@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Mon, 25 May 2026 06:10:04 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2026 04:51:45 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 26.05.2026: Offshore-Windkraft in der Krise, Wärmepumpe Halle &amp; Kerosinversorgung gesichert</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den wachsenden Druck auf die deutsche Offshore-Windkraft, einen Meilenstein für die Wärmewende in Halle an der Saale und die gesicherte Kerosinversorgung in Deutschland trotz Ener ...</description>
+      <pubDate>Tue, 26 May 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-26.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-26.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-26.mp3" type="audio/mpeg" length="5949274" />
+      <itunes:title>Energie am Morgen – 26.05.2026: Offshore-Windkraft in der Krise, Wärmepumpe Halle &amp; Kerosinversorgung gesichert</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>41</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:11</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 25.05.2026: Netzverdichtung, Gasausstieg &amp; Agri-PV – Infrastruktur im Fokus</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, wie eine Ingenieurin das Stromnetz von innen heraus modernisiert, warum eine neue Agora-Studie den Weg aus der russischen Gasabhängigkeit aufzeigt und weshalb Agri-Photovoltaik d ...</description>
