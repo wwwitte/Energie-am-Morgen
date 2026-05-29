@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Thu, 28 May 2026 05:58:51 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 05:03:20 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 29.05.2026: Batteriespeicher-Boom, neue Netzentgelte für Solar &amp; Afrika-Bahn</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen Batteriespeicher-Großauftrag in Deutschland, neue Netzentgelte für Solaranlagenbesitzer ab zweitausendneunundzwanzig und eine Bahnverbindung aus Afrika, die Rohstoffe für di ...</description>
+      <pubDate>Fri, 29 May 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-29.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-29.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-29.mp3" type="audio/mpeg" length="6245189" />
+      <itunes:title>Energie am Morgen – 29.05.2026: Batteriespeicher-Boom, neue Netzentgelte für Solar &amp; Afrika-Bahn</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>44</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:30</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 28.05.2026: Neue Netzentgelte, Smart Meter-Probleme &amp; deutsche Erfinderrekorde</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir neue Netzentgeltpläne der Bundesnetzagentur die Besitzer von Solaranlagen direkt betreffen, alarmierende Berichte über Smart Meter die trotz gesetzlicher Pflicht nicht funktionier ...</description>
