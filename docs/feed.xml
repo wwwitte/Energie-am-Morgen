@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Fri, 29 May 2026 05:57:25 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2026 04:42:06 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 30.05.2026: Bornholm-Offshore, Netzausbau-Offensive &amp; Solar-Netzentgelte</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Energieinsel Bornholm als grenzüberschreitendes Offshore-Modell für Deutschland und Dänemark, die neue Offensive der Bundesregierung beim Übertragungsnetzausbau und die geplan ...</description>
+      <pubDate>Sat, 30 May 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-30.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-30.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-05-30.mp3" type="audio/mpeg" length="5944258" />
+      <itunes:title>Energie am Morgen – 30.05.2026: Bornholm-Offshore, Netzausbau-Offensive &amp; Solar-Netzentgelte</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>45</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:11</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 29.05.2026: Batteriespeicher-Boom, neue Netzentgelte für Solar &amp; Afrika-Bahn</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen Batteriespeicher-Großauftrag in Deutschland, neue Netzentgelte für Solaranlagenbesitzer ab zweitausendneunundzwanzig und eine Bahnverbindung aus Afrika, die Rohstoffe für di ...</description>
