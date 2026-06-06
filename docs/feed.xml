@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Fri, 05 Jun 2026 06:06:57 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2026 04:43:50 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 06.06.2026: EU-Schuldenregel, EEG-Reform &amp; Windkraft-Rückenwind aus Österreich</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir eine wegweisende EU-Entscheidung zu Schuldenregeln für die Energiewende, wie neue EEG-Regelungen Landwirte unter Druck setzen und warum Österreich gerade intensiv über Windkraft ...</description>
+      <pubDate>Sat, 06 Jun 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-06.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-06.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-06.mp3" type="audio/mpeg" length="5714798" />
+      <itunes:title>Energie am Morgen – 06.06.2026: EU-Schuldenregel, EEG-Reform &amp; Windkraft-Rückenwind aus Österreich</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>52</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:57</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 05.06.2026: Netz am Limit, Helios Solar-Börsengang &amp; Wärmewende-Lücke</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die wachsende Belastung des deutschen Stromnetzes durch Wärmepumpen und Photovoltaik, den geplanten Börsengang des Solarunternehmens Helios Solar und die echte Lücke bei der deuts ...</description>
