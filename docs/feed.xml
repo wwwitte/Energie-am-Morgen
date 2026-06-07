@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sat, 06 Jun 2026 05:40:14 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2026 05:14:51 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,23 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 07.06.2026: Strompreise, Smart Meter &amp; Solarstrom rund um die Uhr</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir steigende Strompreise trotz Energiewende, warum Smart Meter allein keine Netztransparenz schaffen, und wie Hausspeicher die Solarnutzung in Deutschland verändern. 
+
+ Agrarheute b ...</description>
+      <pubDate>Sun, 07 Jun 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-07.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-07.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-07.mp3" type="audio/mpeg" length="5966410" />
+      <itunes:title>Energie am Morgen – 07.06.2026: Strompreise, Smart Meter &amp; Solarstrom rund um die Uhr</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>53</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:12</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 06.06.2026: EU-Schuldenregel, EEG-Reform &amp; Windkraft-Rückenwind aus Österreich</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir eine wegweisende EU-Entscheidung zu Schuldenregeln für die Energiewende, wie neue EEG-Regelungen Landwirte unter Druck setzen und warum Österreich gerade intensiv über Windkraft ...</description>
