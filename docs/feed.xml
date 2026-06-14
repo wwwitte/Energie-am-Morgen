@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sat, 13 Jun 2026 06:02:13 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 05:22:09 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,23 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 14.06.2026: Stromexport, DC-Speicher &amp; Energiegesetze im Check</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Deutschlands Rückkehr zum Stromexporteur, einen vielversprechenden Speichertest von Sigenergy, ZSW und EnBW sowie den aktuellen Stand der wichtigsten Energiegesetze. 
+
+ Der Gebäud ...</description>
+      <pubDate>Sun, 14 Jun 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-14.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-14.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-14.mp3" type="audio/mpeg" length="5672167" />
+      <itunes:title>Energie am Morgen – 14.06.2026: Stromexport, DC-Speicher &amp; Energiegesetze im Check</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>60</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:54</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 13.06.2026: Netzentwicklungsplan, EEG 2027 &amp; Offshore-Wind in der Krise</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den neuen Netzentwicklungsplan der Bundesnetzagentur, alarmierende Zahlen zum geplanten EEG zweitausendundsiebenundzwanzig und eine Offshore-Windbranche, die sich selbst am Limit ...</description>
