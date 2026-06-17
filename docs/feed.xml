@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 16 Jun 2026 07:05:23 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2026 05:32:41 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 17.06.2026: Energiewende am Scheideweg, Rekordzahlen &amp; Netzrenditen</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum die Energiewende Opfer ihres eigenen Erfolgs wird, welchen Rekordwert erneuerbare Energien beim Stromanteil erreicht haben und weshalb Netzbetreiber Rekordrenditen einfahre ...</description>
+      <pubDate>Wed, 17 Jun 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-17.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-17.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-17.mp3" type="audio/mpeg" length="6264415" />
+      <itunes:title>Energie am Morgen – 17.06.2026: Energiewende am Scheideweg, Rekordzahlen &amp; Netzrenditen</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>63</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:31</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 16.06.2026: Energiekrisen, Elektrifizierung &amp; Wärmeplanung – Die Wende nimmt Fahrt auf</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, wie globale Energiekrisen den Umstieg auf erneuerbare Energien beschleunigen, warum neun von zehn Unternehmen weltweit bis zweitausendfünfunddreißig elektrifizieren wollen – und ...</description>
