@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sun, 21 Jun 2026 06:31:08 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 06:14:35 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 22.06.2026: Amazon-PPA, PV-Milliarden &amp; Batteriespeicher-Boom in Deutschland</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen Sechshundert-Megawatt-Deal von Amazon mit deutschen Windparks und das damit verbundene Rechtsrisiko, den milliardenschweren volkswirtschaftlichen Nutzen von Solarstrom in De ...</description>
+      <pubDate>Mon, 22 Jun 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-22.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-22.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-22.mp3" type="audio/mpeg" length="6363889" />
+      <itunes:title>Energie am Morgen – 22.06.2026: Amazon-PPA, PV-Milliarden &amp; Batteriespeicher-Boom in Deutschland</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>68</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:37</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 21.06.2026: Solarstrom spart Milliarden, Reiche in Ankara &amp; Offshore-Kontrolle</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir wie deutscher Solarstrom hunderte Milliarden Euro an Klimaschäden verhindert hat, warum Bundeswirtschaftsministerin Katherina Reiche in Ankara über Energiekooperation verhandelt ...</description>
