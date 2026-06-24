@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 23 Jun 2026 05:51:31 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 04:53:38 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 24.06.2026: Jobrisiko Energiewende, Solar-Weltspitze &amp; Netzanschluss-Blockade</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir eine neue Studie der Bertelsmann-Stiftung, die vor einem massiven Jobverlust durch eine Kehrtwende bei den Erneuerbaren warnt, Deutschlands überraschenden Aufstieg in die globale ...</description>
+      <pubDate>Wed, 24 Jun 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-24.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-24.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-24.mp3" type="audio/mpeg" length="6274028" />
+      <itunes:title>Energie am Morgen – 24.06.2026: Jobrisiko Energiewende, Solar-Weltspitze &amp; Netzanschluss-Blockade</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>70</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:32</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 23.06.2026: Negativstrompreise auf Rekord, Solarkosten-Ersparnis &amp; E.ON digitalisiert PV-Planung</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen neuen Rekord bei negativen Strompreisen in Deutschland, was Solarstrom die Verbraucher seit zweitausendzwanzig wirklich gespart hat, und wie E.ON die Planung von Solaranlage ...</description>
