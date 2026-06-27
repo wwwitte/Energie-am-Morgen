@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Fri, 26 Jun 2026 05:54:53 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2026 04:42:27 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 27.06.2026: Hitzewelle treibt Strompreise, Windkraft-Turbo Süd &amp; Solarenergie-Effekt</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, wie die aktuelle Hitzewelle die Strompreise auf ein Niveau wie zweitausendzwei treibt, warum Söder und Özdemir gemeinsam einen Windkraft-Turbo für Süddeutschland fordern, und wel ...</description>
+      <pubDate>Sat, 27 Jun 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-27.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-27.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-27.mp3" type="audio/mpeg" length="5649179" />
+      <itunes:title>Energie am Morgen – 27.06.2026: Hitzewelle treibt Strompreise, Windkraft-Turbo Süd &amp; Solarenergie-Effekt</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>73</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:53</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 26.06.2026: Geothermie-Rekord, Großspeicher-Milliarden &amp; Solar-Vorbild Deutschland</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Deutschlands größte Erdwärme-Aufsuchungserlaubnis aller Zeiten, warum schnellere Großspeicher Verbrauchern bis zu zwei Komma acht Milliarden Euro sparen könnten, und weshalb Deuts ...</description>
