@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Mon, 29 Jun 2026 06:23:09 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 04:52:10 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 30.06.2026: Windausbau, Solarrang &amp; Cybersicherheit bei Wechselrichtern</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Deutschlands Aufstieg zum vierten Platz im globalen Solarausbau, einen neuen Zuschlag in einer stark überzeichneten Windausschreibung und warum die Bundesregierung chinesische We ...</description>
+      <pubDate>Tue, 30 Jun 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-30.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-30.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-06-30.mp3" type="audio/mpeg" length="5444797" />
+      <itunes:title>Energie am Morgen – 30.06.2026: Windausbau, Solarrang &amp; Cybersicherheit bei Wechselrichtern</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>76</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:40</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 29.06.2026: Energiewende unter Druck: Netzstress, Strompreise &amp; Solar-Verunsicherung</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum der rasante Ausbau von Wind und Solar die Netze an ihre Grenzen bringt, ob regionale Strompreise den Norden Deutschlands günstiger machen könnten und weshalb viele Solar-Ha ...</description>
