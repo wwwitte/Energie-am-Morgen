@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Fri, 10 Jul 2026 05:46:13 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2026 03:59:27 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 11.07.2026: Energiewende unter Druck, Energy Sharing &amp; Solarausbau verlangsamt</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, wo die Energiewende hakt und was sie wieder beschleunigen könnte, warum Energy Sharing mehr Fragen aufwirft als beantwortet, und weshalb der Solarausbau in Deutschland deutlich a ...</description>
+      <pubDate>Sat, 11 Jul 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-07-11.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-07-11.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-07-11.mp3" type="audio/mpeg" length="6261489" />
+      <itunes:title>Energie am Morgen – 11.07.2026: Energiewende unter Druck, Energy Sharing &amp; Solarausbau verlangsamt</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>87</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:31</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 10.07.2026: Gaskraftwerke, Heimspeicher &amp; Eisenpulver – Energiewende im Wandel</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den Bundestag-Beschluss zur milliardenschweren Förderung neuer Gaskraftwerke, den wachsenden Markt für Heimspeicher und was Eisenpulver mit der Energiewende zu tun haben könnte. ...</description>
