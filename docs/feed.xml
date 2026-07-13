@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sun, 12 Jul 2026 04:59:23 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 04:27:42 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 13.07.2026: Smart Meter-Rückstand, Stromnetz-Erstversicherung &amp; Dänemarks Wärmewende</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Deutschlands deutlichen Rückstand beim Rollout intelligenter Stromzähler im europäischen Vergleich, eine historische Premiere bei der Absicherung des deutschen Stromnetzes und was ...</description>
+      <pubDate>Mon, 13 Jul 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-07-13.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-07-13.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-07-13.mp3" type="audio/mpeg" length="6016983" />
+      <itunes:title>Energie am Morgen – 13.07.2026: Smart Meter-Rückstand, Stromnetz-Erstversicherung &amp; Dänemarks Wärmewende</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>89</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:16</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 12.07.2026: Offshore-Sorgen, Wärmewende ohne Plan &amp; Wind im Wald</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Warnung eines Energieexperten vor stockendem Offshore-Ausbau, warum Deutschlands Wärmewende einen Bauplan vermisst und weshalb Forststandorte für Windkraft zunehmend in den Fo ...</description>
