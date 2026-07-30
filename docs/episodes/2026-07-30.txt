@@ -1,0 +1,31 @@
+TITEL: EEG 2027 im Kabinett, Solar unter Druck & Weltrekord-Windrad
+===
+Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den Kabinettsbeschluss zum EEG zweitausendundzwanzig und dem Netzpaket, warum die Solarbranche dabei Alarm schlägt und wie ein neues Rekord-Windrad in Deutschland Geschichte schreiben soll.
+
+<break time="1s"/>
+
+Das Fachmagazin pv-magazine.de berichtet am neunundzwanzigsten Juli zweitausendundzwanzig darüber, dass das Bundeskabinett Entwürfe zum neuen Erneuerbare-Energien-Gesetz zweitausendundzwanzig sowie zum Netzanschlusspaket beschlossen hat. Damit hat die Bundesregierung zwei der zentralen energiepolitischen Reformvorhaben dieser Legislaturperiode aus dem Kabinett heraus auf den parlamentarischen Weg gebracht.
+
+Das EEG, das Erneuerbare-Energien-Gesetz, ist das Kerngesetz der deutschen Energiewende. Es regelt, wie Strom aus Wind, Solar und anderen erneuerbaren Quellen gefördert wird, zu welchen Konditionen er ins Netz eingespeist werden darf und welche Ausschreibungsmengen den Ausbau steuern. Das Netzanschlusspaket wiederum soll regeln, unter welchen Bedingungen neue Kraftwerke und Anlagen Zugang zum Stromnetz erhalten.
+
+Was steckt dahinter? Bundeswirtschaftsministerin Katherina Reiche hat mit diesen Entwürfen einen Kurs eingeschlagen, der die bisherige Förderlogik des EEG strukturell verändert. Das Kabinett hat damit einen Rahmen gesetzt, der nun im Bundestag verhandelt wird. Offen bleibt, welche konkreten Änderungen am Entwurf im parlamentarischen Verfahren noch vorgenommen werden. Für die Investitionsplanung der Branche ist diese Unsicherheit belastend, denn Projektentwickler brauchen verlässliche Rahmenbedingungen, um Finanzierungen zu sichern und Anlagen zu planen. Der Beschluss ist ein formaler Meilenstein, aber kein Abschluss.
+
+<break time="1s"/>
+
+Das Presseportal meldet am neunundzwanzigsten Juli zweitausendundzwanzig, dass der Kabinettsbeschluss zum EEG zweitausendundzwanzig die Solarenergie in Deutschland ausbremst. Branchenvertreter und Verbände reagieren mit scharfer Kritik auf die beschlossene Reform der Solarstromförderung.
+
+Konkret geht es um die Ausgestaltung der Förderung: Der neue Entwurf sieht offenbar deutliche Einschnitte bei den Vergütungssätzen und den Ausschreibungsvolumina für Photovoltaikanlagen vor. Das bedeutet: Wer künftig eine Solaranlage bauen will, bekommt weniger Förderung, muss sich auf engeren Ausschreibungsmengen gegen mehr Konkurrenz durchsetzen oder beides. Für kleinere Projektierer und Bürgerenergiegesellschaften kann das das wirtschaftliche Aus bedeuten.
+
+Hier lohnt ein zweiter Blick: Deutschland hat laut EEG zweitausendundzwanzig ein gesetzliches Ausbauziel von zweihundertfünfzehn Gigawatt installierter Photovoltaikleistung bis zweitausenddreißig. Um dieses Ziel zu erreichen, wären laut Fraunhofer ISE jährlich zweiundzwanzig Gigawatt Neuzubau notwendig. Wenn die Reform die Investitionsanreize schwächt, ist dieses Ziel faktisch nicht mehr erreichbar. Die Ironie ist offensichtlich: Das Gesetz, das den Ausbau regeln soll, wird mit Regelungen verabschiedet, die den Ausbau bremsen. Was offen bleibt, ist wie stark der Dämpfer tatsächlich ausfällt und ob der Bundestag im weiteren Gesetzgebungsverfahren noch korrigierend eingreift. Die Branche hat angekündigt, intensiv Lobbyarbeit zu betreiben. Dieses heiße Thema wird uns in den nächsten Wochen weiter begleiten.
+
+<break time="1s"/>
+
+Das Portal agrarheute.com berichtet am neunundzwanzigsten Juli zweitausendundzwanzig darüber, dass in Deutschland das weltgrößte Windrad gebaut werden soll. Die Anlage erreicht eine Nabenhöhe von zweihundertfünfundachtzig Metern und eine Nennleistung von sieben Komma zwei Megawatt. Zum Vergleich: Ein typisches modernes Onshore-Windrad in Deutschland kommt heute auf Nabenhöhen von rund einhundertfünfzig bis einhundertachtzig Metern. Das neue Exemplar überragt das deutlich.
+
+Der größere Zusammenhang: Für die Windkraft an Land ist die Nabenhöhe eine entscheidende Kenngröße. Je höher die Anlage, desto beständiger und kräftiger sind in der Regel die Windverhältnisse. Gleichzeitig steigt die Leistungsausbeute überproportional, weil die Rotorfläche und damit die eingefangene Windenergie mit dem Quadrat des Rotorradius wächst. Mit sieben Komma zwei Megawatt liegt diese Anlage deutlich über dem heutigen Marktstandard, der bei vier bis sechs Megawatt für Onshore-Turbinen liegt. Das ist kein Marketingprojekt, sondern ein technischer Entwicklungsschritt, der zeigt, wo die Industrie in der nächsten Dekade hinwill.
+
+Was bedeutet das? Größere Anlagen bedeuten mehr Leistung pro Standort, was gerade in Deutschland mit seinen begrenzten Flächen für Windenergie einen echten Vorteil bringt. Wenn auf einem genehmigten Standort eine Anlage mit doppelter Leistung steht, sinkt der Flächenbedarf pro erzeugter Kilowattstunde erheblich. Was bei dieser Meldung offen bleibt: An welchem konkreten Standort die Anlage errichtet wird, welches Unternehmen dahintersteckt und wann die Inbetriebnahme geplant ist. Für die Energiewende ist die Richtung jedoch eindeutig: Die Technologie entwickelt sich weiter, auch wenn die politischen Rahmenbedingungen gerade unter Druck stehen.
+
+<break time="1s"/>
+
+Vielen Dank für deine Zeit. Wenn dir dieser Podcast hilft, die Energiewende besser zu verstehen, dann abonniere uns, teile diese Folge mit anderen oder hinterlasse uns eine Bewertung. Wir wünschen dir einen energiegeladenen Tag. Hör morgen wieder rein für die aktuellsten News rund um erneuerbare Energien und bleib immer auf dem Laufenden!
