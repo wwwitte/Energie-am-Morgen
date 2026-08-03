@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sun, 02 Aug 2026 05:00:24 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 04:23:16 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 03.08.2026: EEG-Einschnitte, Siemens Energy &amp; der tägliche Strommix</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir geplante Förderkürzungen für Solar und Windkraft in Deutschland, die Quartalszahlen von Siemens Energy und was das tägliche Stromversorgungs-Update über den Zustand der Energiewen ...</description>
+      <pubDate>Mon, 03 Aug 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-03.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-03.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-03.mp3" type="audio/mpeg" length="5930047" />
+      <itunes:title>Energie am Morgen – 03.08.2026: EEG-Einschnitte, Siemens Energy &amp; der tägliche Strommix</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>110</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:10</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 02.08.2026: Förder-Aus für Solar, PV-Systemwechsel &amp; steigende Verbraucherkosten</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir das drohende Förder-Aus für Millionen Solaranlagen, die geplante Reform der Photovoltaik-Vergütung und einen neuen Regierungsplan, der auf einige Verbraucher erhebliche Zusatzkost ...</description>
