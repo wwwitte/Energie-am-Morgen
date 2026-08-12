@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Wed, 05 Aug 2026 04:48:48 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 14:15:09 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 12.08.2026: XXL-Windpark Nordsee, Solarförderung &amp; Netzbetreiber-Daten</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen XXL-Windpark in der Nordsee und was er für die Energiewende bedeutet, eine wichtige Debatte über den richtigen Zeitpunkt für den Abbau von Solarförderung, und eine neue Onli ...</description>
+      <pubDate>Wed, 12 Aug 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-12.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-12.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-12.mp3" type="audio/mpeg" length="5811347" />
+      <itunes:title>Energie am Morgen – 12.08.2026: XXL-Windpark Nordsee, Solarförderung &amp; Netzbetreiber-Daten</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>113</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:03</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 05.08.2026: Strompreise, Solarhandwerk &amp; Erneuerbare im Verkehr</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Aussagen von Bundeswirtschaftsministerin Katherina Reiche zu sinkenden Strompreisen, eine neue Kampagne des Solarhandwerks für regionale Fachbetriebe sowie die enormen Lücken ...</description>
