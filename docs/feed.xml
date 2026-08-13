@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Wed, 12 Aug 2026 14:15:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 03:15:57 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 13.08.2026: Offshore-Rekord, Floating-Solar &amp; Kohleausstieg ohne Fahrplan</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Deutschlands größten Offshore-Windpark vor Helgoland, den wachsenden Trend der schwimmenden Solaranlagen auf Seen und die überraschende Verschiebung des Kohleausstiegs-Berichts du ...</description>
+      <pubDate>Thu, 13 Aug 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-13.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-13.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-13.mp3" type="audio/mpeg" length="5621594" />
+      <itunes:title>Energie am Morgen – 13.08.2026: Offshore-Rekord, Floating-Solar &amp; Kohleausstieg ohne Fahrplan</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>114</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:51</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 12.08.2026: XXL-Windpark Nordsee, Solarförderung &amp; Netzbetreiber-Daten</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen XXL-Windpark in der Nordsee und was er für die Energiewende bedeutet, eine wichtige Debatte über den richtigen Zeitpunkt für den Abbau von Solarförderung, und eine neue Onli ...</description>
