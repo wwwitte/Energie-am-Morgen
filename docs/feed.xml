@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sun, 16 Aug 2026 02:46:32 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 02:11:11 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 17.08.2026: Trittin kritisiert Merkel-Ära, Wärmepumpen-Krise &amp; fehlender Bauplan</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Jürgen Trittins Abrechnung mit sechzehn Jahren Energiepolitik unter Angela Merkel, die stockende Wärmepumpen-Nachfrage in Deutschland und warum Millionen sanierungsbedürftige Gebä ...</description>
+      <pubDate>Mon, 17 Aug 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-17.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-17.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-17.mp3" type="audio/mpeg" length="7104095" />
+      <itunes:title>Energie am Morgen – 17.08.2026: Trittin kritisiert Merkel-Ära, Wärmepumpen-Krise &amp; fehlender Bauplan</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>118</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>07:24</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 16.08.2026: Redispatch &amp; Eigenverbrauch, Floating-PV &amp; Energiegesetze im Überblick</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir eine regulatorische Lücke die Solarstrom-Eigenverbrauch gefährdet, warum Solaranlagen aufs Wasser ziehen, und welche Energiegesetze in Deutschland gerade auf der Zielgeraden sind. ...</description>
