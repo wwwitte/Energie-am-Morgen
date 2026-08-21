@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Thu, 20 Aug 2026 02:42:14 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2026 02:14:56 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 21.08.2026: Solarziel 2026 erreicht, PV-Gebühr 2029 &amp; LNG-Fehlinvestition</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den erreichten Solarausbau-Meilenstein für zweitausendsechsundzwanzig, die kommende Netzentgeltpflicht für Solaranlagenbesitzer und warum neue Flüssiggas-Verträge mit Kanada als ...</description>
+      <pubDate>Fri, 21 Aug 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-21.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-21.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-21.mp3" type="audio/mpeg" length="6321675" />
+      <itunes:title>Energie am Morgen – 21.08.2026: Solarziel 2026 erreicht, PV-Gebühr 2029 &amp; LNG-Fehlinvestition</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>122</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:35</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 20.08.2026: Durchbruch beim Solarstreit, China-Fehler &amp; Energiemanagement im Gewerbe</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen politischen Durchbruch im Dauerstreit um Wind- und Solarenergie, warum Deutschland gerade aus dem China-Fehler lernt und was hinter der wachsenden Marktübersicht für Energie ...</description>
