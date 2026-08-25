@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Mon, 24 Aug 2026 02:49:55 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 02:10:12 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 25.08.2026: Investitionsrisiko, Hitzeschäden &amp; Quaschnings Deutschlandfahne</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum Deutschland bei den Erneuerbaren ein Investitionsminus riskiert, was Hitzewellen das Land in diesem Jahr kosten und was die Deutschlandfahne mit der Energiewende zu tun hat ...</description>
+      <pubDate>Tue, 25 Aug 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-25.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-25.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-25.mp3" type="audio/mpeg" length="5459007" />
+      <itunes:title>Energie am Morgen – 25.08.2026: Investitionsrisiko, Hitzeschäden &amp; Quaschnings Deutschlandfahne</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>126</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:41</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 24.08.2026: Energiewende rettet Klima, PV-Urteil &amp; Umweltverbände-Kritik</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, ob die deutsche Energiewende wirklich das Klima gerettet hat, was ein neues Gerichtsurteil zur Photovoltaik-Montage bedeutet und warum Umweltverbände die Klimapolitik der Bundes ...</description>
