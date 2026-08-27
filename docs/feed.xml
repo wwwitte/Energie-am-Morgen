@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Wed, 26 Aug 2026 02:51:46 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 10:33:02 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 27.08.2026: KfW-Klimaumfrage, Wärmenetzgesetz &amp; Windkraft-Statistik</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum immer mehr Haushalte wieder in den Klimaschutz investieren wollen, was das neue Wärmenetzgesetz für die Fernwärme in Deutschland bedeutet und welchen Anteil Windkraft aktue ...</description>
+      <pubDate>Thu, 27 Aug 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-27.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-27.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-08-27.mp3" type="audio/mpeg" length="5363713" />
+      <itunes:title>Energie am Morgen – 27.08.2026: KfW-Klimaumfrage, Wärmenetzgesetz &amp; Windkraft-Statistik</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>128</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:35</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 26.08.2026: Solar-Rekordziel erreicht, Netzanschluss-Engpass &amp; Offshore-Wind 2026</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir das erreichte EEG-Solarziel zweitausendsechsundzwanzig und die Warnung vor einem Ausbaustillstand, den wachsenden Kampf um Netzanschlüsse in Deutschland und den aktuellen Stand d ...</description>
