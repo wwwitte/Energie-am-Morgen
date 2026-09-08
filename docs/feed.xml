@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Mon, 07 Sep 2026 06:38:39 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 05:17:02 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 08.09.2026: Enerparc-Insolvenz, Kapitalkosten-Studie &amp; Rhein-Wärme Mannheim</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Insolvenz eines der größten deutschen Solarparkbetreiber, eine Studie über Milliardenpotenziale durch günstigere Kapitalkosten für die Energiewende, und ein ungewöhnliches Wär ...</description>
+      <pubDate>Tue, 08 Sep 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-08.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-08.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-08.mp3" type="audio/mpeg" length="6074243" />
+      <itunes:title>Energie am Morgen – 08.09.2026: Enerparc-Insolvenz, Kapitalkosten-Studie &amp; Rhein-Wärme Mannheim</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>140</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:19</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 07.09.2026: Solarausbau-Rekordjahr, sinkende Einspeisevergütung &amp; Stromnetz-Sabotage</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir das deutsche Rekordjahr beim Solarausbau, schlechte Nachrichten für Solaranlagenbesitzer bei der Einspeisevergütung und einen Sabotageakt am Hambacher Forst, der die Sicherheit kr ...</description>
