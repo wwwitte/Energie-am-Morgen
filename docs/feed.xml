@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 08 Sep 2026 06:32:38 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 05:19:20 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 09.09.2026: Rekordhoch Ökostrom, Agri-Solar &amp; Solarpark-Insolvenz</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den neuen Rekordwert erneuerbarer Energien im deutschen Strommix, Deutschlands größte Agri-Solaranlage die ans Netz geht, und was die Insolvenz eines bekannten Solarpark-Betreibe ...</description>
+      <pubDate>Wed, 09 Sep 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-09.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-09.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-09.mp3" type="audio/mpeg" length="5686377" />
+      <itunes:title>Energie am Morgen – 09.09.2026: Rekordhoch Ökostrom, Agri-Solar &amp; Solarpark-Insolvenz</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>141</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:55</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 08.09.2026: Enerparc-Insolvenz, Kapitalkosten-Studie &amp; Rhein-Wärme Mannheim</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Insolvenz eines der größten deutschen Solarparkbetreiber, eine Studie über Milliardenpotenziale durch günstigere Kapitalkosten für die Energiewende, und ein ungewöhnliches Wär ...</description>
