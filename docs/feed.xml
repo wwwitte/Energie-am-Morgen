@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Mon, 14 Sep 2026 07:05:45 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 05:23:59 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 15.09.2026: Netzsicherheit, Stromspeicher &amp; Offshore-Wind unter Druck</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir eine Tennet-Managerin, die mehr Schutz für die Strominfrastruktur fordert, eine große Flexibilitätsvereinbarung für Batteriespeicher in Deutschland und die Frage, warum Offshore-W ...</description>
+      <pubDate>Tue, 15 Sep 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-15.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-15.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-15.mp3" type="audio/mpeg" length="5915419" />
+      <itunes:title>Energie am Morgen – 15.09.2026: Netzsicherheit, Stromspeicher &amp; Offshore-Wind unter Druck</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>147</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:09</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 14.09.2026: Digitales Stromnetz, Infrastruktur-Sicherheit &amp; Ukraine-Hilfe</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum das Stromnetz dringend digital werden muss, wie Deutschland kritische Energieinfrastruktur nach Anschlägen schützen will und welche Hilfe die Ukraine für ihre Energieversor ...</description>
