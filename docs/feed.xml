@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 15 Sep 2026 06:42:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 05:18:53 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,23 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 16.09.2026: Terrorangriffe aufs Stromnetz, Energy Sharing &amp; Regionen-Tool</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Terrorangriffe auf das deutsche Stromnetz, den politischen Stillstand beim Energy Sharing und ein neues digitales Werkzeug für die regionale Energiewende. 
+
+ Ad-hoc-news.de berich ...</description>
+      <pubDate>Wed, 16 Sep 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-16.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-16.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-16.mp3" type="audio/mpeg" length="5925032" />
+      <itunes:title>Energie am Morgen – 16.09.2026: Terrorangriffe aufs Stromnetz, Energy Sharing &amp; Regionen-Tool</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>148</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:10</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 15.09.2026: Netzsicherheit, Stromspeicher &amp; Offshore-Wind unter Druck</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir eine Tennet-Managerin, die mehr Schutz für die Strominfrastruktur fordert, eine große Flexibilitätsvereinbarung für Batteriespeicher in Deutschland und die Frage, warum Offshore-W ...</description>
