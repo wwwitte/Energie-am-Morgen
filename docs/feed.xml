@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Thu, 17 Sep 2026 06:39:40 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 05:14:33 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 18.09.2026: Größter Offshore-Windpark, Gerechtigkeitsfrage &amp; Energiegesetze im Check</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den größten deutschen Offshore-Windpark, der gestern in Betrieb gegangen ist, eine neue Max-Planck-Studie zur Verteilungsgerechtigkeit der Energiewende und einen Überblick über de ...</description>
+      <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-18.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-18.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-18.mp3" type="audio/mpeg" length="5140105" />
+      <itunes:title>Energie am Morgen – 18.09.2026: Größter Offshore-Windpark, Gerechtigkeitsfrage &amp; Energiegesetze im Check</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>150</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:21</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 17.09.2026: Preisspitzen, Solarrekord &amp; Stromnetz-Sicherheit</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, was hinter den Preisspitzen an der Strombörse steckt, warum Deutschland beim Solarausbau einen wichtigen Meilenstein erreicht hat und wie sicher unser Stromnetz wirklich ist. ...</description>
