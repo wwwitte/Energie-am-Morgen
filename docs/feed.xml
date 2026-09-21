@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sun, 20 Sep 2026 07:01:24 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 05:31:23 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 21.09.2026: Durchbruch im Energiestreit, Bürokratie bremst Solar &amp; Ukraine-Hilfe</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den politischen Durchbruch im Dauerstreit um Wind- und Solarenergie, warum Bürokratie den Solarausbau in Deutschland ausbremst und wie Deutschland die Ukraine mit zweihundertfünfz ...</description>
+      <pubDate>Mon, 21 Sep 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-21.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-21.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-21.mp3" type="audio/mpeg" length="5520865" />
+      <itunes:title>Energie am Morgen – 21.09.2026: Durchbruch im Energiestreit, Bürokratie bremst Solar &amp; Ukraine-Hilfe</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>153</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:45</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 20.09.2026: Offshore-Gigant, Batteriespeicher im Netz &amp; faire Stromkosten</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den neuen Offshore-Windpark Borkum Riffgrund drei, wie Batteriespeicher an Umspannwerken das Stromnetz für mehr Solarstrom öffnen, und warum die Frage wer die Energiewende eigentl ...</description>
