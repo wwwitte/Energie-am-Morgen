@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 22 Sep 2026 06:47:53 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 05:13:52 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 23.09.2026: Smart Meter, Ausbauziele &amp; Solarstrom im Netz</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den schleppenden Smart-Meter-Rollout in Deutschland, die Frage ob Bundeswirtschaftsministerin Katherina Reiche die Ausbauziele in Schleswig-Holstein gefährdet und eine neue Studi ...</description>
+      <pubDate>Wed, 23 Sep 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-23.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-23.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-23.mp3" type="audio/mpeg" length="6083856" />
+      <itunes:title>Energie am Morgen – 23.09.2026: Smart Meter, Ausbauziele &amp; Solarstrom im Netz</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>155</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:20</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 22.09.2026: Netz kann mehr Solar, Streit um Netzausbau &amp; Leag baut Energiezentrum</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir eine Studie die zeigt dass das Stromnetz deutlich mehr Solarstrom verträgt als bisher angenommen, den wachsenden Streit um Netzausbau und Ökostrom in Deutschland und wie der Energ ...</description>
