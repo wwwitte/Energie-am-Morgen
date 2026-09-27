@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 06:37:24 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 05:49:07 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 27.09.2026: Südlink-Schock, Saisonspeicher &amp; EEG-Novelle unter der Lupe</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir eine böse Überraschung beim Stromtrassenprojekt Südlink, warum Saisonspeicher für die Energiewende so schwierig bleiben und was die geplante EEG-Novelle für den Wettbewerb auf dem ...</description>
+      <pubDate>Sun, 27 Sep 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-27.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-27.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-09-27.mp3" type="audio/mpeg" length="6428673" />
+      <itunes:title>Energie am Morgen – 27.09.2026: Südlink-Schock, Saisonspeicher &amp; EEG-Novelle unter der Lupe</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>159</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:41</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 26.09.2026: Tandem-Solar aus BW, Insolvenzen im Solarmarkt &amp; Netz-Chaos bremst Investitionen</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen Durchbruch bei Tandem-Solarzellen aus Baden-Württemberg, eine Pleitewelle im deutschen Solarmarkt und das Anschluss-Chaos in den Stromnetzen, das Milliarden an Investitione ...</description>
