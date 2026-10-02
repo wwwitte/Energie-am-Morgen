@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Thu, 01 Oct 2026 07:49:15 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 06:15:13 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 02.10.2026: Energiewende-Bilanz, Heimspeicher-Revolution &amp; Sachsens Fernwärme-Milliarden</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den aktuellen Stand des Ausbaus erneuerbarer Energien in Deutschland, neue Regeln die Heimspeicher für Millionen Haushalte zur Einkommensquelle machen könnten, und Sachsens Milli ...</description>
+      <pubDate>Fri, 02 Oct 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-02.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-02.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-02.mp3" type="audio/mpeg" length="5740712" />
+      <itunes:title>Energie am Morgen – 02.10.2026: Energiewende-Bilanz, Heimspeicher-Revolution &amp; Sachsens Fernwärme-Milliarden</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>164</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:58</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 01.10.2026: Ökostrom-Rekord, Netz am Limit &amp; Gasspeicher-Anweisung</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen neuen Rekord beim Ökostromanteil in Deutschland, warum das Hamburger Stromnetz trotz Windkraft am Limit ist, und was hinter der Gasspeicher-Anweisung der Bundeswirtschaftsmi ...</description>
