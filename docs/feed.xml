@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Thu, 08 Oct 2026 08:00:01 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 06:45:04 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 09.10.2026: Energiewende auf Kurs? Rechenzentren im Stromnetz &amp; Solarinsolvenzen</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den aktuellen Stand der deutschen Energiewende, warum Rechenzentren das Stromnetz unter Druck setzen und was eine Insolvenzwelle in der Solarbranche über den Zustand des Marktes v ...</description>
+      <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-09.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-09.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-09.mp3" type="audio/mpeg" length="5712291" />
+      <itunes:title>Energie am Morgen – 09.10.2026: Energiewende auf Kurs? Rechenzentren im Stromnetz &amp; Solarinsolvenzen</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>170</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:57</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 08.10.2026: Ökostrom-Bremse, Hacker-Angriff auf Solaranlagen &amp; Wärmewende</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Warnung der Erneuerbaren-Branche vor einer drohenden Bremse beim Ökostrom-Ausbau, einen Hacker-Angriff der fast acht Gigawatt Solarleistung vom Netz genommen hätte, und den ak ...</description>
