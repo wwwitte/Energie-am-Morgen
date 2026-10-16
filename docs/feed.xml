@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Thu, 15 Oct 2026 06:27:52 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 05:03:37 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 16.10.2026: Riesenspeicher, Solar-Aufschlag &amp; Gaskrise 2026</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den Baustart für Deutschlands größten netzdienlichen Batteriespeicher, eine Warnung von elf Verbänden gegen eine neue Netzgebühr für Solaranlagen und warum die Gaskrise zweitausen ...</description>
+      <pubDate>Fri, 16 Oct 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-16.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-16.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-16.mp3" type="audio/mpeg" length="6656878" />
+      <itunes:title>Energie am Morgen – 16.10.2026: Riesenspeicher, Solar-Aufschlag &amp; Gaskrise 2026</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>177</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:56</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 15.10.2026: Energiewende-Kosten, Bidirektionales Laden &amp; Heim-Batterien</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, was die Energiewende wirklich kostet und warum sie sich trotzdem rechnet, wie Mercedes-Benz das bidirektionale Laden in Deutschland startet und warum Mini-Batterien im Wohnzimmer ...</description>
