@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Mon, 19 Oct 2026 06:51:01 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 05:20:54 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 20.10.2026: Offshore-Regelenergie, EEG-Novelle &amp; Fachkräftemangel in der Energiewende</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, wie Vattenfall erstmals Regelenergie aus einem Offshore-Windpark vermarktet, warum eine geplante EEG-Novelle Landwirte und den Mittelstand unter Druck setzt und was der Fachkräft ...</description>
+      <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-20.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-20.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-20.mp3" type="audio/mpeg" length="6647683" />
+      <itunes:title>Energie am Morgen – 20.10.2026: Offshore-Regelenergie, EEG-Novelle &amp; Fachkräftemangel in der Energiewende</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>181</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:55</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 19.10.2026: Deutschlands Strommix, Solarbonus durch Klimawandel &amp; Offshore-Trick</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, wie sich Deutschlands Strommix gerade verändert, warum der Klimawandel den Solarstromertrag steigern könnte und mit welchem Trick Offshore-Windparks neuerdings Geld verdienen wol ...</description>
