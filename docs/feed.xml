@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Mon, 26 Oct 2026 06:59:07 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 05:39:21 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 27.10.2026: EEG-Kosten 2027, Offshore-Rettungsplan &amp; Batteriezellen-Risiko</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den unerwartet hohen EEG-Finanzierungsbedarf für zweitausendundsiebenundzwanzig, Bundeswirtschaftsministerin Reiches Plan zur Rettung gefährdeter Offshore-Windprojekte und drohend ...</description>
+      <pubDate>Tue, 27 Oct 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-27.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-27.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-10-27.mp3" type="audio/mpeg" length="5805078" />
+      <itunes:title>Energie am Morgen – 27.10.2026: EEG-Kosten 2027, Offshore-Rettungsplan &amp; Batteriezellen-Risiko</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>188</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:02</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 26.10.2026: Energiewende &amp; Sicherheit, Stromverfügbarkeit &amp; Abwärme aus Rechenzentren</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum die Energiewende zur Frage nationaler Sicherheit wird, was an einem internationalen Ranking zur deutschen Stromversorgung wirklich drinsteckt, und wie Abwärme aus Rechenzen ...</description>
