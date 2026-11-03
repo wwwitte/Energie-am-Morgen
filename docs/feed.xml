@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Mon, 02 Nov 2026 08:20:50 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 07:17:58 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 03.11.2026: Solarranking, Flow-Batterien &amp; Agri-PV: Energiewende im Detail</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir das Kundenvoting zu den besten Solarherstellern Deutschlands, eine neue Batterietechnologie aus dem Freistaat Bayern, und die Expansion eines internationalen Unternehmens in den d ...</description>
+      <pubDate>Tue, 03 Nov 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-03.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-03.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-03.mp3" type="audio/mpeg" length="6216350" />
+      <itunes:title>Energie am Morgen – 03.11.2026: Solarranking, Flow-Batterien &amp; Agri-PV: Energiewende im Detail</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>195</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:28</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 02.11.2026: Dunkelflaute, Gasspeicher-Lücke &amp; Heizkosten im Winter</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die tägliche Frage nach Dunkelflaute oder Stromüberschuss, warum Deutschland die Gasspeicher-Vorgaben verfehlt hat und was das für den Winter bedeutet, sowie einen Blick auf die H ...</description>
