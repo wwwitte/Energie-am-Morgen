@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sat, 07 Nov 2026 07:48:01 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 06:45:05 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,23 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 08.11.2026: Wärmepumpen-EU-Bonus, Steckerspeicher &amp; Gasspeicher-Lücke</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen neuen EU-Bonus für Wärmepumpen, warum Steckerspeicher noch nicht auf Netzsignale reagieren, und wie es um die deutschen Gasspeicher steht. 
+
+ Netz Trends berichtet am siebte ...</description>
+      <pubDate>Sun, 08 Nov 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-08.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-08.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-08.mp3" type="audio/mpeg" length="5329022" />
+      <itunes:title>Energie am Morgen – 08.11.2026: Wärmepumpen-EU-Bonus, Steckerspeicher &amp; Gasspeicher-Lücke</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>200</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>05:33</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 07.11.2026: Energieimporte, Strompreisschock &amp; Gaskraftwerk-Milliarden</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, was Deutschlands Energieimporte das Land wirklich kosten, warum der Strompreis trotz Windrekord explodiert ist, und welche Kritik sich am milliardenschweren Gaskraftwerksplan der ...</description>
