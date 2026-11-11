@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 10 Nov 2026 08:51:32 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 07:09:29 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,23 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 11.11.2026: Klimaschutz-Abstieg, Solar-Wirtschaftlichkeit &amp; Grüngasquote</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Deutschlands Absturz im Klimaschutz-Index, eine kritische Warnung zur Wirtschaftlichkeit von Solaranlagen und die Debatte um die neue Grüngasquote. 
+
+ ZDFheute berichtet am elfte ...</description>
+      <pubDate>Wed, 11 Nov 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-11.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-11.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-11.mp3" type="audio/mpeg" length="5920434" />
+      <itunes:title>Energie am Morgen – 11.11.2026: Klimaschutz-Abstieg, Solar-Wirtschaftlichkeit &amp; Grüngasquote</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>203</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:10</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 10.11.2026: Wärmewende verfehlt, EEG-Verzögerung &amp; KI ohne Strom</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum Deutschland bei der Wärmewende massiv hinter seinen Zielen zurückbleibt, was die verschleppte EEG-Novelle für den Wirtschaftsstandort bedeutet und weshalb der KI-Boom ohne ...</description>
