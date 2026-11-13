@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Thu, 12 Nov 2026 08:51:32 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 07:20:55 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 13.11.2026: Strompreise, Wärmewende &amp; Smart Meter – Deutschland unter Druck</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir, warum die Versprechen günstiger Energie bisher nicht eingelöst wurden, welche Herausforderungen die europäische Energiewende bei den Strompreisen prägen und warum Deutschland bei ...</description>
+      <pubDate>Fri, 13 Nov 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-13.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-13.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-13.mp3" type="audio/mpeg" length="6490531" />
+      <itunes:title>Energie am Morgen – 13.11.2026: Strompreise, Wärmewende &amp; Smart Meter – Deutschland unter Druck</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>205</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:45</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 12.11.2026: RWE-Quartalsbericht, Netzausbau Mecklenburg &amp; PV-Boom Österreich</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Quartalszahlen von RWE mit einer bemerkenswerten Aussage des Finanzchefs, die Frage was Mecklenburg-Vorpommern mit seinem Ökostrom macht und warum in Österreich Fördermittel f ...</description>
