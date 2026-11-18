@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Tue, 17 Nov 2026 09:45:57 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 08:00:06 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,23 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 18.11.2026: Solar-Rekord, Batterie-Großspeicher &amp; grüner Wasserstoff aus Dänemark</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den nahenden Solarstrom-Rekord in Deutschland, einen geplanten Batterie-Großspeicher in der Lausitz und die unsichere Zukunft von grünem Wasserstoff aus Dänemark. 
+
+ Das Magazin ...</description>
+      <pubDate>Wed, 18 Nov 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-18.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-18.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-18.mp3" type="audio/mpeg" length="6090544" />
+      <itunes:title>Energie am Morgen – 18.11.2026: Solar-Rekord, Batterie-Großspeicher &amp; grüner Wasserstoff aus Dänemark</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>210</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:20</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 17.11.2026: Solar-Rekord, Klimaindex-Absturz &amp; E-Autos mit grünem Strom</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir Deutschlands historischen Solarstrom-Rekord, den ernüchternden Platz fünfundzwanzig im globalen Klimaschutz-Index und was eine neue Fraunhofer-Studie über das Laden von Elektroaut ...</description>
