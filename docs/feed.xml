@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Sat, 21 Nov 2026 08:47:19 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 07:30:35 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 22.11.2026: COP-Warnung, Smart-Meter-Rückstand &amp; Netzstress in Deutschland</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir die Warnung vor einem Tauziehen um Öl und Gas auf der Weltklimakonferenz, Deutschlands massiven Rückstand bei smarten Stromzählern und warum die Physik des Stromnetzes zur echten ...</description>
+      <pubDate>Sun, 22 Nov 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-22.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-22.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-22.mp3" type="audio/mpeg" length="7029698" />
+      <itunes:title>Energie am Morgen – 22.11.2026: COP-Warnung, Smart-Meter-Rückstand &amp; Netzstress in Deutschland</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>214</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>07:19</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 21.11.2026: Weltrekord-Windrad, Erneuerbare im Takt &amp; Kosten der Energiewende</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir das höchste Windrad der Welt, das jetzt in der Lausitz Strom liefert, einen bemerkenswerten Rekord beim Zubau erneuerbarer Energien in Ostdeutschland und die Frage, was die Energi ...</description>
