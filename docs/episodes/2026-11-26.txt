@@ -1,0 +1,25 @@
+TITEL: 100 Terawattstunden Solar, Nordsee-Kabel & Polens Blick auf Deutschland
+===
+Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen historischen Meilenstein für die deutsche Solarenergie, ein neues Seekabel zwischen Deutschland und Großbritannien sowie einen polnischen Entwickler, der massiv auf den deutschen Markt für erneuerbare Energien setzt.
+
+<break time="1s"/>
+
+Golem.de berichtet am fünfundzwanzigsten November zweitausendsechsundzwanzig darüber, dass die deutsche Solarenergie in diesem Jahr erstmals die Marke von einhundert Terawattstunden Stromerzeugung überschritten hat. Einhundert Terawattstunden – das ist die Strommenge, die rund achtundzwanzig Millionen deutsche Durchschnittshaushalte ein ganzes Jahr lang versorgen würde. Dieser Wert wurde noch nie zuvor allein durch Photovoltaik erreicht. Die Marke gilt als historischer Einschnitt in der Geschichte der deutschen Energiewende.
+
+Das ist bemerkenswert, weil der Weg dorthin alles andere als selbstverständlich war. Noch vor wenigen Jahren galt die deutsche Solarenergie als saisonales Nischenprodukt – relevant im Sommer, weitgehend bedeutungslos im Winter. Die Überschreitung der einhundert-Terawattstunden-Schwelle zeigt, dass Photovoltaik inzwischen zu einer tragenden Säule der deutschen Stromversorgung geworden ist. Zum Vergleich: Der gesamte deutsche Bruttostromverbrauch liegt in einem typischen Jahr bei rund fünfhundert Terawattstunden. Solarstrom deckt damit mittlerweile rund ein Fünftel des Gesamtbedarfs ab. Was bleibt offen? Die Frage der Systemintegration. Einhundert Terawattstunden Erzeugung sind beeindruckend – aber ein erheblicher Teil davon fällt zu Zeiten an, in denen das Netz bereits an seinen Grenzen arbeitet. Speicher, flexible Lasten und Netzausbau sind die Voraussetzung dafür, dass diese Menge auch tatsächlich genutzt werden kann und nicht abgeregelt wird. Der Meilenstein ist real. Die Hausaufgaben dahinter auch.
+
+<break time="1s"/>
+
+Energie und Management berichtet am vierundzwanzigsten November zweitausendsechsundzwanzig darüber, dass ein deutsch-britisches Seekabel vor der deutschen Küste einen wichtigen Baufortschritt erzielt hat. Das Kabel soll künftig Strom zwischen dem deutschen und dem britischen Stromnetz übertragen und damit die Verbindungskapazität zwischen beiden Ländern deutlich ausbauen. Solche Verbindungsleitungen zwischen Ländern werden als Interkonnektoren bezeichnet – sie ermöglichen es, Stromüberschüsse dorthin zu transportieren, wo gerade Bedarf besteht.
+
+Der Kontext dazu: Interkonnektoren sind ein oft unterschätztes Werkzeug der Energiewende. Deutschland produziert an windreichen Tagen mehr Strom als es verbrauchen kann, Großbritannien hat ähnliche Spitzenlastprobleme – und beide Länder profitieren davon, wenn Überschüsse grenzüberschreitend gehandelt werden können. Eine stärkere Verbindung reduziert die Notwendigkeit, Windkraft- oder Solaranlagen abzuschalten, weil das Netz voll ist – sogenannte Abregelungen, die derzeit noch erhebliche Mengen an grünem Strom vernichten. Was das konkret bedeutet: Jede zusätzliche Gigawatt-Stunde, die ins Ausland fließen kann statt abgeregelt zu werden, ist bares Geld für Betreiber und ein echter Beitrag zur Klimabilanz. Der genaue Fertigstellungstermin und die finale Übertragungskapazität des Kabels gehen aus der Meldung nicht hervor – das bleibt zu beobachten.
+
+<break time="1s"/>
+
+Energie und Management berichtet am fünfundzwanzigsten November zweitausendsechsundzwanzig darüber, dass ein polnischer Projektentwickler für erneuerbare Energien sein Deutschlandgeschäft gezielt ausbaut. Das Unternehmen plant, seine Aktivitäten auf dem deutschen Markt zu verstärken und weitere Wind- und Solarprojekte zu entwickeln.
+
+Was steckt dahinter? Deutschland ist trotz aller bürokratischen Hürden nach wie vor einer der attraktivsten Märkte für Erneuerbare in Europa – und zieht zunehmend auch internationale Entwickler an. Das ist grundsätzlich ein gutes Zeichen. Mehr Wettbewerb im Projektentwicklungsmarkt kann dazu beitragen, dass Projekte schneller und kosteneffizienter realisiert werden. Gleichzeitig zeigt diese Meldung etwas, das in der deutschen Debatte oft untergeht: Die Energiewende ist längst kein rein nationales Projekt mehr. Europäische Kapitalströme, internationale Entwickler und grenzüberschreitende Lieferketten bestimmen das Tempo des Ausbaus mit. Ob der polnische Entwickler dabei konkrete Projekte oder Zielvolumina für Deutschland benennt, geht aus der Meldung nicht hervor. Der Trend selbst ist aber eindeutig: Deutschland wird als Investitionsstandort für erneuerbare Energien ernster genommen als noch vor fünf Jahren.
+
+<break time="1s"/>
+
+Vielen Dank für deine Zeit. Wenn dir dieser Podcast hilft, die Energiewende besser zu verstehen, dann abonniere uns, teile diese Folge mit anderen oder hinterlasse uns eine Bewertung. Wir wünschen dir einen energiegeladenen Tag. Hör morgen wieder rein für die aktuellsten News rund um erneuerbare Energien und bleib immer auf dem Laufenden!
