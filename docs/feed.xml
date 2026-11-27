@@ -5,7 +5,7 @@
     <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     <description>Täglich die spannendsten News zu erneuerbaren Energien in Deutschland – kompakt und eingeordnet. Shownotes und Disclaimer: tinyurl.com/energieammorgen</description>
     <language>de</language>
-    <lastBuildDate>Thu, 26 Nov 2026 10:03:35 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 09:07:58 GMT</lastBuildDate>
     <itunes:author>Energie am Morgen</itunes:author>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -20,6 +20,21 @@
       <title>Energie am Morgen</title>
       <link>https://wwwitte.github.io/Energie-am-Morgen</link>
     </image>
+    <item>
+      <title>Energie am Morgen – 27.11.2026: Wissenschaftsstreit Energiewende, Riesenspeicher Sachsen &amp; Grünstrom-Rekord</title>
+      <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir den Wissenschaftsstreit über die Kosten der Energiewende, einen der größten Batteriespeicher Deutschlands in Sachsen und den aktuellen Grünstrom-Rekord – samt der Frage, warum tro ...</description>
+      <pubDate>Fri, 27 Nov 2026 06:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-27.mp3</guid>
+      <link>https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-27.mp3</link>
+      <enclosure url="https://wwwitte.github.io/Energie-am-Morgen/episodes/2026-11-27.mp3" type="audio/mpeg" length="6116039" />
+      <itunes:title>Energie am Morgen – 27.11.2026: Wissenschaftsstreit Energiewende, Riesenspeicher Sachsen &amp; Grünstrom-Rekord</itunes:title>
+      <itunes:author>Energie am Morgen</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>219</itunes:episode>
+      <itunes:image href="https://wwwitte.github.io/Energie-am-Morgen/cover_2d2844a0.jpg" />
+      <itunes:duration>06:22</itunes:duration>
+    </item>
     <item>
       <title>Energie am Morgen – 26.11.2026: 100 Terawattstunden Solar, Nordsee-Kabel &amp; Polens Blick auf Deutschland</title>
       <description>Herzlich Willkommen zu Energie am Morgen. Dein täglicher News-Podcast rund um erneuerbare Energien. Heute besprechen wir einen historischen Meilenstein für die deutsche Solarenergie, ein neues Seekabel zwischen Deutschland und Großbritannien sowie einen polnischen Entwickler, der massiv auf den deut ...</description>
